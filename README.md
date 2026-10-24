@@ -9,21 +9,11 @@ High-performance, automated, pre-compiled **Mihomo Rule-Set (`.mrs`)** binaries 
 
 ---
 
-## 📱 Compatible GUI Clients (Prerequisites)
-
-Optimized for clients powered by the modern **Mihomo (formerly Clash.Meta)** core:
-
-* **[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)** *(Recommended — Windows, macOS, Linux)*
-* **[Mihomo Party](https://github.com/mihomo-party-org/mihomo-party)** *(Windows, macOS, Linux)*
-* **[Clash Nyanpasu](https://github.com/libnyanpasu/clash-nyanpasu)** *(Windows, macOS, Linux)*
-* **[Flclash](https://github.com/chen08209/FlClash)** *(Cross-Platform)*
-
----
-
-## 📦 1. Available Pre-Compiled HaGeZi Tiers
+## 📦 Available Pre-Compiled HaGeZi Rulesets
 
 Continuously synced with upstream commits every **20 minutes**, compiled using the native Mihomo binary engine, and delivered via jsDelivr CDN edges with instant cache purging:
 
+### 1. General & Security Tiers
 | Tier | Format | Size | Target Profile | CDN URL |
 | :--- | :---: | :---: | :--- | :--- |
 | **Light** | `.mrs` | ![Light Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziLight.mrs?branch=release&label=&color=success) | Low-resource routers & minimal filtering | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziLight.mrs) |
@@ -32,30 +22,29 @@ Continuously synced with upstream commits every **20 minutes**, compiled using t
 | **Pro++** | `.mrs` | ![ProPlus Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziProPlus.mrs?branch=release&label=&color=blue) | **Default:** Advanced tracking, telemetry & affiliate links | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziProPlus.mrs) |
 | **Ultimate** | `.mrs` | ![Ultimate Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziUltimate.mrs?branch=release&label=&color=orange) | Paranoia mode (strict corporate-grade filtering) | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziUltimate.mrs) |
 | **TIF** | `.mrs` | ![TIF Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziTIF.mrs?branch=release&label=&color=critical) | **Active Threat Defense:** Phishing, malware, botnets & miners | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziTIF.mrs) |
+| **DynDNS** | `.mrs` | ![DynDNS Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziDynDNS.mrs?branch=release&label=&color=critical) | Block dynamic DNS domains utilized by malware & C2 servers | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziDynDNS.mrs) |
+
+### 2. Native Hardware & OS Tracker Protection
+| Target OS | Format | Live Size | Protection Scope | Fast CDN URL |
+| :--- | :---: | :---: | :--- | :--- |
+| **Windows** | `.mrs` | ![Windows Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziWindows.mrs?branch=release&label=&color=blue) | Complete Windows 10/11 & Office diagnostic telemetry block | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziWindows.mrs) |
+| **Apple** | `.mrs` | ![Apple Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziApple.mrs?branch=release&label=&color=blue) | Blocks Apple diagnostic metrics, analytics & crash reporters | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziApple.mrs) |
+| **Xiaomi** | `.mrs` | ![Xiaomi Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziXiaomi.mrs?branch=release&label=&color=orange) | Neutralizes MIUI/HyperOS aggressive system analytics | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziXiaomi.mrs) |
+| **Android** | `.mrs` | ![Android Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziAndroid.mrs?branch=release&label=&color=success) | Blocks Samsung & OEM native device telemetry | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziAndroid.mrs) |
+
+### 3. Specialized Filtering (Parental Control & Anti-Gambling)
+| Target | Format | Live Size | Protection Scope | Fast CDN URL |
+| :--- | :---: | :---: | :--- | :--- |
+| **Gambling** | `.mrs` | ![Gambling Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziGambling.mrs?branch=release&label=&color=critical) | Comprehensive international gambling, casino, and betting block | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziGambling.mrs) |
+| **NSFW** | `.mrs` | ![NSFW Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziNSFW.mrs?branch=release&label=&color=critical) | Worldwide adult content and pornography blocklist | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNSFW.mrs) |
 
 ---
 
-## ⚙️ 2. The Universal Merge Script (`clash-verge-merge.js`)
+## ⚙️ The Universal Merge Script (`clash-verge-merge.js`)
 
-Included directly in this repository is [`clash-verge-merge.js`](./clash-verge-merge.js), an engine designed to transform any raw subscription into a high-performance configuration:
-
-* **Dual-Layer Filtering:** Integrates HaGeZi MRS blocklists with domestic Iranian routing.
-* **Leak-Proof DNS Design:** Implements `fake-ip` address mapping and isolated unpoisoned upstream resolvers.
-* **Memory Optimization:** Uses immutable structures (`Object.freeze`) and precompiled regexes to eliminate runtime GC lag.
-* **QUIC Protocol Drop:** Drops `UDP/443` traffic to circumvent ISP packet loss and throttling.
+Included directly in this repository is [`clash-verge-merge.js`](./clash-verge-merge.js), an engine designed to coordinate both global and regional protections into a zero-leak profile.
 
 👉 **[View the Complete Script Here (`clash-verge-merge.js`)](./clash-verge-merge.js)**
-
----
-
-## 📖 3. Setup & Installation (Clash Verge Rev)
-
-1. Open **Clash Verge Rev**.
-2. Select the **Script** tab on the left-side navigation menu.
-3. Click **New** and name it `Universal Bypass Engine`.
-4. Copy the entire contents of [`clash-verge-merge.js`](./clash-verge-merge.js) and paste it into the editor.
-5. Click **Save** and ensure the switch is toggled **ON**.
-6. Switch to the **Profiles** tab and click **Refresh** (🔄) on your active profile.
 
 ---
 
