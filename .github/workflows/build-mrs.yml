@@ -1,0 +1,114 @@
+name: HaGeZi to MRS Automated Builder
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check for Upstream HaGeZi Updates
+        id: check_update
+        run: |
+          LATEST_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/hagezi/dns-blocklists/commits/main" | jq -r .sha)
+          
+          echo "Latest Upstream SHA: $LATEST_SHA"
+
+          if [ -z "$LATEST_SHA" ] || [ "$LATEST_SHA" == "null" ]; then
+            echo "Error: Failed to fetch latest commit from GitHub API."
+            exit 1
+          fi
+
+          SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt" || true)
+          echo "Locally Stored SHA:  $SAVED_SHA"
+
+          if [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
+            echo "CHANGED=true" >> $GITHUB_OUTPUT
+            echo "NEW_SHA=$LATEST_SHA" >> $GITHUB_OUTPUT
+            echo "New update detected in upstream repository. Triggering build..."
+          else
+            echo "CHANGED=false" >> $GITHUB_OUTPUT
+            echo "No changes detected. Exiting cleanly..."
+          fi
+
+      - name: Download Mihomo Core
+        if: steps.check_update.outputs.CHANGED == 'true'
+        run: |
+          echo "Downloading latest Mihomo core..."
+          MIHOMO_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "browser_download_url.*linux-amd64-compatible.*\.gz\"" | head -n 1 | cut -d '"' -f 4)
+          curl -sL "$MIHOMO_URL" -o mihomo.gz
+          gzip -d mihomo.gz
+          chmod +x mihomo
+
+      - name: Fetch Blocklists and Convert to MRS
+        if: steps.check_update.outputs.CHANGED == 'true'
+        run: |
+          mkdir -p output
+
+          declare -A TIERS=(
+            ["HageziLight"]="light"
+            ["HageziNormal"]="multi"
+            ["HageziPro"]="pro"
+            ["HageziProPlus"]="pro.plus"
+            ["HageziUltimate"]="ultimate"
+            ["HageziTIF"]="tif"
+          )
+
+          for NAME in "${!TIERS[@]}"; do
+            SRC="${TIERS[$NAME]}"
+            echo "Processing $NAME (Source: $SRC.txt)..."
+            curl -sL "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/${SRC}.txt" -o "${SRC}.txt"
+            ./mihomo convert-ruleset domain text "${SRC}.txt" "output/${NAME}.mrs"
+            rm -f "${SRC}.txt"
+          done
+
+          echo "${{ steps.check_update.outputs.NEW_SHA }}" > output/last_sha.txt
+          rm -f mihomo
+
+      - name: Deploy MRS Artifacts to Release Branch
+        if: steps.check_update.outputs.CHANGED == 'true'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: release
+          publish_dir: ./output
+          destination_dir: ./
+          keep_files: false
+
+      - name: Create Official GitHub Release
+        if: steps.check_update.outputs.CHANGED == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RELEASE_TAG="v$(date -u +'%Y.%m.%d-%H%M')"
+          RELEASE_TITLE="HaGeZi Ruleset Update ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          RELEASE_NOTES="Automated ruleset build synced with upstream HaGeZi commit: \`${{ steps.check_update.outputs.NEW_SHA }}\`"
+
+          echo "Publishing GitHub Release: $RELEASE_TAG"
+          gh release create "$RELEASE_TAG" output/*.mrs output/last_sha.txt \
+            --title "$RELEASE_TITLE" \
+            --notes "$RELEASE_NOTES" \
+            --latest
+
+      - name: Purge jsDelivr CDN Cache
+        if: steps.check_update.outputs.CHANGED == 'true'
+        run: |
+          echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
+          sleep 5
+          for NAME in HageziLight HageziNormal HageziPro HageziProPlus HageziUltimate HageziTIF; do
+            echo "Purging CDN cache for ${NAME}.mrs..."
+            STATUS=$(curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${NAME}.mrs" | jq -r .status)
+            echo "Purge status: $STATUS"
+          done
