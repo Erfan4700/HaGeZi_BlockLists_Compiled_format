@@ -34,17 +34,18 @@ jobs:
           SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt" || true)
           echo "Locally Stored SHA:  $SAVED_SHA"
 
-          if [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
-            echo "CHANGED=true" >> $GITHUB_OUTPUT
+          # Force build if triggered manually (workflow_dispatch) OR if upstream commit changed
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
+            echo "EXECUTE_BUILD=true" >> $GITHUB_OUTPUT
             echo "NEW_SHA=$LATEST_SHA" >> $GITHUB_OUTPUT
-            echo "New update detected in upstream repository. Triggering build..."
+            echo "Build condition met (Manual trigger or upstream update). Triggering build..."
           else
-            echo "CHANGED=false" >> $GITHUB_OUTPUT
+            echo "EXECUTE_BUILD=false" >> $GITHUB_OUTPUT
             echo "No changes detected. Exiting cleanly..."
           fi
 
       - name: Download Mihomo Core
-        if: steps.check_update.outputs.CHANGED == 'true'
+        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
           echo "Downloading latest Mihomo core..."
           MIHOMO_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "browser_download_url.*linux-amd64-compatible.*\.gz\"" | head -n 1 | cut -d '"' -f 4)
@@ -53,7 +54,7 @@ jobs:
           chmod +x mihomo
 
       - name: Fetch Blocklists and Convert to MRS
-        if: steps.check_update.outputs.CHANGED == 'true'
+        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
           mkdir -p output
 
@@ -92,7 +93,7 @@ jobs:
           rm -f mihomo
 
       - name: Deploy MRS Artifacts to Release Branch
-        if: steps.check_update.outputs.CHANGED == 'true'
+        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -102,7 +103,7 @@ jobs:
           keep_files: false
 
       - name: Create Official GitHub Release
-        if: steps.check_update.outputs.CHANGED == 'true'
+        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -117,7 +118,7 @@ jobs:
             --latest
 
       - name: Purge jsDelivr CDN Cache
-        if: steps.check_update.outputs.CHANGED == 'true'
+        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
           echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
           sleep 5
