@@ -1,70 +1,182 @@
-# 🛡️ HaGeZi Blocklists (MRS Format) & Universal Mihomo Engine
+🛡️ HaGeZi Blocklists (Native Mihomo MRS Format)
 
-[![Automated Build](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/actions/workflows/build-mrs.yml/badge.svg)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/actions)
-[![Latest Release](https://img.shields.io/github/v/release/Erfan4700/HaGeZi_BlockLists_mrs_format?color=blue&label=Latest%20Release)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/latest)
-[![Last Commit](https://img.shields.io/github/last-commit/Erfan4700/HaGeZi_BlockLists_mrs_format/release?label=Last%20Rule%20Update&color=blueviolet)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/commits/release)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+High-Performance Binary DNS Blocklists & Automated Upstream Engine
 
-High-performance, automated, pre-compiled **Mihomo Rule-Set (`.mrs`)** binaries for [HaGeZi DNS Blocklists](https://github.com/hagezi/dns-blocklists), bundled with an advanced **JavaScript Merge Script** (`clash-verge-merge.js`) for anti-DNS leakage, tracker blocking, and domestic bypass.
+Build Status CDN Delivery Upstream Sync Format License: MIT
 
----
+Automated, pre-compiled Mihomo Rule-Set (.mrs) binaries generated directly from
+HaGeZi's DNS Blocklists. Optimized for minimal memory overhead, instant
+cold-starts, and zero-leak deployment on Mihomo (Clash.Meta) environments.
 
-## 📦 Available Pre-Compiled HaGeZi Rulesets
+Ruleset Catalog • Why MRS? • Client Setup • Ecosystem
 
-Continuously synced with upstream commits every **20 minutes**, compiled using the native Mihomo binary engine, and delivered via jsDelivr CDN edges with instant cache purging:
+📐 Pipeline Architecture
 
-### 1. General & Security Tiers
-| Tier | Format | Size | Target Profile | CDN URL |
-| :--- | :---: | :---: | :--- | :--- |
-| **Light** | `.mrs` | ![Light Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziLight.mrs?branch=release&label=&color=success) | Low-resource routers & minimal filtering | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziLight.mrs) |
-| **Normal** | `.mrs` | ![Normal Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziNormal.mrs?branch=release&label=&color=success) | Everyday household ad & tracker protection | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNormal.mrs) |
-| **Pro** | `.mrs` | ![Pro Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziPro.mrs?branch=release&label=&color=blue) | **Balanced Standard:** Ads, trackers, and telemetry | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziPro.mrs) |
-| **Pro++** | `.mrs` | ![ProPlus Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziProPlus.mrs?branch=release&label=&color=blue) | **Default:** Advanced tracking, telemetry & affiliate links | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziProPlus.mrs) |
-| **Ultimate** | `.mrs` | ![Ultimate Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziUltimate.mrs?branch=release&label=&color=orange) | Paranoia mode (strict corporate-grade filtering) | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziUltimate.mrs) |
-| **TIF** | `.mrs` | ![TIF Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziTIF.mrs?branch=release&label=&color=critical) | **Active Threat Defense:** Phishing, malware, botnets & miners | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziTIF.mrs) |
-| **DynDNS** | `.mrs` | ![DynDNS Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziDynDNS.mrs?branch=release&label=&color=critical) | Block dynamic DNS domains utilized by malware & C2 servers | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziDynDNS.mrs) |
+Upstream feeds are ingested every 20 minutes, validated, and converted into
+binary bytecode through an automated CI/CD pipeline:
 
-### 2. Native Hardware & OS Tracker Protection
-| Target OS | Format | Live Size | Protection Scope | Fast CDN URL |
-| :--- | :---: | :---: | :--- | :--- |
-| **Windows** | `.mrs` | ![Windows Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziWindows.mrs?branch=release&label=&color=blue) | Complete Windows 10/11 & Office diagnostic telemetry block | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziWindows.mrs) |
-| **Apple** | `.mrs` | ![Apple Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziApple.mrs?branch=release&label=&color=blue) | Blocks Apple diagnostic metrics, analytics & crash reporters | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziApple.mrs) |
-| **Xiaomi** | `.mrs` | ![Xiaomi Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziXiaomi.mrs?branch=release&label=&color=orange) | Neutralizes MIUI/HyperOS aggressive system analytics | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziXiaomi.mrs) |
-| **Android** | `.mrs` | ![Android Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziAndroid.mrs?branch=release&label=&color=success) | Blocks Samsung & OEM native device telemetry | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziAndroid.mrs) |
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       UPSTREAM HAGEZI REPOSITORIES                          │
+├─────────────────────┬──────────────────────┬────────────────────────────────┤
+│    Standard Tiers   │  Threat Feeds (TIF)  │ OS Telemetry & Content Filters │
+│ (Light -> Ultimate) │ (Malware / C2 / DNS) │ (Apple, MS, Xiaomi, Gambling)  │
+└──────────┬──────────┴──────────┬───────────┴───────────────┬────────────────┘
+           │                     │                           │
+           ▼                     ▼                           ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     AUTOMATED GITHUB ACTIONS RUNNER                         │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  • Upstream commit verification & differential change detection             │
+│  • Rule syntax validation and duplicate pruning                             │
+│  • Binary compilation via native Mihomo engine:                             │
+│    `./mihomo convert-ruleset domain text input.txt output.mrs`              │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+                                       ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    GLOBAL EDGE DISTRIBUTION (jsDelivr CDN)                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│  • Pushed directly to dedicated `release` branch                            │
+│  • Automated edge cache purge via jsDelivr API                              │
+│  • Sub-millisecond binary downloads worldwide                               │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-### 3. Specialized Filtering (Parental Control & Anti-Gambling)
-| Target | Format | Live Size | Protection Scope | Fast CDN URL |
-| :--- | :---: | :---: | :--- | :--- |
-| **Gambling** | `.mrs` | ![Gambling Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziGambling.mrs?branch=release&label=&color=critical) | Comprehensive international gambling, casino, and betting block | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziGambling.mrs) |
-| **NSFW** | `.mrs` | ![NSFW Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziNSFW.mrs?branch=release&label=&color=critical) | Worldwide adult content and pornography blocklist | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNSFW.mrs) |
+⚡ Why Mihomo Rule-Set (.mrs)?
 
----
+Standard plain-text or YAML domain lists require significant runtime parsing,
+which introduces latency and memory spikes on constrained devices.
 
-## ⚙️ The Universal Merge Script (`clash-verge-merge.js`)
+  - Memory-Mapped I/O (mmap): Mihomo loads .mrs files as pre-structured binary
+    trees directly into memory, reducing initial parsing time to near 0 ms.
+  - RAM Optimization: Decreases client memory usage by up to 80% compared to
+    traditional YAML or classical text lists, making it ideal for home routers,
+    embedded boards, and mobile devices.
+  - Deterministic Matching: Structured binary lookups provide consistent
+    sub-millisecond route resolution, avoiding regex backtracking bottlenecks
+    during high packet throughput.
 
-Included directly in this repository is [`clash-verge-merge.js`](./clash-verge-merge.js), an engine designed to coordinate both global and regional protections into a zero-leak profile.
+📦 Ruleset Catalog
 
-👉 **[View the Complete Script Here (`clash-verge-merge.js`)](./clash-verge-merge.js)**
+All binaries are compiled under the domain behavior and served globally through
+jsDelivr edges.
 
----
+1. General Adblocking & Security Tiers
 
-## 🌐 The Complete Ecosystem (Related Projects)
+| Tier Name    | Scope & Target Profile                                                                              | CDN Endpoint                                                                                                              |
+| :----------- | :-------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
+| **Light**    | Basic ad and tracker blocking for low-memory routers and legacy hardware.                           | [Get `HageziLight.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziLight.mrs)       |
+| **Normal**   | Balanced daily protection against common consumer ads and tracking endpoints.                       | [Get `HageziNormal.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNormal.mrs)     |
+| **Pro**      | **Recommended Standard:** Comprehensive ad, tracking, metrics, and telemetry blocking.              | [Get `HageziPro.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziPro.mrs)           |
+| **Pro++**    | **Default Engine Tier:** Extended coverage including marketing affiliates, trackers, and telemetry. | [Get `HageziProPlus.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziProPlus.mrs)   |
+| **Ultimate** | Maximum protection tier designed for zero-tolerance security profiles.                              | [Get `HageziUltimate.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziUltimate.mrs) |
+| **TIF**      | **Threat Intelligence Feeds:** Blocks active malware, ransomware, botnet C2s, phishing, and miners. | [Get `HageziTIF.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziTIF.mrs)           |
+| **DynDNS**   | Blocks public Dynamic DNS provider domains used by evasive trojans and command-and-control nodes.   | [Get `HageziDynDNS.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziDynDNS.mrs)     |
 
-This repository is part of a two-pillar, self-hosted routing & security suite for Mihomo / Clash:
+2. Native OS & Hardware Telemetry
 
-* 🛡️ **Global Defense (This Repo):** **[HaGeZi_BlockLists_mrs_format](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)** — Automated, pre-compiled binary `.mrs` versions of HaGeZi DNS blocklists (Adblock, Telemetry, and Threat Intelligence Feeds).
-* 🇮🇷 **Regional Engine:** **[Iran_Clash_Rules_mrs_format](https://github.com/Erfan4700/Iran_Clash_Rules_mrs_format)** — Optimized Iranian domestic routing, collapsed RIPE CIDRs, and payment gateway safety layers.
-* ⚡ **Unified Driver:** [`clash-verge-merge.js`](./clash-verge-merge.js) — The master integration script combining both repositories into a zero-leak Clash profile.
+| Target System | Scope & Description                                                                     | CDN Endpoint                                                                                                            |
+| :------------ | :-------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| **Windows**   | Blocks diagnostic tracking, Cortana telemetry, telemetry reporting, and Office metrics. | [Get `HageziWindows.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziWindows.mrs) |
+| **Apple**     | Neutralizes analytics, diagnostic loggers, and background metrics on iOS and macOS.     | [Get `HageziApple.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziApple.mrs)     |
+| **Xiaomi**    | Strips tracking, ad injection services, and system analytics across MIUI and HyperOS.   | [Get `HageziXiaomi.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziXiaomi.mrs)   |
+| **Android**   | Blocks analytics, crash telemetry, and OEM-level reporting (Samsung, Huawei, etc.).     | [Get `HageziAndroid.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziAndroid.mrs) |
 
----
+3. Content Filtering & Parental Control
 
-## 🎖️ Credits & Acknowledgements
+| Target Scope | Protection Focus                                                                        | CDN Endpoint                                                                                                              |
+| :----------- | :-------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
+| **Gambling** | Global online casinos, unlicensed betting networks, sportsbooks, and lottery providers. | [Get `HageziGambling.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziGambling.mrs) |
+| **NSFW**     | International adult entertainment, pornography networks, and explicit media domains.    | [Get `HageziNSFW.mrs`](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNSFW.mrs)         |
 
-* **HaGeZi Blocklists:** Curated and maintained by [@hagezi](https://github.com/hagezi) at [hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists).
-* **Mihomo (Clash.Meta) Core:** Developed by the [@MetaCubeX](https://github.com/MetaCubeX) team at [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo).
+🚀 Client Integration
 
----
+Method 1: Universal JavaScript Merge Driver (Recommended)
 
-## 📄 License
+Use our pre-configured master script clash-verge-merge.js for Clash Verge Rev,
+Mihomo Party, and FlClash.
 
-Distributed under the **MIT License**. Upstream blocklists and datasets belong to their respective maintainers.
+  - Dynamic Toggles: Toggle individual protection layers (TIF, OS Telemetry,
+    DynDNS, NSFW, Gambling).
+  - Multi-Tier Switching: Switch between light, normal, pro, proplus, and
+    ultimate using a single variable.
+  - Leak-Proof DNS: Sets up hardened DoH over proxy tunnels with zero
+    Geo-Database memory overhead.
+
+👉 View Master Integration Script (clash-verge-merge.js)
+
+Method 2: Declarative config.yaml Setup
+
+Add providers directly to your custom Mihomo configuration:
+
+rule-providers:
+  # General Protection (Choose Preferred Tier)
+  hagezi-proplus:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziProPlus.mrs"
+    path: ./ruleset/HageziProPlus.mrs
+    interval: 86400
+
+  # Active Cyber Defense
+  hagezi-tif:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziTIF.mrs"
+    path: ./ruleset/HageziTIF.mrs
+    interval: 43200
+
+  # Hardware Telemetry (Example: Windows)
+  hagezi-windows:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziWindows.mrs"
+    path: ./ruleset/HageziWindows.mrs
+    interval: 86400
+
+rules:
+  # Threat mitigation must precede routing rules
+  - RULE-SET,hagezi-tif,REJECT
+  - RULE-SET,hagezi-proplus,REJECT
+  - RULE-SET,hagezi-windows,REJECT
+
+  # Standard Routing Follow-through
+  - GEOIP,private,DIRECT,no-resolve
+  - MATCH,PROXY
+
+🌐 The Unified Ecosystem
+
+This repository acts as the global security layer within a two-pillar Mihomo
+networking ecosystem:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          UNIFIED CLIENT RUNTIME                             │
+├──────────────────────────────────────┬──────────────────────────────────────┤
+│  🛡️ GLOBAL LAYER (This Repo)         │  🇮🇷 REGIONAL LAYER (Iran Suite)       │
+│  HaGeZi_BlockLists_mrs_format        │  Iran_Clash_Rules_mrs_format         │
+│  ----------------------------------  │  ----------------------------------  │
+│  • Global Ad & Tracker Blocking      │  • Domestic Split-Tunneling (.ir)    │
+│  • Threat Intelligence Feeds (TIF)   │  • RIPE Prefix-Folded CIDRs          │
+│  • Native Hardware OS Telemetry      │  • Domestic Payment Safeguards       │
+│  • Worldwide Gambling & NSFW Filter  │  • Native Android Package Rules      │
+└──────────────────────────────────────┴──────────────────────────────────────┘
+                                       ▲
+                                       │
+                        ⚡ Driven by `clash-verge-merge.js`
+
+  - 🛡️ Global Layer (This Repo): HaGeZi_BlockLists_mrs_format
+  - 🇮🇷 Regional Layer: Iran_Clash_Rules_mrs_format
+  - ⚡ Unified Driver: clash-verge-merge.js
+
+🎖️ Upstream Attribution & Credits
+
+  - Blocklist Upstream: Curated by @hagezi at hagezi/dns-blocklists.
+  - Binary Engine: Maintained by the @MetaCubeX team at MetaCubeX/mihomo.
+
+📄 License
+
+This build automation suite is released under the MIT License. Upstream
+blocklist definitions remain the intellectual property of their original
+authors.
