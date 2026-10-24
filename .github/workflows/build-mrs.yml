@@ -68,9 +68,23 @@ jobs:
 
           for NAME in "${!TIERS[@]}"; do
             SRC="${TIERS[$NAME]}"
-            echo "Processing $NAME (Source: $SRC.txt)..."
-            curl -sL "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/${SRC}.txt" -o "${SRC}.txt"
+            echo "Processing $NAME from wildcard/${SRC}-onlydomains.txt..."
+            
+            # Fetch directly from HaGeZi's official wildcard folder with error checking (-f)
+            curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/${SRC}-onlydomains.txt" -o "${SRC}.txt"
+            
+            # Convert to MRS using Mihomo
             ./mihomo convert-ruleset domain text "${SRC}.txt" "output/${NAME}.mrs"
+            
+            # Validate output size (Fail immediately if size is suspiciously small)
+            FILE_SIZE=$(wc -c < "output/${NAME}.mrs")
+            echo "Generated $NAME.mrs size: $FILE_SIZE bytes"
+            
+            if [ "$FILE_SIZE" -lt 10000 ]; then
+              echo "Error: $NAME.mrs is corrupted or empty ($FILE_SIZE bytes)!"
+              exit 1
+            fi
+            
             rm -f "${SRC}.txt"
           done
 
