@@ -24,8 +24,10 @@ const STANDARD_UPDATE_INTERVAL = STANDARD_UPDATE_HOURS * 3600;
 // 1. IMMUTABLE DATASETS & SOURCES (Static Allocation Outside Runtime)
 // ==============================================================================
 
-const CHOCOLATE_BASE_URL = "https://cdn.jsdelivr.net/gh/Chocolate4U/Iran-clash-rules@release/";
+// Self-Hosted Autonomous Repositories
 const HAGEZI_MRS_URL = "https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/";
+const IRAN_RULES_URL = "https://cdn.jsdelivr.net/gh/Erfan4700/Iran_Clash_Rules_mrs_format@release/";
+const METACUBEX_GEO_URL = "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/";
 
 // Static mapping dictionary for HaGeZi tiers
 const HAGEZI_TIERS_MAP = Object.freeze({
@@ -101,8 +103,9 @@ const DOH_ENDPOINTS = Object.freeze([
   "https://9.9.9.9/dns-query"
 ]);
 
-// Precompiled Binary MRS Rule-Providers
+// Precompiled Binary MRS Rule-Providers (All Self-Hosted)
 const PRECOMPILED_PROVIDERS = Object.freeze({
+  // Global Protection (HaGeZi Repository)
   "hagezi-main": Object.freeze({
     type: "http",
     behavior: "domain",
@@ -121,51 +124,29 @@ const PRECOMPILED_PROVIDERS = Object.freeze({
       interval: SECURITY_UPDATE_INTERVAL
     })
   } : {}),
+
+  // Regional Iran Protection & Routing (Iran Rules Repository)
   "ads-ir": Object.freeze({
     type: "http",
     behavior: "domain",
     format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}ads.mrs`,
+    url: `${IRAN_RULES_URL}ads.mrs`,
     path: "./ruleset/ads.mrs",
     interval: STANDARD_UPDATE_INTERVAL
   }),
-  "malware-ip": Object.freeze({
-    type: "http",
-    behavior: "ipcidr",
-    format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}malware-ip.mrs`,
-    path: "./ruleset/malware-ip.mrs",
-    interval: SECURITY_UPDATE_INTERVAL
-  }),
-  "phishing-ip": Object.freeze({
-    type: "http",
-    behavior: "ipcidr",
-    format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}phishing-ip.mrs`,
-    path: "./ruleset/phishing-ip.mrs",
-    interval: SECURITY_UPDATE_INTERVAL
-  }),
-  "nsfw": Object.freeze({
+  "phishing-ir": Object.freeze({
     type: "http",
     behavior: "domain",
     format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}nsfw.mrs`,
-    path: "./ruleset/nsfw.mrs",
-    interval: STANDARD_UPDATE_INTERVAL
-  }),
-  "apps": Object.freeze({
-    type: "http",
-    behavior: "classical",
-    format: "text",
-    url: `${CHOCOLATE_BASE_URL}apps.txt`,
-    path: "./ruleset/apps.txt",
-    interval: STANDARD_UPDATE_INTERVAL
+    url: `${IRAN_RULES_URL}phishing.mrs`,
+    path: "./ruleset/phishing.mrs",
+    interval: SECURITY_UPDATE_INTERVAL
   }),
   "ir": Object.freeze({
     type: "http",
     behavior: "domain",
     format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}ir.mrs`,
+    url: `${IRAN_RULES_URL}ir.mrs`,
     path: "./ruleset/ir.mrs",
     interval: STANDARD_UPDATE_INTERVAL
   }),
@@ -173,7 +154,7 @@ const PRECOMPILED_PROVIDERS = Object.freeze({
     type: "http",
     behavior: "ipcidr",
     format: "mrs",
-    url: `${CHOCOLATE_BASE_URL}ircidr.mrs`,
+    url: `${IRAN_RULES_URL}ircidr.mrs`,
     path: "./ruleset/ircidr.mrs",
     interval: STANDARD_UPDATE_INTERVAL
   }),
@@ -181,7 +162,7 @@ const PRECOMPILED_PROVIDERS = Object.freeze({
     type: "http",
     behavior: "classical",
     format: "text",
-    url: `${CHOCOLATE_BASE_URL}irasn.txt`,
+    url: `${IRAN_RULES_URL}irasn.txt`,
     path: "./ruleset/irasn.txt",
     interval: STANDARD_UPDATE_INTERVAL
   })
@@ -215,9 +196,10 @@ const FROZEN_FAKE_IP_FILTER = Object.freeze([
   "location.services.mozilla.com"
 ]);
 
+// Official MetaCubeX GeoIP Engine
 const FROZEN_GEOX_URL = Object.freeze({
-  geoip: `${CHOCOLATE_BASE_URL}geoip.metadb`,
-  mmdb: `${CHOCOLATE_BASE_URL}geoip.metadb`
+  geoip: `${METACUBEX_GEO_URL}geoip.metadb`,
+  mmdb: `${METACUBEX_GEO_URL}geoip.metadb`
 });
 
 // Streamlined & Stable Sniffer Configuration
@@ -252,20 +234,17 @@ const STATIC_CORE_RULES = Object.freeze([
   "DST-PORT,6881-6889,DIRECT",
   "DST-PORT,51413,DIRECT",
 
-  // 3. HaGeZi Blocklist & Threat Intelligence Defense
+  // 3. Global Threat Protection (HaGeZi)
   "RULE-SET,hagezi-main,REJECT",
   ...(ENABLE_HAGEZI_TIF ? ["RULE-SET,hagezi-tif,REJECT"] : []),
 
-  // 4. Regional Ads, Malware, Phishing & NSFW (Iran)
+  // 4. Regional Ads & Domestic Phishing (Self-Hosted Iran Engine)
   "RULE-SET,ads-ir,REJECT",
-  "RULE-SET,malware-ip,REJECT,no-resolve",
-  "RULE-SET,phishing-ip,REJECT,no-resolve",
-  "RULE-SET,nsfw,REJECT",
+  "RULE-SET,phishing-ir,REJECT",
 
   // 5. Direct Domestic Traffic (Manual Domains, National TLD, CIDRs, & ASNs)
   ...MANUAL_DOMAINS.map(d => `DOMAIN-SUFFIX,${d},DIRECT`),
   "DOMAIN-SUFFIX,ir,DIRECT",
-  "RULE-SET,apps,DIRECT,no-resolve",
   "RULE-SET,ir,DIRECT",
   "RULE-SET,ircidr,DIRECT,no-resolve",
   "RULE-SET,irasn,DIRECT,no-resolve",
