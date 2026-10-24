@@ -14,8 +14,8 @@ This repository and its companion script are specifically optimized for modern p
 
 * **[Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)** *(Recommended — Windows, macOS, Linux)*
 * **[Mihomo Party](https://github.com/mihomo-party-org/mihomo-party)** *(Windows, macOS, Linux)*
-* **[Clash Nyanpasu](https://github.com/libnyanpasu/clash-nyanpasu)** *(Cross-Platform)*
-* **[Flclash](https://github.com/chen08209/FlClash)** *(Android, iOS, Desktop)*
+* **[Clash Nyanpasu](https://github.com/libnyanpasu/clash-nyanpasu)** *(Windows, macOS, Linux)*
+* **[Flclash](https://github.com/chen08209/FlClash)** *(Cross-Platform)*
 
 ---
 
