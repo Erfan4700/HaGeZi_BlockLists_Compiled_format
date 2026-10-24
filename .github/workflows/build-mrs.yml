@@ -59,7 +59,6 @@ jobs:
         run: |
           mkdir -p output
 
-          # ماتریس کامل تمامی پکیج‌های هاگزی
           declare -A TIERS=(
             ["HageziLight"]="wildcard/light-onlydomains.txt"
             ["HageziNormal"]="wildcard/multi-onlydomains.txt"
@@ -113,7 +112,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           RELEASE_TAG="v$(date -u +'%Y.%m.%d-%H%M')"
-          RELEASE_TITLE="HaGeZi Ruleset Update ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+          RELEASE_TITLE="HaGeZi Ruleset Suite Update ($(date -u +'%Y-%m-%d %H:%M UTC'))"
           RELEASE_NOTES="Automated ruleset build including Tiers, TIF, Native Hardware Trackers, DynDNS, and Safety Filters."
 
           echo "Publishing GitHub Release: $RELEASE_TAG"
