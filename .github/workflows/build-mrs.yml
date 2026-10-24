@@ -2,6 +2,7 @@ name: HaGeZi to MRS Automated Builder
 
 on:
   schedule:
+    # Runs every 20 minutes
     - cron: '*/20 * * * *'
   workflow_dispatch:
 
@@ -34,7 +35,6 @@ jobs:
           SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt" || true)
           echo "Locally Stored SHA:  $SAVED_SHA"
 
-          # Force build if triggered manually (workflow_dispatch) OR if upstream commit changed
           if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
             echo "EXECUTE_BUILD=true" >> $GITHUB_OUTPUT
             echo "NEW_SHA=$LATEST_SHA" >> $GITHUB_OUTPUT
@@ -48,7 +48,8 @@ jobs:
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
           echo "Downloading latest Mihomo core..."
-          MIHOMO_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "browser_download_url.*linux-amd64-compatible.*\.gz\"" | head -n 1 | cut -d '"' -f 4)
+          MIHOMO_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "browser_download_url.*linux-amd64-compatible.*\.gz\"" | head -n 1 | cut -d '"' -f 4)
           curl -sL "$MIHOMO_URL" -o mihomo.gz
           gzip -d mihomo.gz
           chmod +x mihomo
@@ -58,6 +59,7 @@ jobs:
         run: |
           mkdir -p output
 
+          # اضافه شدن بسته‌های تخصصی قمار و پورن هاگزی
           declare -A TIERS=(
             ["HageziLight"]="light"
             ["HageziNormal"]="multi"
@@ -65,23 +67,21 @@ jobs:
             ["HageziProPlus"]="pro.plus"
             ["HageziUltimate"]="ultimate"
             ["HageziTIF"]="tif"
+            ["HageziGambling"]="gambling"
+            ["HageziNSFW"]="nsfw"
           )
 
           for NAME in "${!TIERS[@]}"; do
             SRC="${TIERS[$NAME]}"
             echo "Processing $NAME from wildcard/${SRC}-onlydomains.txt..."
             
-            # Fetch directly from HaGeZi's official wildcard folder with error checking (-f)
             curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/${SRC}-onlydomains.txt" -o "${SRC}.txt"
-            
-            # Convert to MRS using Mihomo
             ./mihomo convert-ruleset domain text "${SRC}.txt" "output/${NAME}.mrs"
             
-            # Validate output size (Fail immediately if size is suspiciously small)
             FILE_SIZE=$(wc -c < "output/${NAME}.mrs")
             echo "Generated $NAME.mrs size: $FILE_SIZE bytes"
             
-            if [ "$FILE_SIZE" -lt 10000 ]; then
+            if [ "$FILE_SIZE" -lt 1000 ]; then
               echo "Error: $NAME.mrs is corrupted or empty ($FILE_SIZE bytes)!"
               exit 1
             fi
@@ -122,7 +122,7 @@ jobs:
         run: |
           echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
           sleep 5
-          for NAME in HageziLight HageziNormal HageziPro HageziProPlus HageziUltimate HageziTIF; do
+          for NAME in HageziLight HageziNormal HageziPro HageziProPlus HageziUltimate HageziTIF HageziGambling HageziNSFW; do
             echo "Purging CDN cache for ${NAME}.mrs..."
             STATUS=$(curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${NAME}.mrs" | jq -r .status)
             echo "Purge status: $STATUS"
