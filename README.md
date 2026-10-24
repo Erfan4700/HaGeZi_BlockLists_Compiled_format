@@ -16,6 +16,7 @@ This repository and its companion script are specifically optimized for modern p
 * **[Mihomo Party](https://github.com/mihomo-party-org/mihomo-party)** *(Windows, macOS, Linux)*
 * **[Clash Nyanpasu](https://github.com/libnyanpasu/clash-nyanpasu)** *(Windows, macOS, Linux)*
 * **[Flclash](https://github.com/chen08209/FlClash)** *(Cross-Platform)*
+* And other clients which are compatible...
 
 ---
 
