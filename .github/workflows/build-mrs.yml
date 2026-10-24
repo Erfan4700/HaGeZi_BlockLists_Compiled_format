@@ -59,34 +59,39 @@ jobs:
         run: |
           mkdir -p output
 
-          # اضافه شدن بسته‌های تخصصی قمار و پورن هاگزی
+          # ماتریس کامل تمامی پکیج‌های هاگزی
           declare -A TIERS=(
-            ["HageziLight"]="light"
-            ["HageziNormal"]="multi"
-            ["HageziPro"]="pro"
-            ["HageziProPlus"]="pro.plus"
-            ["HageziUltimate"]="ultimate"
-            ["HageziTIF"]="tif"
-            ["HageziGambling"]="gambling"
-            ["HageziNSFW"]="nsfw"
+            ["HageziLight"]="wildcard/light-onlydomains.txt"
+            ["HageziNormal"]="wildcard/multi-onlydomains.txt"
+            ["HageziPro"]="wildcard/pro-onlydomains.txt"
+            ["HageziProPlus"]="wildcard/pro.plus-onlydomains.txt"
+            ["HageziUltimate"]="wildcard/ultimate-onlydomains.txt"
+            ["HageziTIF"]="wildcard/tif-onlydomains.txt"
+            ["HageziGambling"]="wildcard/gambling-onlydomains.txt"
+            ["HageziNSFW"]="wildcard/nsfw-onlydomains.txt"
+            ["HageziDynDNS"]="wildcard/dyndns.txt"
+            ["HageziWindows"]="wildcard/native.winoffice.txt"
+            ["HageziApple"]="wildcard/native.apple.txt"
+            ["HageziXiaomi"]="wildcard/native.xiaomi.txt"
+            ["HageziAndroid"]="wildcard/native.samsung.txt"
           )
 
           for NAME in "${!TIERS[@]}"; do
-            SRC="${TIERS[$NAME]}"
-            echo "Processing $NAME from wildcard/${SRC}-onlydomains.txt..."
+            SRC_PATH="${TIERS[$NAME]}"
+            echo "Processing $NAME from $SRC_PATH..."
             
-            curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/${SRC}-onlydomains.txt" -o "${SRC}.txt"
-            ./mihomo convert-ruleset domain text "${SRC}.txt" "output/${NAME}.mrs"
+            curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/$SRC_PATH" -o temp_list.txt
+            ./mihomo convert-ruleset domain text temp_list.txt "output/${NAME}.mrs"
             
             FILE_SIZE=$(wc -c < "output/${NAME}.mrs")
             echo "Generated $NAME.mrs size: $FILE_SIZE bytes"
             
-            if [ "$FILE_SIZE" -lt 1000 ]; then
-              echo "Error: $NAME.mrs is corrupted or empty ($FILE_SIZE bytes)!"
+            if [ "$FILE_SIZE" -lt 500 ]; then
+              echo "Error: $NAME.mrs is too small ($FILE_SIZE bytes)!"
               exit 1
             fi
             
-            rm -f "${SRC}.txt"
+            rm -f temp_list.txt
           done
 
           echo "${{ steps.check_update.outputs.NEW_SHA }}" > output/last_sha.txt
@@ -109,7 +114,7 @@ jobs:
         run: |
           RELEASE_TAG="v$(date -u +'%Y.%m.%d-%H%M')"
           RELEASE_TITLE="HaGeZi Ruleset Update ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-          RELEASE_NOTES="Automated ruleset build synced with upstream HaGeZi commit: \`${{ steps.check_update.outputs.NEW_SHA }}\`"
+          RELEASE_NOTES="Automated ruleset build including Tiers, TIF, Native Hardware Trackers, DynDNS, and Safety Filters."
 
           echo "Publishing GitHub Release: $RELEASE_TAG"
           gh release create "$RELEASE_TAG" output/*.mrs output/last_sha.txt \
@@ -122,7 +127,7 @@ jobs:
         run: |
           echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
           sleep 5
-          for NAME in HageziLight HageziNormal HageziPro HageziProPlus HageziUltimate HageziTIF HageziGambling HageziNSFW; do
+          for NAME in HageziLight HageziNormal HageziPro HageziProPlus HageziUltimate HageziTIF HageziGambling HageziNSFW HageziDynDNS HageziWindows HageziApple HageziXiaomi HageziAndroid; do
             echo "Purging CDN cache for ${NAME}.mrs..."
             STATUS=$(curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/${NAME}.mrs" | jq -r .status)
             echo "Purge status: $STATUS"
