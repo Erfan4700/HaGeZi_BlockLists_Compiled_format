@@ -25,7 +25,7 @@ This repository and its companion script are specifically optimized for modern p
 
 Every blocklist is continuously synced with upstream changes, compiled using the native Mihomo binary engine, and distributed globally through jsDelivr CDN edges with automated cache-purge triggers:
 
-| Tier | Format | Live Size | Target Profile | Fast CDN URL |
+| Tier | Format | Size | Target Profile | CDN URL |
 | :--- | :---: | :---: | :--- | :--- |
 | **Light** | `.mrs` | ![Light Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziLight.mrs?branch=release&label=&color=success) | Low-resource routers & minimal filtering | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziLight.mrs) |
 | **Normal** | `.mrs` | ![Normal Size](https://img.shields.io/github/size/Erfan4700/HaGeZi_BlockLists_mrs_format/HageziNormal.mrs?branch=release&label=&color=success) | Everyday household ad & tracker protection | [CDN Link](https://cdn.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/HageziNormal.mrs) |
