@@ -2,7 +2,6 @@ name: HaGeZi to MRS Automated Builder
 
 on:
   schedule:
-    # Runs every 20 minutes
     - cron: '*/20 * * * *'
   workflow_dispatch:
 
@@ -59,6 +58,7 @@ jobs:
         run: |
           mkdir -p output
 
+          # تنظیم آدرس‌های دقیق و یکپارچه فقط‌دامنه از مخزن هاگزی
           declare -A TIERS=(
             ["HageziLight"]="wildcard/light-onlydomains.txt"
             ["HageziNormal"]="wildcard/multi-onlydomains.txt"
@@ -69,17 +69,22 @@ jobs:
             ["HageziGambling"]="wildcard/gambling-onlydomains.txt"
             ["HageziNSFW"]="wildcard/nsfw-onlydomains.txt"
             ["HageziDynDNS"]="wildcard/dyndns.txt"
-            ["HageziWindows"]="wildcard/native.winoffice.txt"
-            ["HageziApple"]="wildcard/native.apple.txt"
-            ["HageziXiaomi"]="wildcard/native.xiaomi.txt"
-            ["HageziAndroid"]="wildcard/native.samsung.txt"
+            ["HageziWindows"]="wildcard/native.winoffice-onlydomains.txt"
+            ["HageziApple"]="wildcard/native.apple-onlydomains.txt"
+            ["HageziXiaomi"]="wildcard/native.xiaomi-onlydomains.txt"
+            ["HageziAndroid"]="wildcard/native.samsung-onlydomains.txt"
           )
 
           for NAME in "${!TIERS[@]}"; do
             SRC_PATH="${TIERS[$NAME]}"
             echo "Processing $NAME from $SRC_PATH..."
             
-            curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/$SRC_PATH" -o temp_list.txt
+            curl -sSL -f "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/$SRC_PATH" \
+              | grep -v '^#' \
+              | grep -v '^[[:space:]]*$' \
+              | sed -E 's/^(\*\.|\.)+//' \
+              | sed 's/^/+./' > temp_list.txt
+
             ./mihomo convert-ruleset domain text temp_list.txt "output/${NAME}.mrs"
             
             FILE_SIZE=$(wc -c < "output/${NAME}.mrs")
