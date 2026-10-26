@@ -1,4 +1,3 @@
----
 <div align="center">
 
 # 🛡️ HaGeZi Universal Cyber Defense & Ruleset Suite
