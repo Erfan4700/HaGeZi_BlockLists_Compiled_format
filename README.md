@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # 🛡️ HaGeZi Blocklists (Native Mihomo MRS Format)
@@ -181,19 +182,7 @@ All binary downloads default to **GitHub Direct Releases** (`latest` rolling tag
 
 ## 🚀 Client Integration
 
-### Method 1: Universal JavaScript Merge Driver (Recommended)
-
-Use our pre-configured script [`clash-verge-merge.js`](./clash-verge-merge.js) with **Clash Verge Rev**, **Mihomo Party**, and **FlClash**.
-
-* **Dynamic Toggles:** Toggle individual protection layers (TIF, OS Telemetry, DynDNS, NSFW, Gambling).
-* **Multi-Tier Switching:** Switch between `light`, `normal`, `pro`, `proplus`, and `ultimate` using a single variable.
-* **Leak-Proof DNS:** Configures DoH over proxy tunnels with zero Geo-Database memory overhead.
-
-👉 **[View Master Integration Script (`clash-verge-merge.js`)](./clash-verge-merge.js)**
-
----
-
-### Method 2: Declarative `config.yaml` Setup
+### Declarative `config.yaml` Setup
 
 Add providers directly to your custom Mihomo configuration using direct GitHub Release URLs:
 
@@ -266,7 +255,6 @@ This repository serves as the global security layer within a two-pillar Mihomo n
 │  • Worldwide Gambling & NSFW Filter  │  • Native Android Package Rules      │
 └──────────────────────────────────────┴──────────────────────────────────────┘
                                        ▲
-                                       
 ```
 
 * 🛡️ **Global Layer (This Repo):** [HaGeZi_BlockLists_mrs_format](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)
