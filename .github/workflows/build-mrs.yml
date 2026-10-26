@@ -2,6 +2,7 @@ name: HaGeZi to MRS Automated Builder
 
 on:
   schedule:
+    # Run every 20 minutes to detect upstream updates
     - cron: '*/20 * * * *'
   workflow_dispatch:
 
@@ -21,6 +22,7 @@ jobs:
       - name: Check for Upstream HaGeZi Updates
         id: check_update
         run: |
+          # Query GitHub API for the latest commit SHA of the upstream repository
           LATEST_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/hagezi/dns-blocklists/commits/main" | jq -r .sha)
           
@@ -31,9 +33,11 @@ jobs:
             exit 1
           fi
 
+          # Read the previously processed commit SHA from the release branch
           SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt" || true)
           echo "Locally Stored SHA:  $SAVED_SHA"
 
+          # Trigger build if triggered manually or if a new upstream commit is detected
           if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
             echo "EXECUTE_BUILD=true" >> $GITHUB_OUTPUT
             echo "NEW_SHA=$LATEST_SHA" >> $GITHUB_OUTPUT
@@ -46,9 +50,16 @@ jobs:
       - name: Download Mihomo Core
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
-          echo "Downloading latest Mihomo core..."
+          echo "Downloading latest Mihomo core binary..."
           MIHOMO_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | grep "browser_download_url.*linux-amd64-compatible.*\.gz\"" | head -n 1 | cut -d '"' -f 4)
+            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+            | jq -r '.assets[] | select(.name | test("linux-amd64-compatible.*\\.gz$")) | .browser_download_url' | head -n 1)
+
+          if [ -z "$MIHOMO_URL" ]; then
+            echo "Error: Unable to locate Mihomo download URL."
+            exit 1
+          fi
+
           curl -sL "$MIHOMO_URL" -o mihomo.gz
           gzip -d mihomo.gz
           chmod +x mihomo
@@ -58,17 +69,21 @@ jobs:
         run: |
           mkdir -p output
 
+          # Comprehensive registry of domain-based blocklists (wildcard/onlydomains)
           declare -A DOMAIN_LISTS=(
+            # --- Main Multi Tiers ---
             ["HageziLight"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt"
             ["HageziNormal"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/multi-onlydomains.txt"
             ["HageziPro"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt"
             ["HageziProPlus"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus-onlydomains.txt"
             ["HageziUltimate"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate-onlydomains.txt"
 
+            # --- Size-Optimized Multi Mini Versions ---
             ["HageziProMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.mini-onlydomains.txt"
             ["HageziProPlusMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus.mini-onlydomains.txt"
             ["HageziUltimateMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate.mini-onlydomains.txt"
 
+            # --- Threat Intelligence Feeds & Security Lists ---
             ["HageziTIF"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt"
             ["HageziTIFMedium"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium-onlydomains.txt"
             ["HageziTIFMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt"
@@ -79,9 +94,11 @@ jobs:
             ["HageziSpamTLDs"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/spam-tlds-onlydomains.txt"
             ["HageziSpamTLDsAllow"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/spam-tlds-allow-onlydomains.txt"
 
+            # --- Bypass and Encrypted DNS Blocker ---
             ["HageziBypassAll"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-vpn-proxy-bypass-onlydomains.txt"
             ["HageziBypassDoH"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt"
 
+            # --- Content Filtering and Safety Categories ---
             ["HageziURLShortener"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/urlshortener-onlydomains.txt"
             ["HageziAntiPiracy"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt"
             ["HageziSocial"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/social-onlydomains.txt"
@@ -91,6 +108,7 @@ jobs:
             ["HageziGamblingMedium"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.medium-onlydomains.txt"
             ["HageziGamblingMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.mini-onlydomains.txt"
 
+            # --- Hardware, OS & Vendor Native Trackers ---
             ["HageziNativeAmazon"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.amazon-onlydomains.txt"
             ["HageziNativeApple"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.apple-onlydomains.txt"
             ["HageziNativeHuawei"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.huawei-onlydomains.txt"
@@ -104,6 +122,7 @@ jobs:
             ["HageziNativeOppoRealme"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.oppo-realme-onlydomains.txt"
             ["HageziNativeXiaomi"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.xiaomi-onlydomains.txt"
 
+            # --- High Entropy / DGA Domains (Upstream NRD Repository) ---
             ["HageziDGA7"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga7.txt"
             ["HageziDGA14"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga14.txt"
             ["HageziDGA30"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga30.txt"
@@ -112,7 +131,8 @@ jobs:
           for NAME in "${!DOMAIN_LISTS[@]}"; do
             URL="${DOMAIN_LISTS[$NAME]}"
             echo "Processing DOMAIN list: $NAME from $URL..."
-            
+
+            # Clean comments/spaces and format domains into Mihomo wildcard prefix (+.)
             curl -sSL -f "$URL" \
               | grep -v '^#' \
               | grep -v '^[[:space:]]*$' \
@@ -129,6 +149,7 @@ jobs:
       - name: Fetch and Compile IP-CIDR Lists
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
+          # Registry for IP lists compiled using Mihomo ipcidr engine
           declare -A IP_LISTS=(
             ["HageziTIF_IP"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt"
             ["HageziDoH_IP"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/doh.txt"
@@ -137,7 +158,8 @@ jobs:
           for NAME in "${!IP_LISTS[@]}"; do
             URL="${IP_LISTS[$NAME]}"
             echo "Processing IP-CIDR list: $NAME from $URL..."
-            
+
+            # Strip comments and ensure standalone IPv4 addresses have a /32 CIDR mask
             curl -sSL -f "$URL" \
               | grep -v '^#' \
               | grep -v '^[[:space:]]*$' \
@@ -150,6 +172,7 @@ jobs:
             rm -f temp_ip.txt
           done
 
+          # Save the latest processed commit SHA to include in the release artifacts
           echo "${{ steps.check_update.outputs.NEW_SHA }}" > output/last_sha.txt
           rm -f mihomo
 
@@ -163,20 +186,27 @@ jobs:
           destination_dir: ./
           keep_files: false
 
-      - name: Create Official GitHub Release
+      - name: Update Rolling GitHub Release
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          RELEASE_TAG="v$(date -u +'%Y.%m.%d-%H%M')"
-          RELEASE_TITLE="HaGeZi Ruleset Suite Update ($(date -u +'%Y-%m-%d %H:%M UTC'))"
-          RELEASE_NOTES="Automated ruleset build including all Multi Tiers, TIF, IP lists, DGAs, and Native Trackers."
+          RELEASE_TAG="latest"
+          RELEASE_TITLE="HaGeZi Ruleset Suite (Latest Build)"
+          RELEASE_NOTES="Automated rolling build. Upstream commit: ${{ steps.check_update.outputs.NEW_SHA }} | Built on: $(date -u +'%Y-%m-%d %H:%M UTC')"
 
-          echo "Publishing GitHub Release: $RELEASE_TAG"
-          gh release create "$RELEASE_TAG" output/*.mrs output/last_sha.txt \
-            --title "$RELEASE_TITLE" \
-            --notes "$RELEASE_NOTES" \
-            --latest
+          echo "Checking whether release '$RELEASE_TAG' already exists..."
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release exists. Updating metadata and overwriting assets..."
+            gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_NOTES"
+            gh release upload "$RELEASE_TAG" output/* --clobber
+          else
+            echo "Release does not exist. Creating fresh '$RELEASE_TAG' release..."
+            gh release create "$RELEASE_TAG" output/* \
+              --title "$RELEASE_TITLE" \
+              --notes "$RELEASE_NOTES" \
+              --latest
+          fi
 
       - name: Purge jsDelivr CDN Cache
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
@@ -184,6 +214,7 @@ jobs:
           echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
           sleep 5
           for FILE in output/*.mrs; do
+            [ -e "$FILE" ] || continue
             FILENAME=$(basename "$FILE")
             echo "Purging CDN cache for $FILENAME..."
             STATUS=$(curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/$FILENAME" | jq -r .status || true)
