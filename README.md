@@ -266,13 +266,11 @@ This repository serves as the global security layer within a two-pillar Mihomo n
 │  • Worldwide Gambling & NSFW Filter  │  • Native Android Package Rules      │
 └──────────────────────────────────────┴──────────────────────────────────────┘
                                        ▲
-                                       │
-                        ⚡ Driven by `clash-verge-merge.js`
+                                       
 ```
 
 * 🛡️ **Global Layer (This Repo):** [HaGeZi_BlockLists_mrs_format](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)
 * 🇮🇷 **Regional Layer:** [Iran_Clash_Rules_mrs_format](https://github.com/Erfan4700/Iran_Clash_Rules_mrs_format)
-* ⚡ **Unified Driver:** [`clash-verge-merge.js`](./clash-verge-merge.js)
 
 ---
 
