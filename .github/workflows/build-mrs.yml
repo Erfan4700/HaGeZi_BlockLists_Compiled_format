@@ -245,14 +245,18 @@ jobs:
           tar -czf output/all-rulesets.tar.gz -C output mrs srs json list yaml raw hagezi-geosite.dat hagezi-geoip.dat 2>/dev/null || true
 
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            for ASSET in $(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name'); do
+              gh release delete-asset "$RELEASE_TAG" "$ASSET" -y || true
+            done
             gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_NOTES"
-            gh release upload "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz --clobber
           else
-            gh release create "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz \
+            gh release create "$RELEASE_TAG" \
               --title "$RELEASE_TITLE" \
               --notes "$RELEASE_NOTES" \
               --latest
           fi
+
+          gh release upload "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz --clobber
 
       - name: Purge jsDelivr CDN Cache
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
