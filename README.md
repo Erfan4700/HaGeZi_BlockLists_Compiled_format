@@ -1,26 +1,22 @@
+# 🛡️ HaGeZi Multi-Format Ruleset Suite
 
-<div align="center">
-
-# 🛡️ HaGeZi Blocklists (Native Mihomo MRS Format)
 ### High-Performance Binary DNS Blocklists & Automated Upstream Engine
+**Native Mihomo (`.mrs`) & sing-box (`.srs`) Formats**
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Erfan4700/HaGeZi_BlockLists_mrs_format/build-mrs.yml?branch=main&label=CI%2FCD%20Build&style=flat-square&logo=github-actions&logoColor=white)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/actions)
-[![GitHub Release](https://img.shields.io/github/v/release/Erfan4700/HaGeZi_BlockLists_mrs_format?display_name=tag&label=Rolling%20Release&style=flat-square&logo=github&logoColor=white)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/tag/latest)
-[![Sync Cadence](https://img.shields.io/badge/Sync%20Cadence-20%20Minutes-blue?style=flat-square&logo=git&logoColor=white)](#-pipeline-architecture)
-[![Format](https://img.shields.io/badge/Format-Binary%20MRS%20(Domain%20%26%20IP--CIDR)-blueviolet?style=flat-square&logo=webassembly&logoColor=white)](#-why-mihomo-rule-set-mrs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Build-Automated%20Rolling-brightgreen?style=flat-square&logo=githubactions)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/Erfan4700/HaGeZi_BlockLists_mrs_format?style=flat-square&logo=github)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/latest)
+[![Formats](https://img.shields.io/badge/Formats-MRS%20%7C%20SRS%20%7C%20GeoIP-blue?style=flat-square)](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-Automated, pre-compiled **Mihomo Rule-Set (`.mrs`)** binaries generated directly from [HaGeZi's DNS Blocklists](https://github.com/hagezi/dns-blocklists) and [NRD feeds](https://github.com/hagezi/nrd). Optimized for ultra-low memory footprints, zero runtime regex parsing overhead, and instant cold-starts across Mihomo (Clash.Meta) environments.
+Automated, pre-compiled binary rule-sets generated directly from **HaGeZi's DNS Blocklists** and **NRD feeds**. Compiled for both **Mihomo (Clash.Meta)** and **sing-box** architectures, offering zero runtime regex parsing overhead, ultra-low memory footprint, and instant cold-starts across routers, servers, and mobile platforms.
 
-[Ruleset Catalog](#-ruleset-catalog) • [Why MRS?](#-why-mihomo-rule-set-mrs) • [Client Setup](#-client-integration) • [Ecosystem](#-the-unified-ecosystem)
-
-</div>
+[Ruleset Catalog](#-ruleset-catalog) • [Why Binary Rulesets?](#-why-binary-rule-sets-mrs--srs) • [Client Configuration](#-client-integration) • [Ecosystem](#-the-unified-ecosystem)
 
 ---
 
 ## 📐 Pipeline Architecture
 
-Upstream blocklists are polled every 20 minutes. When a new upstream commit SHA is detected, rule files are converted into native bytecode binaries and published immediately via GitHub Releases and the edge branch:
+Upstream blocklists are polled continuously. When upstream updates are detected, sources are normalized, validated, and concurrently compiled into high-speed binary artifacts:
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -34,11 +30,12 @@ Upstream blocklists are polled every 20 minutes. When a new upstream commit SHA 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                     AUTOMATED GITHUB ACTIONS RUNNER                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│  • Differential SHA validation (avoids redundant compiles)                  │
+│  • Differential SHA & Hash Validation                                       │
 │  • Rule normalization & deduplication (+. prefixing / CIDR /32 masking)     │
-│  • Binary compilation via Mihomo Engine:                                    │
-│    - Domain rules:  `./mihomo convert-ruleset domain text in.txt out.mrs`   │
-│    - IP lists:      `./mihomo convert-ruleset ipcidr text in.txt out.mrs`   │
+│  • Concurrent Binary Compilation:                                           │
+│    ├─ Mihomo Engine:   `mihomo convert-ruleset [domain/ipcidr] text ...`    │
+│    └─ sing-box Engine: `sing-box rule-set compile ...`                      │
+│  • Bundling: `all-rulesets.tar.gz` & `hagezi-geoip.dat`                     │
 └──────────────────────────────────────┬──────────────────────────────────────┘
                                        │
                     ┌──────────────────┴──────────────────┐
@@ -46,149 +43,197 @@ Upstream blocklists are polled every 20 minutes. When a new upstream commit SHA 
 ┌───────────────────────────────────────┐ ┌───────────────────────────────────┐
 │       OFFICIAL GITHUB RELEASES        │ │    GLOBAL EDGE DISTRIBUTION       │
 ├───────────────────────────────────────┤ ├───────────────────────────────────┤
-│  • Rolling `latest` release tag       │ │  • Committed to `release` branch  │
-│  • In-place binary assets overwrite   │ │  • Automated jsDelivr edge purge  │
+│  • Rolling `latest` release tag       │ │  • Fast delivery via jsDelivr CDN │
+│  • Over 90 compiled binary assets     │ │  • Automated edge cache purge     │
 │  • Direct permanent download URLs     │ │  • Fallback secondary mirrors     │
 └───────────────────────────────────────┘ └───────────────────────────────────┘
 ```
 
 ---
 
-## ⚡ Why Mihomo Rule-Set (`.mrs`)?
+## ⚡ Why Binary Rule-Sets (`.mrs` & `.srs`)?
 
-Standard plain-text or YAML domain lists require significant runtime parsing, causing high latency, CPU load, and memory spikes on routers and mobile devices.
+Standard plain-text or YAML lists require heavy string parsing on startup, causing high CPU consumption, memory bloating, and slow execution on low-RAM routers and mobile phones.
 
-* **Memory-Mapped I/O (`mmap`):** Mihomo loads `.mrs` binaries as pre-structured radix/hash trees directly into memory with **0 ms** initial parsing time.
-* **RAM Optimization:** Reduces memory consumption by **up to 80%** compared to YAML or classical text lists.
-* **Deterministic Matching:** Binary lookups ensure sub-millisecond packet routing without regex backtracking bottlenecks during gigabit-speed traffic.
+- **Memory-Mapped I/O (mmap):** Both Mihomo (`.mrs`) and sing-box (`.srs`) map pre-indexed binary trees directly into memory with near-zero cold-start latency.
+- **RAM Optimization:** Saves up to **80% RAM** compared to classical plain-text domain files or raw YAML rule-providers.
+- **Deterministic Tree Lookups:** Radix/Hash trie lookups allow gigabit line-rate processing without regular expression backtracking bottlenecks.
 
 ---
 
 ## 📦 Ruleset Catalog
 
-All binary downloads default to **GitHub Direct Releases** (`latest` rolling tag).
+All assets can be downloaded directly from GitHub Releases (`latest` tag) or via jsDelivr CDN.
 
 > [!TIP]
-> **CDN Mirror Alternative:** If GitHub is throttled in your region, replace:  
-> `https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/<FileName>.mrs`  
-> with the fast jsDelivr CDN endpoint:  
-> `https://fastly.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/<FileName>.mrs`
+> **CDN Endpoint Format:** If GitHub Releases are throttled or blocked in your network, replace:  
+> `https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/<FileName>`  
+> with:  
+> `https://fastly.jsdelivr.net/gh/Erfan4700/HaGeZi_BlockLists_mrs_format@release/<FileName>`
+
+### 📦 Bundles & GeoIP
+
+| File Name | Description | Direct Download |
+| :--- | :--- | :---: |
+| **all-rulesets.tar.gz** | Complete compressed archive containing all `.mrs` and `.srs` files | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/all-rulesets.tar.gz) |
+| **hagezi-geoip.dat** | Custom GeoIP database based on HaGeZi intelligence feeds | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/hagezi-geoip.dat) |
 
 ---
 
 ### 1. Multi Tiers (General Ad & Tracker Protection)
-*Select exactly **one** main tier based on your device profile and tolerance for false positives.*
+*Select **one** primary tier matching your device resources and tolerance for false positives.*
 
-| List Name | Behavior | Scope & Recommended Profile | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziLight** | `domain` | Basic protection for legacy hardware and low-RAM routers. | [Download `HageziLight.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziLight.mrs) |
-| **HageziNormal** | `domain` | All-round protection against consumer ads, tracking, and malware. | [Download `HageziNormal.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNormal.mrs) |
-| **HageziPro** | `domain` | **Recommended:** Balanced protection, metrics, tracking, and telemetry. | [Download `HageziPro.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPro.mrs) |
-| **HageziProPlus** | `domain` | **Advanced:** Aggressive blocker for users with whitelisting capabilities. | [Download `HageziProPlus.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlus.mrs) |
-| **HageziUltimate** | `domain` | **Maximum:** Strict privacy lockdown; may break some app functions. | [Download `HageziUltimate.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimate.mrs) |
+| List Name | Behavior | Scope & Recommended Profile | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziLight** | `domain` | Entry-level blocking for legacy/low-spec devices. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziLight.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziLight.srs) |
+| **HageziNormal** | `domain` | Standard consumer ads, basic tracking, and malware. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNormal.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNormal.srs) |
+| **HageziPro** | `domain` | **Recommended:** Balanced ad, telemetry & tracker blocking. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPro.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPro.srs) |
+| **HageziProPlus** | `domain` | **Advanced:** Aggressive blocker for power users. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlus.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlus.srs) |
+| **HageziUltimate** | `domain` | **Maximum:** Strict privacy lockdown (may break websites). | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimate.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimate.srs) |
 
-#### Size-Optimized Mini Editions (Top 1M/10M Domains Only)
-| List Name | Behavior | Scope & Target Profile | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziProMini** | `domain` | Size-optimized version of Pro for mobile and constrained devices. | [Download `HageziProMini.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProMini.mrs) |
-| **HageziProPlusMini** | `domain` | Size-optimized version of Pro++ for browser and mobile environments. | [Download `HageziProPlusMini.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlusMini.mrs) |
-| **HageziUltimateMini** | `domain` | Size-optimized version of Ultimate for embedded routers. | [Download `HageziUltimateMini.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimateMini.mrs) |
+#### Size-Optimized Mini Editions (Top 1M/10M Domains)
+
+| List Name | Behavior | Scope & Recommended Profile | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziProMini** | `domain` | Compact Pro edition for mobile networks. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProMini.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProMini.srs) |
+| **HageziProPlusMini** | `domain` | Compact Pro++ edition for mobile & browser clients. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlusMini.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlusMini.srs) |
+| **HageziUltimateMini** | `domain` | Compact Ultimate edition for memory-limited routers. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimateMini.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziUltimateMini.srs) |
 
 ---
 
-### 2. Threat Intelligence & Cyber Defense (Recommended Add-ons)
-*Can be combined with any Multi tier to block active cyber attacks.*
+### 2. Threat Intelligence Feeds (TIF & Cyber Defense)
 
-| List Name | Behavior | Scope & Description | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziTIF** | `domain` | **Full Threat Feeds:** Active malware, phishing, ransomware, botnets, and C2s. | [Download `HageziTIF.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF.mrs) |
-| **HageziTIFMedium** | `domain` | Medium-sized TIF feed containing core primary threat intelligence. | [Download `HageziTIFMedium.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMedium.mrs) |
-| **HageziTIFMini** | `domain` | Compact TIF version for memory-constrained clients. | [Download `HageziTIFMini.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMini.mrs) |
-| **HageziFake** | `domain` | Blocks scam shops, phishing clones, traps, and fraudulent sites. | [Download `HageziFake.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziFake.mrs) |
-| **HageziPopUpAds** | `domain` | Suppresses intrusive, aggressive, and malicious pop-up networks. | [Download `HageziPopUpAds.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPopUpAds.mrs) |
-| **HageziDynDNS** | `domain` | Dynamic DNS endpoints frequently abused by modular trojans and RATs. | [Download `HageziDynDNS.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDynDNS.mrs) |
-| **HageziBadwareHoster**| `domain` | Hosting providers repeatedly harboring malicious user content. | [Download `HageziBadwareHoster.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBadwareHoster.mrs) |
-| **HageziSpamTLDs** | `domain` | High-abuse top-level domains (`.top`, `.shop`, `.gdn`, etc.). | [Download `HageziSpamTLDs.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDs.mrs) |
-| **HageziSpamTLDsAllow**| `domain` | Whitelist exceptions for legitimate services hosted on spam TLDs. | [Download `HageziSpamTLDsAllow.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDsAllow.mrs) |
+| List Name | Behavior | Scope & Target Description | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziTIF** | `domain` | **Full Threat Feed:** Active malware, botnets, and C2s. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF.srs) |
+| **HageziTIFMedium** | `domain` | Core high-impact cyber threat domains. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMedium.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMedium.srs) |
+| **HageziTIFMini** | `domain` | Compact TIF version for low-RAM appliances. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMini.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIFMini.srs) |
+| **HageziFake** | `domain` | Phishing clones, scam storefronts, and deceitful portals. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziFake.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziFake.srs) |
+| **HageziPopUpAds** | `domain` | Intrusive, malicious redirects and aggressive pop-up networks. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPopUpAds.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziPopUpAds.srs) |
+| **HageziDynDNS** | `domain` | Dynamic DNS hosts commonly abused by trojans & RATs. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDynDNS.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDynDNS.srs) |
+| **HageziBadwareHoster** | `domain` | Malicious hosters and bulletproof infrastructure. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBadwareHoster.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBadwareHoster.srs) |
+| **HageziSpamTLDs** | `domain` | Abused top-level domains (`.top`, `.shop`, `.cfd`, etc.). | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDs.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDs.srs) |
+| **HageziSpamTLDsAllow** | `domain` | Whitelist for valid domains hosted on spam TLDs. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDsAllow.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSpamTLDsAllow.srs) |
 
 ---
 
 ### 3. High-Entropy & Domain Generation Algorithms (DGA)
-*Freshly registered, randomized domains utilized by evasive malware C2 channels.*
 
-| List Name | Behavior | Scope & Retention Period | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziDGA7** | `domain` | High-entropy DGA domains observed in the last 7 days. | [Download `HageziDGA7.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA7.mrs) |
-| **HageziDGA14** | `domain` | High-entropy DGA domains observed in the last 14 days. | [Download `HageziDGA14.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA14.mrs) |
-| **HageziDGA30** | `domain` | Extended 30-day DGA threat collection. | [Download `HageziDGA30.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA30.mrs) |
+| List Name | Behavior | Scope & Retention Period | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziDGA7** | `domain` | Algorithmic DGA domains active in the last 7 days. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA7.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA7.srs) |
+| **HageziDGA14** | `domain` | Algorithmic DGA domains active in the last 14 days. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA14.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDGA14.srs) |
 
 ---
 
 ### 4. Bypass Prevention & Network Integrity
-*Enforces local DNS rules by preventing clients and applications from bypassing them.*
 
-| List Name | Behavior | Scope & Protection Focus | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziBypassAll** | `domain` | Blocks encrypted DNS resolvers (DoH/DoT/DoQ), commercial VPNs, proxies, and Tor. | [Download `HageziBypassAll.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassAll.mrs) |
-| **HageziBypassDoH** | `domain` | Restricts outbound queries targeting standalone public encrypted DNS (DoH) servers. | [Download `HageziBypassDoH.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassDoH.mrs) |
+| List Name | Behavior | Scope & Protection Target | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziBypassAll** | `domain` | Commercial VPNs, Tor nodes, proxies, and encrypted DNS. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassAll.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassAll.srs) |
+| **HageziBypassDoH** | `domain` | Public DoH/DoT endpoints used to evade local filtering. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassDoH.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziBypassDoH.srs) |
 
 ---
 
 ### 5. Content Filtering & Parental Safeguards
 
-| List Name | Behavior | Protection Scope | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziGambling** | `domain` | Online casinos, bookmakers, unlicensed betting, and lottery portals. | [Download `HageziGambling.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGambling.mrs) |
-| **HageziGamblingMedium**| `domain` | Medium-tier gambling filter covering major betting operations. | [Download `HageziGamblingMedium.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMedium.mrs) |
-| **HageziGamblingMini** | `domain` | Compact gambling filter for devices with limited memory. | [Download `HageziGamblingMini.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMini.mrs) |
-| **HageziNSFW** | `domain` | Adult media networks, pornography, and sexually explicit services. | [Download `HageziNSFW.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNSFW.mrs) |
-| **HageziSocial** | `domain` | Social networks (Facebook, TikTok, Instagram, X/Twitter, Snapchat). | [Download `HageziSocial.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSocial.mrs) |
-| **HageziAntiPiracy** | `domain` | Warez, unauthorized streaming, torrent indexes, and copyright-infringing sites. | [Download `HageziAntiPiracy.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziAntiPiracy.mrs) |
-| **HageziURLShortener** | `domain` | Link shorteners masking destination URLs and malicious redirects. | [Download `HageziURLShortener.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziURLShortener.mrs) |
-| **HageziNoSafeSearch** | `domain` | Search engines that do not implement or support SafeSearch restrictions. | [Download `HageziNoSafeSearch.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNoSafeSearch.mrs) |
+| List Name | Behavior | Category / Purpose | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziGambling** | `domain` | Online betting, casinos, and gambling services. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGambling.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGambling.srs) |
+| **HageziGamblingMedium** | `domain` | Medium-tier gambling filter covering major portals. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMedium.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMedium.srs) |
+| **HageziGamblingMini** | `domain` | Compact gambling filter for limited devices. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMini.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziGamblingMini.srs) |
+| **HageziNSFW** | `domain` | Adult content, pornography, and sexually explicit services. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNSFW.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNSFW.srs) |
+| **HageziSocial** | `domain` | Social networks (Facebook, TikTok, Instagram, X, etc.). | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSocial.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziSocial.srs) |
+| **HageziAntiPiracy** | `domain` | Warez, illicit streaming, trackers, and copyright infringement. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziAntiPiracy.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziAntiPiracy.srs) |
+| **HageziURLShortener** | `domain` | URL shorteners masking original endpoints and redirects. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziURLShortener.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziURLShortener.srs) |
+| **HageziNoSafeSearch** | `domain` | Search engines lacking enforced SafeSearch filtering. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNoSafeSearch.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNoSafeSearch.srs) |
 
 ---
 
 ### 6. Native Hardware & OS Telemetry
-*Neutralizes built-in OEM telemetry, tracking beacons, and diagnostics.*
 
-| Target Platform | Behavior | Description | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziNativeMicrosoft**| `domain` | Windows diagnostics, telemetry beacons, Office telemetry, and MSN analytics. | [Download `HageziNativeMicrosoft.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeMicrosoft.mrs) |
-| **HageziNativeApple** | `domain` | Analytics, diagnostic loggers, and metrics across iOS, iPadOS, and macOS. | [Download `HageziNativeApple.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeApple.mrs) |
-| **HageziNativeSamsung**| `domain` | Tracking, diagnostic telemetry, and OEM-level reporting on Samsung devices. | [Download `HageziNativeSamsung.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeSamsung.mrs) |
-| **HageziNativeXiaomi** | `domain` | Diagnostic reporting, tracking, and ad-service telemetry across MIUI / HyperOS. | [Download `HageziNativeXiaomi.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeXiaomi.mrs) |
-| **HageziNativeHuawei** | `domain` | Huawei mobile and IoT hardware telemetry reporting endpoints. | [Download `HageziNativeHuawei.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeHuawei.mrs) |
-| **HageziNativeOppoRealme**| `domain`| Telemetry services on ColorOS, RealmeUI, and OnePlus handsets. | [Download `HageziNativeOppoRealme.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeOppoRealme.mrs) |
-| **HageziNativeVivo** | `domain` | Diagnostic services and user telemetry across OriginOS and FuntouchOS. | [Download `HageziNativeVivo.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeVivo.mrs) |
-| **HageziNativeLGWebOS**| `domain` | Smart TV telemetry, automatic content recognition (ACR), and analytics. | [Download `HageziNativeLGWebOS.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeLGWebOS.mrs) |
-| **HageziNativeRoku** | `domain` | Analytics and telemetry reporting on Roku OS devices. | [Download `HageziNativeRoku.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeRoku.mrs) |
-| **HageziNativeAmazon** | `domain` | Tracking endpoints on FireTV, Echo devices, and shopping analytics. | [Download `HageziNativeAmazon.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeAmazon.mrs) |
-| **HageziNativeTikTok** | `domain` | Fingerprinting and tracking servers tied to the TikTok infrastructure. | [Download `HageziNativeTikTok.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTok.mrs) |
-| **HageziNativeTikTokExtended**| `domain`| Aggressive fingerprinting rules targeting TikTok analytics infrastructure. | [Download `HageziNativeTikTokExtended.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTokExtended.mrs) |
+| List Name | Behavior | Operating System / OEM Target | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziNativeMicrosoft** | `domain` | Windows diagnostics, telemetry beacons, and Office analytics. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeMicrosoft.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeMicrosoft.srs) |
+| **HageziNativeApple** | `domain` | Diagnostic loggers and telemetry across iOS, iPadOS, macOS. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeApple.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeApple.srs) |
+| **HageziNativeSamsung** | `domain` | Telemetry, analytics, and OEM tracking on Samsung devices. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeSamsung.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeSamsung.srs) |
+| **HageziNativeXiaomi** | `domain` | Diagnostics, logging, and ad metrics across MIUI & HyperOS. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeXiaomi.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeXiaomi.srs) |
+| **HageziNativeHuawei** | `domain` | Hardware telemetry on Huawei EMUI, HarmonyOS, and IoT. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeHuawei.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeHuawei.srs) |
+| **HageziNativeOppoRealme**| `domain` | Telemetry on ColorOS, RealmeUI, and OxygenOS handsets. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeOppoRealme.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeOppoRealme.srs) |
+| **HageziNativeVivo** | `domain` | Tracking services across OriginOS and FuntouchOS. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeVivo.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeVivo.srs) |
+| **HageziNativeLGWebOS** | `domain` | Smart TV analytics, ACR, and ad beacons on webOS. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeLGWebOS.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeLGWebOS.srs) |
+| **HageziNativeRoku** | `domain` | User telemetry and usage analytics on Roku OS devices. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeRoku.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeRoku.srs) |
+| **HageziNativeAmazon** | `domain` | Telemetry on FireTV, Echo, Alexa, and Amazon hardware. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeAmazon.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeAmazon.srs) |
+| **HageziNativeTikTok** | `domain` | Tracking beacons and telemetry servers in TikTok apps. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTok.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTok.srs) |
+| **HageziNativeTikTokExtended**| `domain` | Strict telemetry & auxiliary data pipelines for TikTok. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTokExtended.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeTikTokExtended.srs) |
 
 ---
 
-### 7. IP-Level Threat & Infrastructure Rulesets (IP-CIDR)
-> [!IMPORTANT]
-> The following rulesets contain IP addresses and subnets. In your Mihomo configuration, they must be declared with `behavior: ipcidr` rather than `domain`.
+### 7. IP Threat & Infrastructure Rulesets (IP-CIDR)
 
-| List Name | Behavior | Target Description | Direct GitHub Download |
-| :--- | :---: | :--- | :--- |
-| **HageziTIF_IP** | `ipcidr` | Known IPv4 addresses running command-and-control servers, malware, and spam. | [Download `HageziTIF_IP.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF_IP.mrs) |
-| **HageziDoH_IP** | `ipcidr` | Known IPv4 addresses of public and evasive encrypted DNS (DoH/DoT) resolvers. | [Download `HageziDoH_IP.mrs`](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDoH_IP.mrs) |
+> [!IMPORTANT]
+> The following rulesets contain IP addresses and subnets.
+> - **Mihomo:** Must be declared with `behavior: ipcidr`.
+> - **sing-box:** Handled automatically as `ip_cidr` rules within `.srs`.
+
+| List Name | Behavior | Target Description | Mihomo (`.mrs`) | sing-box (`.srs`) |
+| :--- | :---: | :--- | :---: | :---: |
+| **HageziTIF_IP** | `ipcidr` | Malicious IPv4 addresses running C2 servers and botnets. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF_IP.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF_IP.srs) |
+| **HageziDoH_IP** | `ipcidr` | IPv4 addresses of public & evasive DoH/DoT resolvers. | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDoH_IP.mrs) | [Download](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziDoH_IP.srs) |
 
 ---
 
 ## 🚀 Client Integration
 
-### Declarative `config.yaml` Setup
+### Method 1: sing-box (Remote Binary Rule-Sets)
 
-Add providers directly to your custom Mihomo configuration using direct GitHub Release URLs:
+Add to the `route.rule_set` array in your `config.json`:
+
+```json
+{
+  "route": {
+    "rule_set": [
+      {
+        "tag": "hagezi-tif",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "tag": "hagezi-proplus",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziProPlus.srs",
+        "download_detour": "proxy"
+      },
+      {
+        "tag": "hagezi-tif-ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziTIF_IP.srs",
+        "download_detour": "proxy"
+      }
+    ],
+    "rules": [
+      {
+        "rule_set": ["hagezi-tif", "hagezi-tif-ip", "hagezi-proplus"],
+        "action": "reject"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### Method 2: Mihomo / Clash.Meta (`config.yaml`)
+
+Add binary rule-providers to your `config.yaml`:
 
 ```yaml
 rule-providers:
-  # 1. Domain Rule Provider (Example: Pro Plus Tier)
+  # 1. Main Adblock Tier (Pro Plus)
   hagezi-proplus:
     type: http
     behavior: domain
@@ -197,7 +242,7 @@ rule-providers:
     path: ./ruleset/HageziProPlus.mrs
     interval: 86400
 
-  # 2. Cyber Threat Defense (TIF Feed)
+  # 2. Cyber Threat Defense (TIF)
   hagezi-tif:
     type: http
     behavior: domain
@@ -206,16 +251,7 @@ rule-providers:
     path: ./ruleset/HageziTIF.mrs
     interval: 43200
 
-  # 3. Native OS Telemetry (Example: Windows)
-  hagezi-windows:
-    type: http
-    behavior: domain
-    format: mrs
-    url: "https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format/releases/download/latest/HageziNativeMicrosoft.mrs"
-    path: ./ruleset/HageziNativeMicrosoft.mrs
-    interval: 86400
-
-  # 4. IP-CIDR Threat List (Note the behavior: ipcidr)
+  # 3. IP Threat Intelligence
   hagezi-tif-ip:
     type: http
     behavior: ipcidr
@@ -225,22 +261,32 @@ rule-providers:
     interval: 43200
 
 rules:
-  # Threat mitigation must precede general routing rules
+  # Threat mitigation and adblocking
   - RULE-SET,hagezi-tif,REJECT
   - RULE-SET,hagezi-tif-ip,REJECT,no-resolve
   - RULE-SET,hagezi-proplus,REJECT
-  - RULE-SET,hagezi-windows,REJECT
 
-  # Standard Routing Fallthrough
+  # Routing Fallthrough
   - GEOIP,private,DIRECT,no-resolve
   - MATCH,PROXY
 ```
 
 ---
 
+### Method 3: Clash GUI Integration (Verge Rev / Mihomo Party)
+
+You can use the integration script `clash-verge-merge.js` inside Clash Verge Rev, Mihomo Party, or FlClash for 1-click dynamic configuration switching.
+
+- **Dynamic Toggles:** Easily enable/disable TIF, OS Telemetry, DynDNS, NSFW, or Gambling rules.
+- **Single-Variable Switching:** Switch between `light`, `normal`, `pro`, `proplus`, and `ultimate` instantly.
+
+👉 **[View Master Integration Script (clash-verge-merge.js)](./clash-verge-merge.js)**
+
+---
+
 ## 🌐 The Unified Ecosystem
 
-This repository serves as the global security layer within a two-pillar Mihomo networking ecosystem:
+This repository forms the global security core of a two-pillar proxy architecture:
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -254,21 +300,21 @@ This repository serves as the global security layer within a two-pillar Mihomo n
 │  • Native Hardware OS Telemetry      │  • Domestic Payment Safeguards       │
 │  • Worldwide Gambling & NSFW Filter  │  • Native Android Package Rules      │
 └──────────────────────────────────────┴──────────────────────────────────────┘
-                                       ▲
 ```
 
-* 🛡️ **Global Layer (This Repo):** [HaGeZi_BlockLists_mrs_format](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)
-* 🇮🇷 **Regional Layer:** [Iran_Clash_Rules_mrs_format](https://github.com/Erfan4700/iran-routing-rules)
+- 🛡️ **Global Security Layer:** [HaGeZi_BlockLists_mrs_format](https://github.com/Erfan4700/HaGeZi_BlockLists_mrs_format)
+- 🇮🇷 **Regional Routing Layer:** [Iran_Clash_Rules_mrs_format](https://github.com/Erfan4700/Iran_Clash_Rules_mrs_format)
 
 ---
 
 ## 🎖️ Upstream Attribution & Credits
 
-* **Blocklist Upstream:** Curated by [@hagezi](https://github.com/hagezi) at [hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists) and [hagezi/nrd](https://github.com/hagezi/nrd).
-* **Binary Engine:** Maintained by the [@MetaCubeX](https://github.com/MetaCubeX) team at [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo).
+- **Rule Sources:** Curated and maintained with excellence by [@hagezi](https://github.com/hagezi) at [hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists) and [hagezi/nrd](https://github.com/hagezi/nrd).
+- **Mihomo Compiler:** Maintained by [@MetaCubeX](https://github.com/MetaCubeX) at [MetaCubeX/mihomo](https://github.com/MetaCubeX/mihomo).
+- **sing-box Compiler:** Maintained by [@SagerNet](https://github.com/SagerNet) at [sagernet/sing-box](https://github.com/SagerNet/sing-box).
 
 ---
 
 ## 📄 License
 
-This build automation suite is released under the **[MIT License](LICENSE)**. Upstream blocklist definitions remain the intellectual property of their original authors.
+This compilation and build automation suite is licensed under the [MIT License](LICENSE). Upstream blocklist definitions remain the intellectual property of their original creators.
