@@ -1,4 +1,4 @@
-name: All-in-One Multi-Format Blocklist Builder
+name: Multi-Format Blocklist Suite Builder
 
 on:
   schedule:
@@ -18,10 +18,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Setup Go & Python
+      - name: Setup Go
         uses: actions/setup-go@v5
         with:
           go-version: 'stable'
+          cache: false
 
       - name: Check for Upstream HaGeZi Updates
         id: check_update
@@ -45,20 +46,20 @@ jobs:
             echo "Build condition met. Proceeding..."
           else
             echo "EXECUTE_BUILD=false" >> $GITHUB_OUTPUT
-            echo "No changes detected. Exiting..."
+            echo "No changes detected. Exiting cleanly..."
           fi
 
       - name: Install Mihomo, Sing-box & Xray DAT Compiler
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
-          # 1. Download Mihomo Core
+          # 1. دانلود هسته Mihomo
           echo "Downloading Mihomo..."
           MIHOMO_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
             | jq -r '.assets[] | select(.name | test("linux-amd64-compatible.*\\.gz$")) | .browser_download_url' | head -n 1)
           curl -sL "$MIHOMO_URL" -o mihomo.gz && gzip -d mihomo.gz && chmod +x mihomo
 
-          # 2. Download Sing-box Core
+          # 2. دانلود هسته Sing-box
           echo "Downloading Sing-box..."
           SINGBOX_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             https://api.github.com/repos/SagerNet/sing-box/releases/latest \
@@ -67,9 +68,9 @@ jobs:
           tar -xzf singbox.tar.gz --strip-components=1 -C .
           chmod +x sing-box
 
-          # 3. Setup V2Ray/Xray geosite dat generator
+          # 3. آماده‌سازی کامپایلرهای geosite و geoip مخصوص Xray / V2Ray
           git clone --depth=1 https://github.com/v2fly/domain-list-community.git compiler-geosite
-          git clone --depth=1 https://github.com/v2fly/geoip.git compiler-geoip
+          go install -v github.com/v2fly/geoip@latest
 
       - name: Fetch and Compile Domain Lists
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
@@ -77,15 +78,21 @@ jobs:
           mkdir -p output/mrs output/srs output/json output/list output/raw output/yaml
           mkdir -p compiler-geosite/data
 
+          # فهرست کامل لیست دامنه‌های HaGeZi
           declare -A DOMAIN_LISTS=(
+            # Main Multi Tiers
             ["HageziLight"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/light-onlydomains.txt"
             ["HageziNormal"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/multi-onlydomains.txt"
             ["HageziPro"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt"
             ["HageziProPlus"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus-onlydomains.txt"
             ["HageziUltimate"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate-onlydomains.txt"
+
+            # Mini Versions
             ["HageziProMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.mini-onlydomains.txt"
             ["HageziProPlusMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro.plus.mini-onlydomains.txt"
             ["HageziUltimateMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/ultimate.mini-onlydomains.txt"
+
+            # Threat Feeds & Security
             ["HageziTIF"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt"
             ["HageziTIFMedium"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium-onlydomains.txt"
             ["HageziTIFMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt"
@@ -94,63 +101,86 @@ jobs:
             ["HageziDynDNS"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/dyndns-onlydomains.txt"
             ["HageziBadwareHoster"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/hoster-onlydomains.txt"
             ["HageziSpamTLDs"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/spam-tlds-onlydomains.txt"
+            ["HageziSpamTLDsAllow"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/spam-tlds-allow-onlydomains.txt"
+
+            # Bypass & Encrypted DNS
             ["HageziBypassAll"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-vpn-proxy-bypass-onlydomains.txt"
             ["HageziBypassDoH"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt"
+
+            # Content Filtering
             ["HageziURLShortener"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/urlshortener-onlydomains.txt"
             ["HageziAntiPiracy"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/anti.piracy-onlydomains.txt"
             ["HageziSocial"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/social-onlydomains.txt"
             ["HageziNSFW"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/nsfw-onlydomains.txt"
+            ["HageziNoSafeSearch"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/nosafesearch-onlydomains.txt"
             ["HageziGambling"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling-onlydomains.txt"
+            ["HageziGamblingMedium"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.medium-onlydomains.txt"
+            ["HageziGamblingMini"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.mini-onlydomains.txt"
+
+            # Native Trackers
             ["HageziNativeAmazon"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.amazon-onlydomains.txt"
             ["HageziNativeApple"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.apple-onlydomains.txt"
+            ["HageziNativeHuawei"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.huawei-onlydomains.txt"
             ["HageziNativeMicrosoft"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.winoffice-onlydomains.txt"
             ["HageziNativeSamsung"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.samsung-onlydomains.txt"
             ["HageziNativeTikTok"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok-onlydomains.txt"
+            ["HageziNativeTikTokExtended"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok.extended-onlydomains.txt"
+            ["HageziNativeLGWebOS"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.lgwebos-onlydomains.txt"
+            ["HageziNativeRoku"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.roku-onlydomains.txt"
+            ["HageziNativeVivo"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.vivo-onlydomains.txt"
+            ["HageziNativeOppoRealme"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.oppo-realme-onlydomains.txt"
+            ["HageziNativeXiaomi"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.xiaomi-onlydomains.txt"
+
+            # DGA
+            ["HageziDGA7"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga7.txt"
+            ["HageziDGA14"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga14.txt"
+            ["HageziDGA30"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga30.txt"
           )
 
           for NAME in "${!DOMAIN_LISTS[@]}"; do
             URL="${DOMAIN_LISTS[$NAME]}"
             LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
-            echo "===> Processing DOMAIN list: $NAME"
+            echo "Processing DOMAIN list: $NAME..."
 
-            # 1. Raw Clean Domains
+            # 1. فایل خام پاکسازی‌شده
             curl -sSL -f "$URL" \
               | grep -v '^#' \
               | grep -v '^[[:space:]]*$' \
               | sed -E 's/^(\*\.|\.)+//' \
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
-            # 2. Xray / V2Ray Data prep (v2fly format)
+            # 2. آماده‌سازی سورس geosite برای Xray
             cp "output/raw/${NAME}.txt" "compiler-geosite/data/${LOWER_NAME}"
 
-            # 3. Mihomo Ruleset (.mrs)
-            sed 's/^/+./' "output/raw/${NAME}.txt" > temp_mihomo.txt
-            ./mihomo convert-ruleset domain text temp_mihomo.txt "output/mrs/${NAME}.mrs"
+            # 3. کامپایل به .mrs (مخصوص Mihomo)
+            sed 's/^/+./' "output/raw/${NAME}.txt" > temp_domain.txt
+            ./mihomo convert-ruleset domain text temp_domain.txt "output/mrs/${NAME}.mrs"
 
-            # 4. Classical List (.list for Surge, Shadowrocket, Stash)
+            # 4. خروجی متنی Surge / Shadowrocket (.list)
             sed 's/^/DOMAIN-SUFFIX,/' "output/raw/${NAME}.txt" > "output/list/${NAME}.list"
 
-            # 5. Clash YAML format
+            # 5. سورس YAML مخصوص کلش
             echo "payload:" > "output/yaml/${NAME}.yaml"
             sed 's/^/  - "+./; s/$/"/' "output/raw/${NAME}.txt" >> "output/yaml/${NAME}.yaml"
 
-            # 6. Sing-box Rule-set (.json & .srs)
-            jq -R . "output/raw/${NAME}.txt" | jq -s --arg name "$NAME" '{"version": 1, "rules": [{"domain_suffix": .}]}' > "output/json/${NAME}.json"
+            # 6. فرمت JSON و کامپایل به .srs باینری (مخصوص Sing-box)
+            jq -R . "output/raw/${NAME}.txt" | jq -s '{"version": 1, "rules": [{"domain_suffix": .}]}' > "output/json/${NAME}.json"
             ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
 
-            rm -f temp_mihomo.txt
+            rm -f temp_domain.txt
           done
 
-          # Build geosite.dat for Xray/V2Ray
-          echo "Compiling all domains into hagezi-geosite.dat for Xray..."
+          # کامپایل فایل یکپارچه hagezi-geosite.dat برای Xray
+          echo "Compiling all domain categories into hagezi-geosite.dat for Xray..."
           cd compiler-geosite
           go run ./ --datapath=./data --outputname=../output/hagezi-geosite.dat
           cd ..
+          rm -rf compiler-geosite
 
       - name: Fetch and Compile IP-CIDR Lists
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
-          mkdir -p compiler-geoip/data
+          mkdir -p geoip-source
 
           declare -A IP_LISTS=(
             ["HageziTIF_IP"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/tif.txt"
@@ -160,44 +190,72 @@ jobs:
           for NAME in "${!IP_LISTS[@]}"; do
             URL="${IP_LISTS[$NAME]}"
             LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed 's/_ip//')
-            echo "===> Processing IP list: $NAME"
+            echo "Processing IP list: $NAME..."
 
-            # 1. Raw Clean IPs with CIDR
+            # 1. فایل خام پاکسازی‌شده با ماسک /32
             curl -sSL -f "$URL" \
               | grep -v '^#' \
               | grep -v '^[[:space:]]*$' \
               | sed -E 's|^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)$|\1/32|' \
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
-            # 2. Xray GeoIP prep
-            cp "output/raw/${NAME}.txt" "compiler-geoip/data/${LOWER_NAME}"
+            # 2. قرار دادن در پوشه ورودی برای ساخت GeoIP
+            cp "output/raw/${NAME}.txt" "geoip-source/${LOWER_NAME}.txt"
 
-            # 3. Mihomo Ruleset (.mrs)
+            # 3. کامپایل به .mrs (مخصوص Mihomo)
             ./mihomo convert-ruleset ipcidr text "output/raw/${NAME}.txt" "output/mrs/${NAME}.mrs"
 
-            # 4. Classical List (.list)
+            # 4. خروجی متنی Surge / Shadowrocket (.list)
             sed 's/^/IP-CIDR,/' "output/raw/${NAME}.txt" > "output/list/${NAME}.list"
 
-            # 5. Clash YAML format
+            # 5. سورس YAML مخصوص کلش
             echo "payload:" > "output/yaml/${NAME}.yaml"
             sed 's/^/  - "/; s/$/"/' "output/raw/${NAME}.txt" >> "output/yaml/${NAME}.yaml"
 
-            # 6. Sing-box Rule-set (.json & .srs)
+            # 6. فرمت JSON و کامپایل به .srs باینری (مخصوص Sing-box)
             jq -R . "output/raw/${NAME}.txt" | jq -s '{"version": 1, "rules": [{"ip_cidr": .}]}' > "output/json/${NAME}.json"
             ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
           done
 
-          # Build geoip.dat for Xray/V2Ray
+          # 7. ساخت کانفیگ v2fly geoip و خروجی hagezi-geoip.dat برای Xray
           echo "Compiling IPs into hagezi-geoip.dat for Xray..."
-          cd compiler-geoip
-          go run ./ --datapath=./data --outputname=../output/hagezi-geoip.dat
-          cd ..
+          cat << 'EOF' > geoip_config.json
+          {
+            "input": [
+              {
+                "type": "text",
+                "action": "add",
+                "args": {
+                  "inputDir": "geoip-source"
+                }
+              }
+            ],
+            "output": [
+              {
+                "type": "v2rayGeoIPDat",
+                "action": "output",
+                "args": {
+                  "outputDir": "output",
+                  "outputName": "hagezi-geoip.dat"
+                }
+              }
+            ]
+          }
+          EOF
 
-          # Copy everything from subfolders to root of output for flat access as well
+          geoip -c geoip_config.json
+          rm -f geoip_config.json
+          rm -rf geoip-source
+
+          # کپی کردن فایل‌های mrs و srs در ریشه پوشه برای دسترسی آسان و مستقیم (Backward Compatibility)
           cp output/mrs/*.mrs output/ 2>/dev/null || true
           cp output/srs/*.srs output/ 2>/dev/null || true
 
+          # ذخیره هش کامیت بالادستی
           echo "${{ steps.check_update.outputs.NEW_SHA }}" > output/last_sha.txt
+
+          # پاکسازی باینری‌ها قبل از آپلود
+          rm -f mihomo sing-box singbox.tar.gz
 
       - name: Deploy All Formats to Release Branch
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
@@ -215,17 +273,19 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           RELEASE_TAG="latest"
-          RELEASE_TITLE="HaGeZi Multi-Client Ruleset Suite (Latest)"
-          RELEASE_NOTES="Automated build for Mihomo, Sing-box, Xray, Surge, Shadowrocket | Upstream SHA: ${{ steps.check_update.outputs.NEW_SHA }} | Built: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          RELEASE_TITLE="HaGeZi Multi-Format Ruleset Suite (Latest)"
+          RELEASE_NOTES="Automated Rolling Build | Upstream SHA: ${{ steps.check_update.outputs.NEW_SHA }} | Built on: $(date -u +'%Y-%m-%d %H:%M UTC')"
 
-          echo "Packaging archive of all formats..."
-          tar -czf output/all-rulesets.tar.gz -C output .
+          echo "Packaging all formats archive..."
+          tar -czf output/all-rulesets.tar.gz -C output mrs srs json list yaml raw hagezi-geosite.dat hagezi-geoip.dat
 
           if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release exists. Updating metadata and assets..."
             gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_NOTES"
-            gh release upload "$RELEASE_TAG" output/*.dat output/*.mrs output/*.srs output/all-rulesets.tar.gz --clobber
+            gh release upload "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz --clobber
           else
-            gh release create "$RELEASE_TAG" output/*.dat output/*.mrs output/*.srs output/all-rulesets.tar.gz \
+            echo "Creating initial release..."
+            gh release create "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz \
               --title "$RELEASE_TITLE" \
               --notes "$RELEASE_NOTES" \
               --latest
@@ -234,68 +294,10 @@ jobs:
       - name: Purge jsDelivr CDN Cache
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
+          echo "Purging jsDelivr CDN cache..."
           sleep 5
           for FILE in output/mrs/*.mrs output/srs/*.srs output/*.dat; do
             [ -e "$FILE" ] || continue
             FILENAME=$(basename "$FILE")
             curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/$FILENAME" >/dev/null || true
-          done-sSL -f "$URL" \
-              | grep -v '^#' \
-              | grep -v '^[[:space:]]*$' \
-              | sed -E 's|^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)$|\1/32|' > temp_ip.txt
-
-            ./mihomo convert-ruleset ipcidr text temp_ip.txt "output/${NAME}.mrs"
-            
-            FILE_SIZE=$(wc -c < "output/${NAME}.mrs")
-            echo "Generated $NAME.mrs ($FILE_SIZE bytes)"
-            rm -f temp_ip.txt
-          done
-
-          # Save the latest processed commit SHA to include in the release artifacts
-          echo "${{ steps.check_update.outputs.NEW_SHA }}" > output/last_sha.txt
-          rm -f mihomo
-
-      - name: Deploy MRS Artifacts to Release Branch
-        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: release
-          publish_dir: ./output
-          destination_dir: ./
-          keep_files: false
-
-      - name: Update Rolling GitHub Release
-        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          RELEASE_TAG="latest"
-          RELEASE_TITLE="HaGeZi Ruleset Suite (Latest Build)"
-          RELEASE_NOTES="Automated rolling build. Upstream commit: ${{ steps.check_update.outputs.NEW_SHA }} | Built on: $(date -u +'%Y-%m-%d %H:%M UTC')"
-
-          echo "Checking whether release '$RELEASE_TAG' already exists..."
-          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            echo "Release exists. Updating metadata and overwriting assets..."
-            gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_NOTES"
-            gh release upload "$RELEASE_TAG" output/* --clobber
-          else
-            echo "Release does not exist. Creating fresh '$RELEASE_TAG' release..."
-            gh release create "$RELEASE_TAG" output/* \
-              --title "$RELEASE_TITLE" \
-              --notes "$RELEASE_NOTES" \
-              --latest
-          fi
-
-      - name: Purge jsDelivr CDN Cache
-        if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
-        run: |
-          echo "Waiting 5 seconds for commit propagation on jsDelivr CDN..."
-          sleep 5
-          for FILE in output/*.mrs; do
-            [ -e "$FILE" ] || continue
-            FILENAME=$(basename "$FILE")
-            echo "Purging CDN cache for $FILENAME..."
-            STATUS=$(curl -s "https://purge.jsdelivr.net/gh/${{ github.repository }}@release/$FILENAME" | jq -r .status || true)
-            echo "Purge status: $STATUS"
           done
