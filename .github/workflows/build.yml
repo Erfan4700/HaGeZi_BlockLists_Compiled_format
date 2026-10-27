@@ -117,9 +117,29 @@ jobs:
             ["HageziDGA14"]="https://raw.githubusercontent.com/hagezi/nrd/main/domains/dga14.txt"
           )
 
+          compile_domain_list() {
+            local NAME="$1"
+            local RAW_FILE="output/raw/${NAME}.txt"
+            local LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
+
+            cp "$RAW_FILE" "compiler-geosite/data/${LOWER_NAME}"
+
+            sed 's/^/+./' "$RAW_FILE" > temp_domain.txt
+            ./mihomo convert-ruleset domain text temp_domain.txt "output/mrs/${NAME}.mrs"
+
+            sed 's/^/DOMAIN-SUFFIX,/' "$RAW_FILE" > "output/list/${NAME}.list"
+
+            echo "payload:" > "output/yaml/${NAME}.yaml"
+            sed 's/^/  - "+./; s/$/"/' "$RAW_FILE" >> "output/yaml/${NAME}.yaml"
+
+            jq -R . "$RAW_FILE" | jq -s '{"version": 1, "rules": [{"domain_suffix": .}]}' > "output/json/${NAME}.json"
+            ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
+
+            rm -f temp_domain.txt
+          }
+
           for NAME in "${!DOMAIN_LISTS[@]}"; do
             URL="${DOMAIN_LISTS[$NAME]}"
-            LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
             echo "Processing DOMAIN list: $NAME..."
 
             curl -sSL -f "$URL" \
@@ -128,22 +148,30 @@ jobs:
               | sed -E 's/^(\*\.|\.)+//' \
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
-            cp "output/raw/${NAME}.txt" "compiler-geosite/data/${LOWER_NAME}"
-
-            sed 's/^/+./' "output/raw/${NAME}.txt" > temp_domain.txt
-            ./mihomo convert-ruleset domain text temp_domain.txt "output/mrs/${NAME}.mrs"
-
-            sed 's/^/DOMAIN-SUFFIX,/' "output/raw/${NAME}.txt" > "output/list/${NAME}.list"
-
-            echo "payload:" > "output/yaml/${NAME}.yaml"
-            sed 's/^/  - "+./; s/$/"/' "output/raw/${NAME}.txt" >> "output/yaml/${NAME}.yaml"
-
-            jq -R . "output/raw/${NAME}.txt" | jq -s '{"version": 1, "rules": [{"domain_suffix": .}]}' > "output/json/${NAME}.json"
-            ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
-
-            rm -f temp_domain.txt
+            compile_domain_list "$NAME"
           done
 
+          # =========================================================================
+          # BUILD MACRO DOMAIN BUNDLES
+          # =========================================================================
+          echo "Building Macro Domain Bundles..."
+
+          # 1. HageziSecurityAll (TIF-Mini, Fake, DynDNS, BadwareHoster)
+          cat output/raw/HageziTIFMini.txt output/raw/HageziFake.txt output/raw/HageziDynDNS.txt output/raw/HageziBadwareHoster.txt \
+            | sort -u > output/raw/HageziSecurityAll.txt
+          compile_domain_list "HageziSecurityAll"
+
+          # 2. HageziContentAll (NSFW, Gambling, PopUpAds)
+          cat output/raw/HageziNSFW.txt output/raw/HageziGambling.txt output/raw/HageziPopUpAds.txt \
+            | sort -u > output/raw/HageziContentAll.txt
+          compile_domain_list "HageziContentAll"
+
+          # 3. HageziNativeAll (All OEM Trackers Combined)
+          cat output/raw/HageziNative*.txt \
+            | sort -u > output/raw/HageziNativeAll.txt
+          compile_domain_list "HageziNativeAll"
+
+          # Compile Geosite Data
           cd compiler-geosite
           go run ./ --datapath=./data --outputname=../output/hagezi-geosite.dat
           cd ..
@@ -159,9 +187,26 @@ jobs:
             ["HageziDoH_IP"]="https://raw.githubusercontent.com/hagezi/dns-blocklists/main/ips/doh.txt"
           )
 
+          compile_ip_list() {
+            local NAME="$1"
+            local RAW_FILE="output/raw/${NAME}.txt"
+            local LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed 's/_ip//')
+
+            cp "$RAW_FILE" "geoip-source/${LOWER_NAME}.txt"
+
+            ./mihomo convert-ruleset ipcidr text "$RAW_FILE" "output/mrs/${NAME}.mrs"
+
+            sed 's/^/IP-CIDR,/' "$RAW_FILE" > "output/list/${NAME}.list"
+
+            echo "payload:" > "output/yaml/${NAME}.yaml"
+            sed 's/^/  - "/; s/$/"/' "$RAW_FILE" >> "output/yaml/${NAME}.yaml"
+
+            jq -R . "$RAW_FILE" | jq -s '{"version": 1, "rules": [{"ip_cidr": .}]}' > "output/json/${NAME}.json"
+            ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
+          }
+
           for NAME in "${!IP_LISTS[@]}"; do
             URL="${IP_LISTS[$NAME]}"
-            LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]' | sed 's/_ip//')
             echo "Processing IP list: $NAME..."
 
             curl -sSL -f "$URL" \
@@ -170,19 +215,20 @@ jobs:
               | sed -E 's|^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)$|\1/32|' \
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
-            cp "output/raw/${NAME}.txt" "geoip-source/${LOWER_NAME}.txt"
-
-            ./mihomo convert-ruleset ipcidr text "output/raw/${NAME}.txt" "output/mrs/${NAME}.mrs"
-
-            sed 's/^/IP-CIDR,/' "output/raw/${NAME}.txt" > "output/list/${NAME}.list"
-
-            echo "payload:" > "output/yaml/${NAME}.yaml"
-            sed 's/^/  - "/; s/$/"/' "output/raw/${NAME}.txt" >> "output/yaml/${NAME}.yaml"
-
-            jq -R . "output/raw/${NAME}.txt" | jq -s '{"version": 1, "rules": [{"ip_cidr": .}]}' > "output/json/${NAME}.json"
-            ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
+            compile_ip_list "$NAME"
           done
 
+          # =========================================================================
+          # BUILD MACRO IP BUNDLES
+          # =========================================================================
+          echo "Building Macro IP Bundles..."
+
+          # HageziSecurityIP (TIF-IP + DoH-IP)
+          cat output/raw/HageziTIF_IP.txt output/raw/HageziDoH_IP.txt \
+            | sort -u > output/raw/HageziSecurityIP.txt
+          compile_ip_list "HageziSecurityIP"
+
+          # Compile GeoIP Data
           cat << 'EOF' > geoip_config.json
           {
             "input": [
