@@ -176,6 +176,7 @@ DOMAIN-SUFFIX,extranet.ap-southeast-1.miui-l7-feedback.qkou0akepj.elb.xiaomi.com
 DOMAIN-SUFFIX,extranet.ap-southeast-1.miui-l7-feedback.s3hawgekth.elb.xiaomi.com
 DOMAIN-SUFFIX,extranet.c3.bigdata-l7-dp-lan.x0x8wmy6im.elb.xiaomi.com
 DOMAIN-SUFFIX,ad.eu.xiaomi.com
+DOMAIN-SUFFIX,sdkconfig.eu.xiaomi.com
 DOMAIN-SUFFIX,cdn.exp.xiaomi.com
 DOMAIN-SUFFIX,lxcdn.dl.files.xiaomi.net
 DOMAIN-SUFFIX,wl.voip.game.xiaomi.com
@@ -206,6 +207,7 @@ DOMAIN-SUFFIX,sys.tv.india.xiaomi.com
 DOMAIN-SUFFIX,ad.india.xiaomi.com
 DOMAIN-SUFFIX,controller.india.xiaomi.com
 DOMAIN-SUFFIX,mistat.india.xiaomi.com
+DOMAIN-SUFFIX,sdkconfig.india.xiaomi.com
 DOMAIN-SUFFIX,api.installer.xiaomi.com
 DOMAIN-SUFFIX,globalvideo.cdn.pandora.intl.xiaomi.com
 DOMAIN-SUFFIX,ruvideo.cdn.pandora.intl.xiaomi.com
@@ -215,6 +217,7 @@ DOMAIN-SUFFIX,h5-ru.video.intl.xiaomi.com
 DOMAIN-SUFFIX,ru.video.intl.xiaomi.com
 DOMAIN-SUFFIX,ad.intl.xiaomi.com
 DOMAIN-SUFFIX,mistat.intl.xiaomi.com
+DOMAIN-SUFFIX,sdkconfig.intl.xiaomi.com
 DOMAIN-SUFFIX,sys.intl.xiaomi.com
 DOMAIN-SUFFIX,secure.report.iss.xiaomi.com
 DOMAIN-SUFFIX,xadx.file.market.xiaomi.com
@@ -311,6 +314,7 @@ DOMAIN-SUFFIX,staging-analyze.pt.xiaomi.com
 DOMAIN-SUFFIX,sec.resource.xiaomi.net
 DOMAIN-SUFFIX,ad.rus.xiaomi.com
 DOMAIN-SUFFIX,mistat.rus.xiaomi.com
+DOMAIN-SUFFIX,sdkconfig.rus.xiaomi.com
 DOMAIN-SUFFIX,mlog.search.xiaomi.net
 DOMAIN-SUFFIX,api.miui.security.xiaomi.com
 DOMAIN-SUFFIX,sec-cdn.static.xiaomi.net
@@ -336,6 +340,7 @@ DOMAIN-SUFFIX,mibi.xiaomi.com
 DOMAIN-SUFFIX,mistat.xiaomi.com
 DOMAIN-SUFFIX,preload.xiaomi.com
 DOMAIN-SUFFIX,qiye.xiaomi.com
+DOMAIN-SUFFIX,sdkconfig.xiaomi.com
 DOMAIN-SUFFIX,ssp.xiaomi.com
 DOMAIN-SUFFIX,stat.xiaomi.com
 DOMAIN-SUFFIX,userid.xiaomi.com
