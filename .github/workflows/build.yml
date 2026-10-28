@@ -3,6 +3,9 @@ name: Multi-Format Blocklist Suite Builder
 on:
   schedule:
     - cron: '*/20 * * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -27,9 +30,7 @@ jobs:
       - name: Check for Upstream HaGeZi Updates
         id: check_update
         run: |
-          LATEST_SHA=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/hagezi/dns-blocklists/commits/main" | jq -r .sha)
-          
+          LATEST_SHA=$(curl -s "https://api.github.com/repos/hagezi/dns-blocklists/commits/main" | jq -r .sha)
           echo "Latest Upstream SHA: $LATEST_SHA"
 
           if [ -z "$LATEST_SHA" ] || [ "$LATEST_SHA" == "null" ]; then
@@ -37,10 +38,10 @@ jobs:
             exit 1
           fi
 
-          SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt" || true)
+          SAVED_SHA=$(curl -sL "https://raw.githubusercontent.com/${{ github.repository }}/release/last_sha.txt?nocache=$(date +%s)" || true)
           echo "Locally Stored SHA:  $SAVED_SHA"
 
-          if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
+          if [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "${{ github.event_name }}" == "push" ] || [ "$LATEST_SHA" != "$SAVED_SHA" ]; then
             echo "EXECUTE_BUILD=true" >> $GITHUB_OUTPUT
             echo "NEW_SHA=$LATEST_SHA" >> $GITHUB_OUTPUT
             echo "Build condition met. Proceeding..."
@@ -52,13 +53,11 @@ jobs:
       - name: Install Mihomo, Sing-box & Xray DAT Compiler
         if: steps.check_update.outputs.EXECUTE_BUILD == 'true'
         run: |
-          MIHOMO_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
+          MIHOMO_URL=$(curl -s https://api.github.com/repos/MetaCubeX/mihomo/releases/latest \
             | jq -r '.assets[] | select(.name | test("linux-amd64-compatible.*\\.gz$")) | .browser_download_url' | head -n 1)
           curl -sL "$MIHOMO_URL" -o mihomo.gz && gzip -d mihomo.gz && chmod +x mihomo
 
-          SINGBOX_URL=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/SagerNet/sing-box/releases/latest \
+          SINGBOX_URL=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest \
             | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url' | head -n 1)
           curl -sL "$SINGBOX_URL" -o singbox.tar.gz
           tar -xzf singbox.tar.gz --strip-components=1 -C .
@@ -151,27 +150,18 @@ jobs:
             compile_domain_list "$NAME"
           done
 
-          # =========================================================================
-          # BUILD MACRO DOMAIN BUNDLES
-          # =========================================================================
-          echo "Building Macro Domain Bundles..."
-
-          # 1. HageziSecurityAll (TIF-Mini, Fake, DynDNS, BadwareHoster)
           cat output/raw/HageziTIFMini.txt output/raw/HageziFake.txt output/raw/HageziDynDNS.txt output/raw/HageziBadwareHoster.txt \
             | sort -u > output/raw/HageziSecurityAll.txt
           compile_domain_list "HageziSecurityAll"
 
-          # 2. HageziContentAll (NSFW, Gambling, PopUpAds)
           cat output/raw/HageziNSFW.txt output/raw/HageziGambling.txt output/raw/HageziPopUpAds.txt \
             | sort -u > output/raw/HageziContentAll.txt
           compile_domain_list "HageziContentAll"
 
-          # 3. HageziNativeAll (All OEM Trackers Combined)
           cat output/raw/HageziNative*.txt \
             | sort -u > output/raw/HageziNativeAll.txt
           compile_domain_list "HageziNativeAll"
 
-          # Compile Geosite Data
           cd compiler-geosite
           go run ./ --datapath=./data --outputname=../output/hagezi-geosite.dat
           cd ..
@@ -218,17 +208,10 @@ jobs:
             compile_ip_list "$NAME"
           done
 
-          # =========================================================================
-          # BUILD MACRO IP BUNDLES
-          # =========================================================================
-          echo "Building Macro IP Bundles..."
-
-          # HageziSecurityIP (TIF-IP + DoH-IP)
           cat output/raw/HageziTIF_IP.txt output/raw/HageziDoH_IP.txt \
             | sort -u > output/raw/HageziSecurityIP.txt
           compile_ip_list "HageziSecurityIP"
 
-          # Compile GeoIP Data
           cat << 'EOF' > geoip_config.json
           {
             "input": [
@@ -290,17 +273,14 @@ jobs:
 
           tar -czf output/all-rulesets.tar.gz -C output mrs srs json list yaml raw hagezi-geosite.dat hagezi-geoip.dat 2>/dev/null || true
 
-          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            for ASSET in $(gh release view "$RELEASE_TAG" --json assets --jq '.assets[].name'); do
-              gh release delete-asset "$RELEASE_TAG" "$ASSET" -y || true
-            done
-            gh release edit "$RELEASE_TAG" --title "$RELEASE_TITLE" --notes "$RELEASE_NOTES"
-          else
-            gh release create "$RELEASE_TAG" \
-              --title "$RELEASE_TITLE" \
-              --notes "$RELEASE_NOTES" \
-              --latest
-          fi
+          gh release delete "$RELEASE_TAG" -y 2>/dev/null || true
+          git push origin ":refs/tags/$RELEASE_TAG" 2>/dev/null || true
+          git tag -d "$RELEASE_TAG" 2>/dev/null || true
+
+          gh release create "$RELEASE_TAG" \
+            --title "$RELEASE_TITLE" \
+            --notes "$RELEASE_NOTES" \
+            --latest
 
           gh release upload "$RELEASE_TAG" output/*.dat output/mrs/*.mrs output/srs/*.srs output/all-rulesets.tar.gz --clobber
 
