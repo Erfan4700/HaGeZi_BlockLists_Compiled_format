@@ -120,11 +120,13 @@ jobs:
             local NAME="$1"
             local RAW_FILE="output/raw/${NAME}.txt"
             local LOWER_NAME=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
+            local TEMP_DOMAIN="temp_domain_${NAME}.txt"
 
             cp "$RAW_FILE" "compiler-geosite/data/${LOWER_NAME}"
 
-            sed 's/^/+./' "$RAW_FILE" > temp_domain.txt
-            ./mihomo convert-ruleset domain text temp_domain.txt "output/mrs/${NAME}.mrs"
+            sed 's/^/+./' "$RAW_FILE" > "$TEMP_DOMAIN"
+            ./mihomo convert-ruleset domain text "$TEMP_DOMAIN" "output/mrs/${NAME}.mrs"
+            rm -f "$TEMP_DOMAIN"
 
             sed 's/^/DOMAIN-SUFFIX,/' "$RAW_FILE" > "output/list/${NAME}.list"
 
@@ -133,13 +135,11 @@ jobs:
 
             jq -R . "$RAW_FILE" | jq -s '{"version": 1, "rules": [{"domain_suffix": .}]}' > "output/json/${NAME}.json"
             ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
-
-            rm -f temp_domain.txt
           }
 
-          for NAME in "${!DOMAIN_LISTS[@]}"; do
-            URL="${DOMAIN_LISTS[$NAME]}"
-            echo "Processing DOMAIN list: $NAME..."
+          process_single_domain() {
+            local NAME="$1"
+            local URL="$2"
 
             curl -sSL -f "$URL" \
               | grep -v '^#' \
@@ -148,7 +148,20 @@ jobs:
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
             compile_domain_list "$NAME"
+          }
+
+          PARALLEL_JOBS=$(nproc || echo 4)
+          echo "Starting parallel processing with $PARALLEL_JOBS workers..."
+
+          for NAME in "${!DOMAIN_LISTS[@]}"; do
+            process_single_domain "$NAME" "${DOMAIN_LISTS[$NAME]}" &
+
+            while [ $(jobs -r -p | wc -l) -ge $PARALLEL_JOBS ]; do
+              sleep 0.1
+            done
           done
+
+          wait
 
           cat output/raw/HageziTIFMini.txt output/raw/HageziFake.txt output/raw/HageziDynDNS.txt output/raw/HageziBadwareHoster.txt \
             | sort -u > output/raw/HageziSecurityAll.txt
@@ -195,9 +208,9 @@ jobs:
             ./sing-box rule-set compile "output/json/${NAME}.json" -o "output/srs/${NAME}.srs"
           }
 
-          for NAME in "${!IP_LISTS[@]}"; do
-            URL="${IP_LISTS[$NAME]}"
-            echo "Processing IP list: $NAME..."
+          process_single_ip() {
+            local NAME="$1"
+            local URL="$2"
 
             curl -sSL -f "$URL" \
               | grep -v '^#' \
@@ -206,7 +219,13 @@ jobs:
               | tr -d '\r' > "output/raw/${NAME}.txt"
 
             compile_ip_list "$NAME"
+          }
+
+          for NAME in "${!IP_LISTS[@]}"; do
+            process_single_ip "$NAME" "${IP_LISTS[$NAME]}" &
           done
+
+          wait
 
           cat output/raw/HageziTIF_IP.txt output/raw/HageziDoH_IP.txt \
             | sort -u > output/raw/HageziSecurityIP.txt
