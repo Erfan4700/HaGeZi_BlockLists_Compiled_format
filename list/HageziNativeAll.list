@@ -442,7 +442,6 @@ DOMAIN-SUFFIX,api.hybrid.xiaomi.com
 DOMAIN-SUFFIX,api.installer.xiaomi.com
 DOMAIN-SUFFIX,api.jr.mi.com
 DOMAIN-SUFFIX,api.launcher.intl.miui.com
-DOMAIN-SUFFIX,api.metrics.us-west-2.iris.apx.amazon.dev
 DOMAIN-SUFFIX,api.micloud.xiaomi.net
 DOMAIN-SUFFIX,api.mintbrs.intl.miui.com
 DOMAIN-SUFFIX,api.miui.security.xiaomi.com
@@ -1969,6 +1968,7 @@ DOMAIN-SUFFIX,metrics.icloud.com
 DOMAIN-SUFFIX,metrics.media-amazon.com
 DOMAIN-SUFFIX,metrics.mzstatic.com
 DOMAIN-SUFFIX,metrics.us-east-1.iris.apx.amazon.dev
+DOMAIN-SUFFIX,metrics.us-west-2.iris.apx.amazon.dev
 DOMAIN-SUFFIX,metrics1-data-hicloud-com.ge.dbankedge.cn
 DOMAIN-SUFFIX,metrics1-data-hicloud-com.gere.dbankedge.cn
 DOMAIN-SUFFIX,metrics1-drcn-dt-dbankcloud-cn.ge.dbankedge.cn
@@ -2511,6 +2511,7 @@ DOMAIN-SUFFIX,report-in.opay.heytapmobile.com
 DOMAIN-SUFFIX,report-in.uc.heytapmobile.com
 DOMAIN-SUFFIX,report-sg.opay.heytapmobile.com
 DOMAIN-SUFFIX,report-sg.uc.heytapmobile.com
+DOMAIN-SUFFIX,report.diagnostic.networking.aws.dev
 DOMAIN-SUFFIX,report.gras.samsungdm.com
 DOMAIN-SUFFIX,report.n.xiaomi.com
 DOMAIN-SUFFIX,resolver.gslb.mi-idc.com

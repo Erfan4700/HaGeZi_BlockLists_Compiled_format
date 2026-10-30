@@ -442,7 +442,6 @@ api.hybrid.xiaomi.com
 api.installer.xiaomi.com
 api.jr.mi.com
 api.launcher.intl.miui.com
-api.metrics.us-west-2.iris.apx.amazon.dev
 api.micloud.xiaomi.net
 api.mintbrs.intl.miui.com
 api.miui.security.xiaomi.com
@@ -1969,6 +1968,7 @@ metrics.icloud.com
 metrics.media-amazon.com
 metrics.mzstatic.com
 metrics.us-east-1.iris.apx.amazon.dev
+metrics.us-west-2.iris.apx.amazon.dev
 metrics1-data-hicloud-com.ge.dbankedge.cn
 metrics1-data-hicloud-com.gere.dbankedge.cn
 metrics1-drcn-dt-dbankcloud-cn.ge.dbankedge.cn
@@ -2511,6 +2511,7 @@ report-in.opay.heytapmobile.com
 report-in.uc.heytapmobile.com
 report-sg.opay.heytapmobile.com
 report-sg.uc.heytapmobile.com
+report.diagnostic.networking.aws.dev
 report.gras.samsungdm.com
 report.n.xiaomi.com
 resolver.gslb.mi-idc.com
