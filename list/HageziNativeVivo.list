@@ -85,6 +85,7 @@ DOMAIN-SUFFIX,de-gdpr-err-up.vivoglobal.com
 DOMAIN-SUFFIX,de-gdpr-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,err-up.vivoglobal.com
 DOMAIN-SUFFIX,eu-album-api.vivoglobal.com
+DOMAIN-SUFFIX,eu-api-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-cota.vivoglobal.com
 DOMAIN-SUFFIX,eu-domaincfg.vivoglobal.com
 DOMAIN-SUFFIX,eu-errup.vivoglobal.com
@@ -110,6 +111,7 @@ DOMAIN-SUFFIX,in-adlog.vivoglobal.com
 DOMAIN-SUFFIX,in-adreq.vivoglobal.com
 DOMAIN-SUFFIX,in-adsjssdk.vivoglobal.com
 DOMAIN-SUFFIX,in-analyzer-appstore.vivoglobal.com
+DOMAIN-SUFFIX,in-api-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-apponrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-apport-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-apppnrt-stsdk.vivoglobal.com
@@ -125,6 +127,7 @@ DOMAIN-SUFFIX,in-errup.vivoglobal.com
 DOMAIN-SUFFIX,in-ex-adlog.vivoglobal.com
 DOMAIN-SUFFIX,in-monitor-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-news-abroad-backstage-interface.vivoglobal.com
+DOMAIN-SUFFIX,in-nrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-onrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-ort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-os-config-appstore.vivoglobal.com
