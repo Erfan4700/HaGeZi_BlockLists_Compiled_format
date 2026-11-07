@@ -1942,16 +1942,17 @@ DOMAIN-SUFFIX,we.antony-gordon.co.uk
 DOMAIN-SUFFIX,ir.barhousefarm.co.uk
 DOMAIN-SUFFIX,noon.begir.co.uk
 DOMAIN-SUFFIX,panir.begir.co.uk
+DOMAIN-SUFFIX,ir.brettanderson.co.uk
 DOMAIN-SUFFIX,adguard.cell.co.id
 DOMAIN-SUFFIX,dns.chaosen3.co.uk
 DOMAIN-SUFFIX,silver.ciaude.co.uk
 DOMAIN-SUFFIX,great.cipservice.co.uk
 DOMAIN-SUFFIX,dns-01.computerservices.co.nz
 DOMAIN-SUFFIX,dns-02.computerservices.co.nz
-DOMAIN-SUFFIX,ir-ir.connectina.co.uk
 DOMAIN-SUFFIX,adg.datamatter.co.za
 DOMAIN-SUFFIX,pihole.datamatter.co.za
 DOMAIN-SUFFIX,tazenafas.dingi3.co.uk
+DOMAIN-SUFFIX,ir.dinocol.co.uk
 DOMAIN-SUFFIX,adguard.discounthost.co.uk
 DOMAIN-SUFFIX,dns.eliv.co.kr
 DOMAIN-SUFFIX,team.fast--pro.co.uk
@@ -1995,12 +1996,10 @@ DOMAIN-SUFFIX,focus.utopia.gzone.co.kr
 DOMAIN-SUFFIX,panel.hook--tehran.co.uk
 DOMAIN-SUFFIX,ag.hostme.co.il
 DOMAIN-SUFFIX,ixl.math.hsf.co.za
-DOMAIN-SUFFIX,support.infinityhalo.co.uk
 DOMAIN-SUFFIX,dns.kloiber.co.at
 DOMAIN-SUFFIX,dns2.kloiber.co.at
 DOMAIN-SUFFIX,dns-one.lins.co.tt
 DOMAIN-SUFFIX,dns-three.lins.co.tt
-DOMAIN-SUFFIX,dl.linux-orggv.co.uk
 DOMAIN-SUFFIX,guard.lumusimc.co.uk
 DOMAIN-SUFFIX,ir.lv426.co.uk
 DOMAIN-SUFFIX,ir-ir.makkers.co.uk
@@ -2009,13 +2008,13 @@ DOMAIN-SUFFIX,dizgrakh.mamadali.co.uk
 DOMAIN-SUFFIX,jadide.mamadali.co.uk
 DOMAIN-SUFFIX,vasalshim.mamadgoli.co.uk
 DOMAIN-SUFFIX,api.mangoseason5.co.uk
+DOMAIN-SUFFIX,web.mangoseason7.co.uk
 DOMAIN-SUFFIX,ir.mediaad.co.uk
 DOMAIN-SUFFIX,org.mediaad.co.uk
 DOMAIN-SUFFIX,bastani.mikhay.co.uk
 DOMAIN-SUFFIX,nooshabe.mikhay.co.uk
 DOMAIN-SUFFIX,pashmak.mikhay.co.uk
 DOMAIN-SUFFIX,pofak.mikhay.co.uk
-DOMAIN-SUFFIX,new7.mizanmizanesgh.co.uk
 DOMAIN-SUFFIX,ir.mohearn.co.uk
 DOMAIN-SUFFIX,dns.moklav.co.jp
 DOMAIN-SUFFIX,puot.mozitop.co.uk
@@ -2031,6 +2030,7 @@ DOMAIN-SUFFIX,opsecmastur.nowhearthis.co.uk
 DOMAIN-SUFFIX,dns.nzxti5.co.uk
 DOMAIN-SUFFIX,dns.oliviertv.co.za
 DOMAIN-SUFFIX,boro.poolaki.co.uk
+DOMAIN-SUFFIX,nasho.poolaki.co.uk
 DOMAIN-SUFFIX,refiq.poolaki.co.uk
 DOMAIN-SUFFIX,jadid.porsorate.co.uk
 DOMAIN-SUFFIX,lightspeed.qr-code.co.za
@@ -2038,10 +2038,11 @@ DOMAIN-SUFFIX,mathnotes.qr-code.co.za
 DOMAIN-SUFFIX,dns.rawalker.co.nz
 DOMAIN-SUFFIX,nice.rozinalpoku.co.uk
 DOMAIN-SUFFIX,one.rozinalpoku.co.uk
+DOMAIN-SUFFIX,honar.saheledarya.co.uk
+DOMAIN-SUFFIX,mofid.saheledarya.co.uk
 DOMAIN-SUFFIX,ketri.samavar.co.uk
 DOMAIN-SUFFIX,isaco.ir.setado.co.uk
 DOMAIN-SUFFIX,reyhoon.shambelile.co.uk
-DOMAIN-SUFFIX,ir.sherlock049.co.uk
 DOMAIN-SUFFIX,dns.skuy.co.id
 DOMAIN-SUFFIX,my.soft98.co.uk
 DOMAIN-SUFFIX,dns.spil.co.id
@@ -2063,7 +2064,6 @@ DOMAIN-SUFFIX,dns.walshnet.co.uk
 DOMAIN-SUFFIX,agh.workfordemo.co.in
 DOMAIN-SUFFIX,qadim.zhigool.co.uk
 DOMAIN-SUFFIX,10bestvpn.co.uk
-DOMAIN-SUFFIX,3etare.co.uk
 DOMAIN-SUFFIX,accessvpn.co.uk
 DOMAIN-SUFFIX,ahvaz.co.uk
 DOMAIN-SUFFIX,akashiro.co.id
@@ -2082,10 +2082,10 @@ DOMAIN-SUFFIX,hax.co.id
 DOMAIN-SUFFIX,insteadvpn.co.cc
 DOMAIN-SUFFIX,jhndoes.co.uk
 DOMAIN-SUFFIX,lamnia.co.uk
+DOMAIN-SUFFIX,mangoseason8.co.uk
 DOMAIN-SUFFIX,my-private-network.co.uk
 DOMAIN-SUFFIX,ninjaproxy.co.uk
 DOMAIN-SUFFIX,noblocc.co.uk
-DOMAIN-SUFFIX,nocloudnew.co.uk
 DOMAIN-SUFFIX,nordvpn.co.il
 DOMAIN-SUFFIX,nordvpn.co.uk
 DOMAIN-SUFFIX,nordvpn.co.za
@@ -2103,7 +2103,6 @@ DOMAIN-SUFFIX,rudmoain.co.uk
 DOMAIN-SUFFIX,safesurfer.co.nz
 DOMAIN-SUFFIX,sbdns.co.in
 DOMAIN-SUFFIX,secvpnproxy.co.cc
-DOMAIN-SUFFIX,severjadid.co.uk
 DOMAIN-SUFFIX,sols.co.in
 DOMAIN-SUFFIX,suodbo.co.uk
 DOMAIN-SUFFIX,surfshark.co.uk
@@ -2268,6 +2267,7 @@ DOMAIN-SUFFIX,dns.controld.com
 DOMAIN-SUFFIX,doh.controld.com
 DOMAIN-SUFFIX,freedns.controld.com
 DOMAIN-SUFFIX,dns.cooluc.com
+DOMAIN-SUFFIX,map.cooptoop.site
 DOMAIN-SUFFIX,dns.corefusion.xyz
 DOMAIN-SUFFIX,core.mind.corega.ro
 DOMAIN-SUFFIX,real.coremindx.com
@@ -3024,6 +3024,7 @@ DOMAIN-SUFFIX,adguard.eximpius.xyz
 DOMAIN-SUFFIX,dns.exitstat.us
 DOMAIN-SUFFIX,adguard.exium.net
 DOMAIN-SUFFIX,dns.exonip.de
+DOMAIN-SUFFIX,dark-rush-85krcymd.expresshost.cloud
 DOMAIN-SUFFIX,rh4.ext.rocks
 DOMAIN-SUFFIX,proxy.extension.vn
 DOMAIN-SUFFIX,dns.extrawdw.net
@@ -3166,6 +3167,8 @@ DOMAIN-SUFFIX,dns.ffnw.de
 DOMAIN-SUFFIX,study.tests.fiat500.li
 DOMAIN-SUFFIX,dns.fidbonteam.ru
 DOMAIN-SUFFIX,dns.filipccz.eu
+DOMAIN-SUFFIX,ir.speed.finecooking.info
+DOMAIN-SUFFIX,fast.finecooking.info
 DOMAIN-SUFFIX,canvas-math-tools.firebaseapp.com
 DOMAIN-SUFFIX,infamous-scram-test.firebaseapp.com
 DOMAIN-SUFFIX,quix-vpn.firebaseapp.com
@@ -3417,6 +3420,7 @@ DOMAIN-SUFFIX,cloud.gqwyq.top
 DOMAIN-SUFFIX,adguard.grantbruneau.com
 DOMAIN-SUFFIX,cloud.graphicpoint.pl
 DOMAIN-SUFFIX,gov.grasic.info
+DOMAIN-SUFFIX,ir.grasic.info
 DOMAIN-SUFFIX,ir-ir.grasic.info
 DOMAIN-SUFFIX,dns.graybox-dev.ru
 DOMAIN-SUFFIX,vpn.greatfire.org
@@ -3453,7 +3457,6 @@ DOMAIN-SUFFIX,dns2.h0schi.cloud
 DOMAIN-SUFFIX,artiom.made.this.h0stname.net
 DOMAIN-SUFFIX,potatojuice.h0stname.net
 DOMAIN-SUFFIX,us.h133r.org
-DOMAIN-SUFFIX,nl7.h1cloud.net
 DOMAIN-SUFFIX,adguard.h22designs.com
 DOMAIN-SUFFIX,adg-nl.h4nt3r.com
 DOMAIN-SUFFIX,adguard.h4nt3r.com
@@ -3536,6 +3539,7 @@ DOMAIN-SUFFIX,rylan67imadethisguys.science.home-webserver.de
 DOMAIN-SUFFIX,pi.homeanywhere.org
 DOMAIN-SUFFIX,isolacje.homeip.net
 DOMAIN-SUFFIX,adguard01.homepeter.de
+DOMAIN-SUFFIX,net.hoookoopdn.site
 DOMAIN-SUFFIX,schoolmath.hop.sh
 DOMAIN-SUFFIX,dns.hopsken.com
 DOMAIN-SUFFIX,2wired.hopto.org
@@ -3965,6 +3969,7 @@ DOMAIN-SUFFIX,doh.kidzonet.io
 DOMAIN-SUFFIX,dns.kikis-cloud-services.uk
 DOMAIN-SUFFIX,doh.killtw.im
 DOMAIN-SUFFIX,blog.kimiblock.top
+DOMAIN-SUFFIX,max.kimt.click
 DOMAIN-SUFFIX,rh.kindlytouch.me
 DOMAIN-SUFFIX,imbored.kinemasot.cl
 DOMAIN-SUFFIX,what.kinemasot.cl
@@ -4123,7 +4128,9 @@ DOMAIN-SUFFIX,playernation.localization.ee
 DOMAIN-SUFFIX,playernationorg.localization.ee
 DOMAIN-SUFFIX,flat.loisy.it
 DOMAIN-SUFFIX,nas-fusion.loisy.it
+DOMAIN-SUFFIX,ajab.lolauth.info
 DOMAIN-SUFFIX,felan-by.lolauth.info
+DOMAIN-SUFFIX,nakhand-mesvak-gerone.lolauth.info
 DOMAIN-SUFFIX,nakoshimon-jomong.lolauth.info
 DOMAIN-SUFFIX,an.loliconapp.top
 DOMAIN-SUFFIX,adguard.londonwebnerd.cloud
@@ -4149,6 +4156,7 @@ DOMAIN-SUFFIX,dns.luismm2311.com
 DOMAIN-SUFFIX,doh.lujiacai.top
 DOMAIN-SUFFIX,dns.lululu.dev
 DOMAIN-SUFFIX,dns.luma-medien.com
+DOMAIN-SUFFIX,m.lumenpost.top
 DOMAIN-SUFFIX,bt.luoo.cc
 DOMAIN-SUFFIX,dns.lupine.solutions
 DOMAIN-SUFFIX,home.luther.io
@@ -4231,9 +4239,12 @@ DOMAIN-SUFFIX,httpdns.meituan.com
 DOMAIN-SUFFIX,httpdnsmultiapi.meituan.com
 DOMAIN-SUFFIX,httpdnsmultiapivip.meituan.com
 DOMAIN-SUFFIX,httpdnsvip.meituan.com
+DOMAIN-SUFFIX,chdhk8.ir.ir.ir.meli-n12.info
 DOMAIN-SUFFIX,s47n.ir.ir.ir.meli-n12.info
 DOMAIN-SUFFIX,s7n.ir.ir.ir.meli-n12.info
 DOMAIN-SUFFIX,sn.ir.ir.ir.meli-n12.info
+DOMAIN-SUFFIX,521.mmd1.meli-n12.info
+DOMAIN-SUFFIX,chd77k7.ir.meli-n13.info
 DOMAIN-SUFFIX,dns.melvin2204.nl
 DOMAIN-SUFFIX,testaghome.meshkov.info
 DOMAIN-SUFFIX,dns.mestdag.fr
@@ -4244,6 +4255,7 @@ DOMAIN-SUFFIX,esel.stusta.mhn.de
 DOMAIN-SUFFIX,muli.stusta.mhn.de
 DOMAIN-SUFFIX,securenet.mhsystems.net
 DOMAIN-SUFFIX,ardebill.miandoabs.info
+DOMAIN-SUFFIX,estevia.miandoabs.info
 DOMAIN-SUFFIX,gardeshgar.miandoabs.info
 DOMAIN-SUFFIX,sarma.miandoabs.info
 DOMAIN-SUFFIX,next.miao.ninja
@@ -4269,7 +4281,6 @@ DOMAIN-SUFFIX,api.miningbest.com
 DOMAIN-SUFFIX,mio.miosen.cyou
 DOMAIN-SUFFIX,dns.mipauns.com
 DOMAIN-SUFFIX,guard.miracloud.fr
-DOMAIN-SUFFIX,connect.mishutkin.click
 DOMAIN-SUFFIX,ultra.mishutkin.click
 DOMAIN-SUFFIX,netcup.mismat.ch
 DOMAIN-SUFFIX,httpdns.browser.miui.com
@@ -5067,7 +5078,6 @@ DOMAIN-SUFFIX,sat.ksf.qzz.io
 DOMAIN-SUFFIX,we-are.ksf.qzz.io
 DOMAIN-SUFFIX,dns.thouse.qzz.io
 DOMAIN-SUFFIX,zouter.zhang3118.qzz.io
-DOMAIN-SUFFIX,beanweb.qzz.io
 DOMAIN-SUFFIX,home.r01.fr
 DOMAIN-SUFFIX,resolver.r0cket.net
 DOMAIN-SUFFIX,tor.r0cket.net
@@ -5103,7 +5113,6 @@ DOMAIN-SUFFIX,dns.rbn.gr
 DOMAIN-SUFFIX,adguard.rdekuyper.nl
 DOMAIN-SUFFIX,1.rdnls.ru
 DOMAIN-SUFFIX,login.readinghelper.online
-DOMAIN-SUFFIX,dns.readlook.tk
 DOMAIN-SUFFIX,learn.readymindit.com
 DOMAIN-SUFFIX,research.readymindit.com
 DOMAIN-SUFFIX,www-p.reaper.mx
@@ -7661,7 +7670,6 @@ DOMAIN-SUFFIX,bettervpn.help
 DOMAIN-SUFFIX,bettingbet365.com
 DOMAIN-SUFFIX,bexumvpn.help
 DOMAIN-SUFFIX,bezlimitvpn.homes
-DOMAIN-SUFFIX,bfesedv.uk
 DOMAIN-SUFFIX,bfgok.com
 DOMAIN-SUFFIX,bfjqye.com
 DOMAIN-SUFFIX,bgpnet.org
@@ -13162,7 +13170,6 @@ DOMAIN-SUFFIX,proxy.sx
 DOMAIN-SUFFIX,proxy.vin
 DOMAIN-SUFFIX,proxy.yt
 DOMAIN-SUFFIX,proxy-123.com
-DOMAIN-SUFFIX,proxy-best.com
 DOMAIN-SUFFIX,proxy-bypass.com
 DOMAIN-SUFFIX,proxy-cheap.com
 DOMAIN-SUFFIX,proxy-german.de
@@ -13323,7 +13330,6 @@ DOMAIN-SUFFIX,pulyavpn.blog
 DOMAIN-SUFFIX,pulyavpn.cc
 DOMAIN-SUFFIX,pulyavpn.com
 DOMAIN-SUFFIX,pulyavpn.icu
-DOMAIN-SUFFIX,pulyavpn.ru
 DOMAIN-SUFFIX,pumplex.com
 DOMAIN-SUFFIX,punchb.xyz
 DOMAIN-SUFFIX,pupilproxy.com
@@ -13341,7 +13347,6 @@ DOMAIN-SUFFIX,purejsq.com
 DOMAIN-SUFFIX,purejsq.info
 DOMAIN-SUFFIX,purejsq.vip
 DOMAIN-SUFFIX,purejsq.xyz
-DOMAIN-SUFFIX,purejsq111.com
 DOMAIN-SUFFIX,purejsq666.com
 DOMAIN-SUFFIX,purejsqvpn.pro
 DOMAIN-SUFFIX,purekeji.com
@@ -13364,10 +13369,8 @@ DOMAIN-SUFFIX,pushvpn.com
 DOMAIN-SUFFIX,puvyubd.cn
 DOMAIN-SUFFIX,pvlxwwr.cn
 DOMAIN-SUFFIX,pvmj.top
-DOMAIN-SUFFIX,pwooswvg.com
 DOMAIN-SUFFIX,pwwtpiby.com
 DOMAIN-SUFFIX,pxcim.xyz
-DOMAIN-SUFFIX,pxgbpowx.com
 DOMAIN-SUFFIX,pxi-fusion.com
 DOMAIN-SUFFIX,pygos.space
 DOMAIN-SUFFIX,pyiirwlu.com
@@ -13386,7 +13389,6 @@ DOMAIN-SUFFIX,qasfmp.com
 DOMAIN-SUFFIX,qavrenio.ru
 DOMAIN-SUFFIX,qaxwjqdo.com
 DOMAIN-SUFFIX,qaz.tw
-DOMAIN-SUFFIX,qbcqn17eijd2ow6cun.online
 DOMAIN-SUFFIX,qcnjh2vv.com
 DOMAIN-SUFFIX,qdvr9rgf.com
 DOMAIN-SUFFIX,qeltruno.ru
@@ -13426,7 +13428,6 @@ DOMAIN-SUFFIX,qodami.com
 DOMAIN-SUFFIX,qolfgv.xyz
 DOMAIN-SUFFIX,qpadf.com
 DOMAIN-SUFFIX,qqmcfw.tech
-DOMAIN-SUFFIX,qrykgvdh.com
 DOMAIN-SUFFIX,qstam.ru
 DOMAIN-SUFFIX,qtrwplkdz.com
 DOMAIN-SUFFIX,qtyrqg.com
@@ -13468,9 +13469,7 @@ DOMAIN-SUFFIX,qwiepc.com
 DOMAIN-SUFFIX,qwpien.com
 DOMAIN-SUFFIX,qwruo.com
 DOMAIN-SUFFIX,qxydy.baby
-DOMAIN-SUFFIX,qy4jow5snndan.online
 DOMAIN-SUFFIX,qya97ge69i2loo.com
-DOMAIN-SUFFIX,qynsklyl.com
 DOMAIN-SUFFIX,qyov.top
 DOMAIN-SUFFIX,qytvipaff.cc
 DOMAIN-SUFFIX,qytvipaff.pro
@@ -13482,7 +13481,6 @@ DOMAIN-SUFFIX,qytvipaffa05.cc
 DOMAIN-SUFFIX,r-vpn.com
 DOMAIN-SUFFIX,r1bnc.com
 DOMAIN-SUFFIX,r1v892ck.com
-DOMAIN-SUFFIX,r6oemdos.online
 DOMAIN-SUFFIX,ra4wvpn.com
 DOMAIN-SUFFIX,raabta.xyz
 DOMAIN-SUFFIX,rabbitdns.org
@@ -13522,7 +13520,6 @@ DOMAIN-SUFFIX,rayneau.fr
 DOMAIN-SUFFIX,rayobyte.com
 DOMAIN-SUFFIX,rayvpn.help
 DOMAIN-SUFFIX,razord.top
-DOMAIN-SUFFIX,rbkqavjt.cc
 DOMAIN-SUFFIX,rblblbliq.top
 DOMAIN-SUFFIX,rcvqvgo.com
 DOMAIN-SUFFIX,rd-service.moscow
