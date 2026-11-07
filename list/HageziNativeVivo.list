@@ -55,9 +55,6 @@ DOMAIN-SUFFIX,asia-vpushonrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,asia-vpushort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,br-p.vivoglobal.com
 DOMAIN-SUFFIX,cl-vcode-api.vivoglobal.com
-DOMAIN-SUFFIX,cn-zh-ort-stsdk.vivoglobal.com
-DOMAIN-SUFFIX,cn-zh-prt-stsdk.vivoglobal.com
-DOMAIN-SUFFIX,cn-zh-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,cname-ali-asia-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,cname-asia-comonrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,cname-asia-st-exappupgrade.vivoglobal.com
@@ -89,12 +86,12 @@ DOMAIN-SUFFIX,eu-api-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-cota.vivoglobal.com
 DOMAIN-SUFFIX,eu-domaincfg.vivoglobal.com
 DOMAIN-SUFFIX,eu-errup.vivoglobal.com
+DOMAIN-SUFFIX,eu-nrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-onrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-ort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-p.vivoglobal.com
 DOMAIN-SUFFIX,eu-pnrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-romsp-unifyconfig.vivoglobal.com
-DOMAIN-SUFFIX,eu-st-exappupgrade.vivoglobal.com
 DOMAIN-SUFFIX,eu-st-sl.vivoglobal.com
 DOMAIN-SUFFIX,eu-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-timesync.vivoglobal.com
@@ -110,7 +107,6 @@ DOMAIN-SUFFIX,in-ad-mkt-vivofs.vivoglobal.com
 DOMAIN-SUFFIX,in-adlog.vivoglobal.com
 DOMAIN-SUFFIX,in-adreq.vivoglobal.com
 DOMAIN-SUFFIX,in-adsjssdk.vivoglobal.com
-DOMAIN-SUFFIX,in-analyzer-appstore.vivoglobal.com
 DOMAIN-SUFFIX,in-api-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-apponrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-apport-stsdk.vivoglobal.com
@@ -140,7 +136,6 @@ DOMAIN-SUFFIX,in-vcode-od.vivoglobal.com
 DOMAIN-SUFFIX,in-vcode-or.vivoglobal.com
 DOMAIN-SUFFIX,in-vpushonrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-vpushort-stsdk.vivoglobal.com
-DOMAIN-SUFFIX,kz-album-api.vivoglobal.com
 DOMAIN-SUFFIX,kz-cname-sin01-bigdata.vivoglobal.com
 DOMAIN-SUFFIX,kz-cota.vivoglobal.com
 DOMAIN-SUFFIX,kz-err-up.vivoglobal.com
@@ -217,6 +212,7 @@ DOMAIN-SUFFIX,tr-onrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,tr-ort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,tr-p.vivoglobal.com
 DOMAIN-SUFFIX,tr-pnrt-stsdk.vivoglobal.com
+DOMAIN-SUFFIX,tr-prt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,tr-romsp-unifyconfig.vivoglobal.com
 DOMAIN-SUFFIX,tr-st-sl.vivoglobal.com
 DOMAIN-SUFFIX,tr-st-sysupgrade.vivoglobal.com

@@ -33,7 +33,6 @@ DOMAIN-SUFFIX,fbs.smoot.apple.com
 DOMAIN-SUFFIX,ads.apple.com
 DOMAIN-SUFFIX,advertising.apple.com
 DOMAIN-SUFFIX,advp.apple.com
-DOMAIN-SUFFIX,analytics-events.apple.com
 DOMAIN-SUFFIX,api-adservices.apple.com
 DOMAIN-SUFFIX,books-analytics-events.apple.com
 DOMAIN-SUFFIX,cstat.apple.com
@@ -42,9 +41,7 @@ DOMAIN-SUFFIX,databeacon.apple.com
 DOMAIN-SUFFIX,datacollection.apple.com
 DOMAIN-SUFFIX,diagassets.apple.com
 DOMAIN-SUFFIX,diagnostics.apple.com
-DOMAIN-SUFFIX,dz1dt3wqswdezgx4j2ryem5iad.apple.com
 DOMAIN-SUFFIX,experiments.apple.com
-DOMAIN-SUFFIX,flirfvysba2opz0zmzqs5iuiad.apple.com
 DOMAIN-SUFFIX,freeform-events.apple.com
 DOMAIN-SUFFIX,graffiti-tags.apple.com
 DOMAIN-SUFFIX,iad.apple.com
@@ -59,7 +56,6 @@ DOMAIN-SUFFIX,iphonesubmissions.apple.com
 DOMAIN-SUFFIX,iphonesubmissions-old.apple.com
 DOMAIN-SUFFIX,launch.apple.com
 DOMAIN-SUFFIX,metrics.apple.com
-DOMAIN-SUFFIX,news-analytics-events.apple.com
 DOMAIN-SUFFIX,news-app-events.apple.com
 DOMAIN-SUFFIX,news-events.apple.com
 DOMAIN-SUFFIX,news-notification-events.apple.com
@@ -68,7 +64,6 @@ DOMAIN-SUFFIX,notes-analytics-events.apple.com
 DOMAIN-SUFFIX,odin-signals.apple.com
 DOMAIN-SUFFIX,performance-partners.apple.com
 DOMAIN-SUFFIX,phonesubmissions.apple.com
-DOMAIN-SUFFIX,podcasts-analytics-events.apple.com
 DOMAIN-SUFFIX,prd-usw2-requestattribution-iad.apple.com
 DOMAIN-SUFFIX,proxy-skadnetwork.apple.com
 DOMAIN-SUFFIX,radarsubmissions.apple.com
@@ -77,7 +72,6 @@ DOMAIN-SUFFIX,securemetrics.apple.com
 DOMAIN-SUFFIX,securemvt.apple.com
 DOMAIN-SUFFIX,stocks-analytics-events.apple.com
 DOMAIN-SUFFIX,supportmetrics.apple.com
-DOMAIN-SUFFIX,tv-analytics-events.apple.com
 DOMAIN-SUFFIX,weather-analytics-events.apple.com
 DOMAIN-SUFFIX,xp.apple.com
 DOMAIN-SUFFIX,xp-cdn.apple.com

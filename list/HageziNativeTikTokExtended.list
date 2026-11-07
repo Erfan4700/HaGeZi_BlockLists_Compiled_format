@@ -117,6 +117,7 @@ DOMAIN-SUFFIX,xlog.capcutapi.us
 DOMAIN-SUFFIX,xlog-va.capcutapi.com
 DOMAIN-SUFFIX,frontier.capcutw.us
 DOMAIN-SUFFIX,frontier-us-ttp2.capcutw.us
+DOMAIN-SUFFIX,log9-normal-c-useast1a.tiktokv.com.ecdnx.com
 DOMAIN-SUFFIX,analytics.tiktok.com.edgekey.net
 DOMAIN-SUFFIX,analytics-attribution-va.tiktok.com.edgekey.net
 DOMAIN-SUFFIX,analytics-exp-i18n.tiktok.com.edgekey.net
@@ -187,6 +188,13 @@ DOMAIN-SUFFIX,p16-ttam-sg.ibyteimg.com
 DOMAIN-SUFFIX,p16-ttam-va.ibyteimg.com
 DOMAIN-SUFFIX,p19-ttam-sg.ibyteimg.com
 DOMAIN-SUFFIX,p19-ttam-va.ibyteimg.com
+DOMAIN-SUFFIX,log16-normal-alisg.tiktokv.com.kp45.ru
+DOMAIN-SUFFIX,log22-normal-alisg.tiktokv.com.kp45.ru
+DOMAIN-SUFFIX,mon16-normal-alisg.tiktokv.com.kp45.ru
+DOMAIN-SUFFIX,rtlog16-normal-alisg.tiktokv.com.kp45.ru
+DOMAIN-SUFFIX,rtlog22-normal-alisg.tiktokv.com.kp45.ru
+DOMAIN-SUFFIX,log3-normal-c-alisg.tiktokv.com.w.kunlunsl.com
+DOMAIN-SUFFIX,log3-normal-c-useast1a.tiktokv.com.w.kunlunsl.com
 DOMAIN-SUFFIX,abtest-ch.snssdk.com
 DOMAIN-SUFFIX,analytics.snssdk.com
 DOMAIN-SUFFIX,applog.snssdk.com
@@ -267,7 +275,6 @@ DOMAIN-SUFFIX,mssdk-i18n.tiktok.com
 DOMAIN-SUFFIX,mssdk-quic-sg.tiktok.com
 DOMAIN-SUFFIX,mssdk-sg.tiktok.com
 DOMAIN-SUFFIX,mssdk-va.tiktok.com
-DOMAIN-SUFFIX,ad-union-i18n-api.tos-sg.tiktok-row.org
 DOMAIN-SUFFIX,mcs.tiktok-row.net
 DOMAIN-SUFFIX,p16-tiktok-ads-sg.tiktokcdn.com
 DOMAIN-SUFFIX,p16-ttam-va.tiktokcdn.com
@@ -313,12 +320,10 @@ DOMAIN-SUFFIX,ad.tiktokv.com
 DOMAIN-SUFFIX,ad.tiktokv.eu
 DOMAIN-SUFFIX,ad.tiktokv.us
 DOMAIN-SUFFIX,ad-format.tiktokv.eu
-DOMAIN-SUFFIX,ad-format.tiktokv.us
 DOMAIN-SUFFIX,ad-format-i18n.tiktokv.com
 DOMAIN-SUFFIX,ad-format-ie.tiktokv.eu
 DOMAIN-SUFFIX,ad-format-ru.tiktokv.com
 DOMAIN-SUFFIX,ad-format-sg.tiktokv.com
-DOMAIN-SUFFIX,ad-format-ttp2.tiktokv.eu
 DOMAIN-SUFFIX,ad-format-ttp2.tiktokv.us
 DOMAIN-SUFFIX,ad-format16-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,ad-instantpage.tiktokv.eu
@@ -370,12 +375,9 @@ DOMAIN-SUFFIX,live-video-log16-normal-useast5.tiktokv.us
 DOMAIN-SUFFIX,live-video-log16-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,location.tiktokv.com
 DOMAIN-SUFFIX,location.tiktokv.eu
-DOMAIN-SUFFIX,location.tiktokv.us
 DOMAIN-SUFFIX,location-i18n.tiktokv.com
 DOMAIN-SUFFIX,location-ie.tiktokv.eu
-DOMAIN-SUFFIX,location-ru.tiktokv.com
 DOMAIN-SUFFIX,location-sg.tiktokv.com
-DOMAIN-SUFFIX,location-ttp2.tiktokv.eu
 DOMAIN-SUFFIX,location-ttp2.tiktokv.us
 DOMAIN-SUFFIX,location-v6.tiktokv.com
 DOMAIN-SUFFIX,location-v6.tiktokv.eu
@@ -387,7 +389,6 @@ DOMAIN-SUFFIX,location-v6-ttp2.tiktokv.eu
 DOMAIN-SUFFIX,location-v6-ttp2.tiktokv.us
 DOMAIN-SUFFIX,location-v6-va.tiktokv.com
 DOMAIN-SUFFIX,location-va.tiktokv.com
-DOMAIN-SUFFIX,location16-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,locationv16-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,log.tiktokv.com
 DOMAIN-SUFFIX,log.tiktokv.eu
@@ -582,7 +583,6 @@ DOMAIN-SUFFIX,rtc-logger.tiktokv.com
 DOMAIN-SUFFIX,rtc-logger.tiktokv.eu
 DOMAIN-SUFFIX,rtc-logger.tiktokv.us
 DOMAIN-SUFFIX,rtc-logger-i18n.tiktokv.com
-DOMAIN-SUFFIX,rtc-logger-ie.tiktokv.eu
 DOMAIN-SUFFIX,rtc-logger-ttp2.tiktokv.eu
 DOMAIN-SUFFIX,rtc-logger-ttp2.tiktokv.us
 DOMAIN-SUFFIX,rtc-logger-va.tiktokv.com
