@@ -12,7 +12,6 @@ DOMAIN-SUFFIX,metrics.dt.dbankcloud.cn
 DOMAIN-SUFFIX,metrics-dra.dt.dbankcloud.cn
 DOMAIN-SUFFIX,metrics-dra.dt.dbankcloud.com
 DOMAIN-SUFFIX,metrics-drcn.dt.dbankcloud.cn
-DOMAIN-SUFFIX,metrics-drcn.dt.dbankcloud.com
 DOMAIN-SUFFIX,metrics-dre.dt.dbankcloud.cn
 DOMAIN-SUFFIX,metrics1-drcn.dt.dbankcloud.cn
 DOMAIN-SUFFIX,connect-drru.hispace.dbankcloud.cn
@@ -20,7 +19,6 @@ DOMAIN-SUFFIX,connect-drru.hispace.dbankcloud.ru
 DOMAIN-SUFFIX,connect-dra.map.dbankcloud.com
 DOMAIN-SUFFIX,connect-dre.map.dbankcloud.com
 DOMAIN-SUFFIX,ad-drcn.media.dbankcloud.cn
-DOMAIN-SUFFIX,ad-drcn.media.dbankcloud.ru
 DOMAIN-SUFFIX,adx-dra.op.dbankcloud.com
 DOMAIN-SUFFIX,adx-drcn.op.dbankcloud.cn
 DOMAIN-SUFFIX,adx-dre.op.dbankcloud.com
@@ -99,6 +97,14 @@ DOMAIN-SUFFIX,grs.hicloud.com
 DOMAIN-SUFFIX,logbak.hicloud.com
 DOMAIN-SUFFIX,logservice.hicloud.com
 DOMAIN-SUFFIX,logservice1.hicloud.com
+DOMAIN-SUFFIX,grayr.abx.ipd.hihonor.com
+DOMAIN-SUFFIX,apm.yun.hihonor.com
+DOMAIN-SUFFIX,apm-ap.yun.hihonor.com
+DOMAIN-SUFFIX,apm-eu.yun.hihonor.com
+DOMAIN-SUFFIX,apm-fr.yun.hihonor.com
+DOMAIN-SUFFIX,apm-ru.yun.hihonor.com
+DOMAIN-SUFFIX,apm-sg.yun.hihonor.com
+DOMAIN-SUFFIX,rms-behavior-collect-drcn.hihonorcdn.com
 DOMAIN-SUFFIX,honorsearch-dra.hiboard.hihonorcloud.com
 DOMAIN-SUFFIX,honorsearch-drcn.hiboard.hihonorcloud.com
 DOMAIN-SUFFIX,honorsearch-dre.hiboard.hihonorcloud.com
@@ -110,6 +116,10 @@ DOMAIN-SUFFIX,log-dra.platform.hihonorcloud.com
 DOMAIN-SUFFIX,log-drcn.platform.hihonorcloud.com
 DOMAIN-SUFFIX,log-dre.platform.hihonorcloud.com
 DOMAIN-SUFFIX,log-drru.platform.hihonorcloud.com
+DOMAIN-SUFFIX,remoteconfig-dra.platform.hihonorcloud.com
+DOMAIN-SUFFIX,remoteconfig-drcn.platform.hihonorcloud.com
+DOMAIN-SUFFIX,remoteconfig-dre.platform.hihonorcloud.com
+DOMAIN-SUFFIX,remoteconfig-uat-drcn.platform.hihonorcloud.com
 DOMAIN-SUFFIX,tracking-data.platform.hihonorcloud.com
 DOMAIN-SUFFIX,tracking-data-drru.platform.hihonorcloud.com
 DOMAIN-SUFFIX,dt.hihonorcloud.com
@@ -131,5 +141,6 @@ DOMAIN-SUFFIX,nsp-logservice-weardevice-p42-drcn.obs.cn-north-2.myhuaweicloud.co
 DOMAIN-SUFFIX,nsp-logservice-weardevice-p51-drcn.obs.cn-north-2.myhuaweicloud.com
 DOMAIN-SUFFIX,nsp-logservice-hiview-p01-drru.obs.ru-northwest-2.myhuaweicloud.ru
 DOMAIN-SUFFIX,logserver.nzxcloud.cn
+DOMAIN-SUFFIX,hihonor.api.useinsider.com
 DOMAIN-SUFFIX,logservice.vmall.com
 DOMAIN-SUFFIX,h4g3z1-native-huawei.web.app
