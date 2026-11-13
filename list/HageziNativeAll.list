@@ -146,12 +146,12 @@ DOMAIN-SUFFIX,ad-instantpage.tiktokv.us
 DOMAIN-SUFFIX,ad-instantpage.tiktokv.us.edgesuite.net
 DOMAIN-SUFFIX,ad-instantpage.tiktokv.us.ttdns4.com
 DOMAIN-SUFFIX,ad-instantpage.us.tiktokv.com
-DOMAIN-SUFFIX,ad.cdn.pandora.xiaomi.com
 DOMAIN-SUFFIX,ad.eu.xiaomi.com
 DOMAIN-SUFFIX,ad.india.xiaomi.com
 DOMAIN-SUFFIX,ad.intl.xiaomi.com
 DOMAIN-SUFFIX,ad.intl.xiaomi.com.edgesuite.net
 DOMAIN-SUFFIX,ad.intl.xiaomi.com.ksyna.net
+DOMAIN-SUFFIX,ad.intl.xiaomi.com.mgslb.com
 DOMAIN-SUFFIX,ad.mi.com
 DOMAIN-SUFFIX,ad.miui.com
 DOMAIN-SUFFIX,ad.msn.com
@@ -224,6 +224,7 @@ DOMAIN-SUFFIX,ads.heytapmobile.com
 DOMAIN-SUFFIX,ads.in.tiktok.com
 DOMAIN-SUFFIX,ads.jp.msn.com
 DOMAIN-SUFFIX,ads.lgtvcommon.com
+DOMAIN-SUFFIX,ads.mi.com
 DOMAIN-SUFFIX,ads.microsoft.com
 DOMAIN-SUFFIX,ads.msn.com
 DOMAIN-SUFFIX,ads.oppomobile.com
@@ -552,12 +553,14 @@ DOMAIN-SUFFIX,assoc-msdk-us.amazon-adsystem.com
 DOMAIN-SUFFIX,at-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,at-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,at-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,at.tv.global.mi.com
 DOMAIN-SUFFIX,atfe.amazon-adsystem.com
 DOMAIN-SUFFIX,atue.amazon-adsystem.com
 DOMAIN-SUFFIX,au-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,au-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,au-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,au.ff.avast.sec.miui.com
+DOMAIN-SUFFIX,au.tv.global.mi.com
 DOMAIN-SUFFIX,auc-visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,audiobible-production-analytics-eh.servicebus.windows.net
 DOMAIN-SUFFIX,auth.api.gitv.tv
@@ -591,6 +594,7 @@ DOMAIN-SUFFIX,bds.snssdk.com
 DOMAIN-SUFFIX,be-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,be-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,be-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,be.tv.global.mi.com
 DOMAIN-SUFFIX,beacon.shazam.com
 DOMAIN-SUFFIX,beacons.trafficmanager.net
 DOMAIN-SUFFIX,beacons.xboxlive.com
@@ -621,9 +625,11 @@ DOMAIN-SUFFIX,br-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,br-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,br-p.vivoglobal.com
 DOMAIN-SUFFIX,br-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,br.tv.global.mi.com
 DOMAIN-SUFFIX,brc-visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,browser-api-br.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-fr.heytapmobile.com
+DOMAIN-SUFFIX,browser-api-gl-01.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-gl.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-id.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-in.heytapmobile.com
@@ -655,6 +661,7 @@ DOMAIN-SUFFIX,bw-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,by-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,by-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,by-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,by.tv.global.mi.com
 DOMAIN-SUFFIX,bz-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,c-bingapis-com.dual-a-0034.a-msedge.net
 DOMAIN-SUFFIX,c-ring-fallback.msedge.net
@@ -705,6 +712,7 @@ DOMAIN-SUFFIX,c3mini.pandora.xiaomi.com
 DOMAIN-SUFFIX,ca-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ca-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ca-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,ca.tv.global.mi.com
 DOMAIN-SUFFIX,cac-visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,cache.datamart.windows.com
 DOMAIN-SUFFIX,callback.xmpush.xiaomi.com
@@ -733,6 +741,7 @@ DOMAIN-SUFFIX,ch-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ch-asimov-leafs-events-data.trafficmanager.net
 DOMAIN-SUFFIX,ch-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ch-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,ch.tv.global.mi.com
 DOMAIN-SUFFIX,channelusa.samsung.com
 DOMAIN-SUFFIX,child.sec.miui.com
 DOMAIN-SUFFIX,chong.sec.miui.com
@@ -756,6 +765,7 @@ DOMAIN-SUFFIX,cl-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,cl-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,cl-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,cl-vcode-api.vivoglobal.com
+DOMAIN-SUFFIX,cl.tv.global.mi.com
 DOMAIN-SUFFIX,clarity.microsoft.com
 DOMAIN-SUFFIX,classify-app-eu.allawnos.com
 DOMAIN-SUFFIX,classify-app-in.allawnos.com
@@ -944,6 +954,7 @@ DOMAIN-SUFFIX,cota-service-sg.allawnos.com
 DOMAIN-SUFFIX,cpu.samsungelectronics.com
 DOMAIN-SUFFIX,cr-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,cr-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,cr.tv.global.mi.com
 DOMAIN-SUFFIX,crypto-dsf-fr.allawnos.com
 DOMAIN-SUFFIX,crypto-dsf-in.allawnos.com
 DOMAIN-SUFFIX,crypto-dsf-sg.allawnos.com
@@ -992,8 +1003,11 @@ DOMAIN-SUFFIX,de-gdpr-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,de-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,de-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,de.pandora.xiaomi.com
+DOMAIN-SUFFIX,de.tv.global.mi.com
 DOMAIN-SUFFIX,dec-visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,dev-apigw.samsungdmroute.com
+DOMAIN-SUFFIX,dev.api.zhuti.n.xiaomi.com
+DOMAIN-SUFFIX,dev.market.n.xiaomi.com
 DOMAIN-SUFFIX,dev.staging.api.developer.n.xiaomi.com
 DOMAIN-SUFFIX,device-metrics-us-2.amazon.com
 DOMAIN-SUFFIX,device-metrics-us-ud.amazon.com
@@ -1050,6 +1064,7 @@ DOMAIN-SUFFIX,dt.hicloud.com
 DOMAIN-SUFFIX,dt.hihonorcloud.com
 DOMAIN-SUFFIX,dual-s-ring.msedge.net
 DOMAIN-SUFFIX,dvb.pandora.xiaomi.com
+DOMAIN-SUFFIX,dvb.pre.pandora.xiaomi.com
 DOMAIN-SUFFIX,dz-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,dz-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,e.mi.com
@@ -1065,6 +1080,7 @@ DOMAIN-SUFFIX,ee-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,eg-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,eg-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,eg-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,eg.tv.global.mi.com
 DOMAIN-SUFFIX,ehg-samsungusa.hitbox.com
 DOMAIN-SUFFIX,ehtelemetrystaging.servicebus.windows.net
 DOMAIN-SUFFIX,emq.xmpush.xiaomi.com
@@ -1074,6 +1090,7 @@ DOMAIN-SUFFIX,err.up.vivoglobal.com
 DOMAIN-SUFFIX,es-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,es-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,es-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,es.tv.global.mi.com
 DOMAIN-SUFFIX,et-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,eu-album-api.vivoglobal.com
 DOMAIN-SUFFIX,eu-api-stsdk.vivoglobal.com
@@ -1141,6 +1158,8 @@ DOMAIN-SUFFIX,excel-telemetry.wac.trafficmanager.net
 DOMAIN-SUFFIX,experiments.apple.com
 DOMAIN-SUFFIX,experiments.apple.com.edgekey.net
 DOMAIN-SUFFIX,extlog.snssdk.com
+DOMAIN-SUFFIX,extranet.ap-south-1.miui-l7-feedback.gualne84bg.elb.xiaomi.com
+DOMAIN-SUFFIX,extranet.ap-south-1.miui-l7-feedback.y5qvxdjy6g.elb.xiaomi.com
 DOMAIN-SUFFIX,extranet.ap-southeast-1.miui-l7-feedback.d6ocem01vo.elb.xiaomi.com
 DOMAIN-SUFFIX,extranet.ap-southeast-1.miui-l7-feedback.qkou0akepj.elb.xiaomi.com
 DOMAIN-SUFFIX,extranet.ap-southeast-1.miui-l7-feedback.s3hawgekth.elb.xiaomi.com
@@ -1159,6 +1178,9 @@ DOMAIN-SUFFIX,fe.us-west.ono.axp.amazon-adsystem.com
 DOMAIN-SUFFIX,featureinfo-service-sg.allawnos.com
 DOMAIN-SUFFIX,federatedanalytics.amazon.com
 DOMAIN-SUFFIX,feedback.miui.com
+DOMAIN-SUFFIX,feedback.pt.intl.xiaomi.com
+DOMAIN-SUFFIX,feedback.pt.rus.xiaomi.com
+DOMAIN-SUFFIX,feedback.pt.xiaomi.com
 DOMAIN-SUFFIX,feedback.search.microsoft.com
 DOMAIN-SUFFIX,feedbackws.fe.apple-dns.cn
 DOMAIN-SUFFIX,feedbackws.fe.apple-dns.net
@@ -1209,7 +1231,6 @@ DOMAIN-SUFFIX,fls-na.amazon.ca
 DOMAIN-SUFFIX,fls-na.amazon.com
 DOMAIN-SUFFIX,fls-na.amazon.com.br
 DOMAIN-SUFFIX,fls-na.amazon.com.mx
-DOMAIN-SUFFIX,foreign.coloros.com
 DOMAIN-SUFFIX,forester.a2z.com
 DOMAIN-SUFFIX,fourier-videoclip-eu.allawnos.com
 DOMAIN-SUFFIX,fourier-videoclip-in.allawnos.com
@@ -1222,6 +1243,7 @@ DOMAIN-SUFFIX,fr-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,fr-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,fr-register.xmpush.global.xiaomi.com
 DOMAIN-SUFFIX,fr.feedback.xmpush.global.xiaomi.com
+DOMAIN-SUFFIX,fr.tv.global.mi.com
 DOMAIN-SUFFIX,frc-visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,freeform-events.apple.com
 DOMAIN-SUFFIX,frontier-i18n.tiktokv.com
@@ -1284,6 +1306,7 @@ DOMAIN-SUFFIX,gateway.bingviz.microsoftapp.net
 DOMAIN-SUFFIX,gb-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,gb-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,gb-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,gb.tv.global.mi.com
 DOMAIN-SUFFIX,gd-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ge-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,geofence.sys.miui.com
@@ -1314,6 +1337,7 @@ DOMAIN-SUFFIX,gq-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,gr-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,gr-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,gr-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,gr.tv.global.mi.com
 DOMAIN-SUFFIX,graffiti-tags.apple.com
 DOMAIN-SUFFIX,grayr.abx.ipd.hihonor.com
 DOMAIN-SUFFIX,grs-dbankcloud-asia-dra.appacc-region.dbankedge.cn
@@ -1359,7 +1383,6 @@ DOMAIN-SUFFIX,h4g3z1-native-tiktok.web.app
 DOMAIN-SUFFIX,h4g3z1-native-vivo.web.app
 DOMAIN-SUFFIX,h4g3z1-native-winoffice.web.app
 DOMAIN-SUFFIX,h4g3z1-native-xiaomi.web.app
-DOMAIN-SUFFIX,h5-ru.video.intl.xiaomi.com
 DOMAIN-SUFFIX,h5.tv.mi.com
 DOMAIN-SUFFIX,h6.msn.com
 DOMAIN-SUFFIX,haohuo.snssdk.com
@@ -1377,6 +1400,7 @@ DOMAIN-SUFFIX,hizonetech.com
 DOMAIN-SUFFIX,hk-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,hk-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,hk-tracker.trafficmanager.net
+DOMAIN-SUFFIX,hk.tv.global.mi.com
 DOMAIN-SUFFIX,hme-live-loganalytics-namespace.servicebus.windows.net
 DOMAIN-SUFFIX,hme-uat-loganalytics-namespace.servicebus.windows.net
 DOMAIN-SUFFIX,hn-ad-lgsmartad-com.aws-prd.net
@@ -1388,9 +1412,12 @@ DOMAIN-SUFFIX,hook.gitv.pandora.xiaomi.com
 DOMAIN-SUFFIX,hot.browser.intl.miui.com
 DOMAIN-SUFFIX,hr-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,hr-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,hr.tv.global.mi.com
 DOMAIN-SUFFIX,hu-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,hu-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,hu-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,hu.tv.global.mi.com
+DOMAIN-SUFFIX,huangye.miui.com
 DOMAIN-SUFFIX,huosai.xiaomi.com
 DOMAIN-SUFFIX,hybrid.miui.com
 DOMAIN-SUFFIX,i-cn01a.ocloud.heytapmobi.com
@@ -1434,6 +1461,7 @@ DOMAIN-SUFFIX,id-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,id-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,id-third-appstore.vivoglobal.com
 DOMAIN-SUFFIX,id.push.heytapmobi.com
+DOMAIN-SUFFIX,id.tv.global.mi.com
 DOMAIN-SUFFIX,identity.browserapps.amazon.de
 DOMAIN-SUFFIX,idiagnostics-mdn1.apple.com
 DOMAIN-SUFFIX,idiagnostics.apple.com
@@ -1516,6 +1544,7 @@ DOMAIN-SUFFIX,inference-app-gateway.eastus2.cloudapp.azure.com
 DOMAIN-SUFFIX,inference-app-gateway.koreacentral.cloudapp.azure.com
 DOMAIN-SUFFIX,inference-app-gateway.northeurope.cloudapp.azure.com
 DOMAIN-SUFFIX,inference-location-livenet.trafficmanager.net
+DOMAIN-SUFFIX,info.analysis.kp.sec.miui.com
 DOMAIN-SUFFIX,ingest.appcenter.ms
 DOMAIN-SUFFIX,inputsuggestions.msdxcdn.microsoft.com
 DOMAIN-SUFFIX,insights.video.a2z.com
@@ -1533,6 +1562,7 @@ DOMAIN-SUFFIX,iphonesubmissions.apple.com.akadns.net
 DOMAIN-SUFFIX,iphonesubmissions.v.aaplimg.com
 DOMAIN-SUFFIX,iq-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,iq-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,iq.tv.global.mi.com
 DOMAIN-SUFFIX,ir-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ir-br.amazon-adsystem.com
 DOMAIN-SUFFIX,ir-ca.amazon-adsystem.com
@@ -1556,6 +1586,7 @@ DOMAIN-SUFFIX,ism-telemetry.trafficmanager.net
 DOMAIN-SUFFIX,it-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,it-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,it-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,it.tv.global.mi.com
 DOMAIN-SUFFIX,item-tracking.dev.sr.roku.com
 DOMAIN-SUFFIX,ja7-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,jm-ad-lgsmartad-com.aws-prd.net
@@ -1688,6 +1719,7 @@ DOMAIN-SUFFIX,location.us.tiktokv.com
 DOMAIN-SUFFIX,location16-normal-useastred.tiktokw.eu
 DOMAIN-SUFFIX,locationv16-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,lockcard-service-in.allawnos.com
+DOMAIN-SUFFIX,log-abroad.avlyun.sec.miui.com
 DOMAIN-SUFFIX,log-boot.capcutapi.com
 DOMAIN-SUFFIX,log-boot.tiktokv.com
 DOMAIN-SUFFIX,log-dr.tiktokv.com
@@ -2066,6 +2098,7 @@ DOMAIN-SUFFIX,metrics1.data.dbankcloud.cn
 DOMAIN-SUFFIX,mg-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,mi4crawler.pandora.xiaomi.com
 DOMAIN-SUFFIX,mibi.api.xiaomi.com
+DOMAIN-SUFFIX,mibi.stat.pt.xiaomi.com
 DOMAIN-SUFFIX,mibi.xiaomi.com
 DOMAIN-SUFFIX,micloudevents.preview.n.xiaomi.com
 DOMAIN-SUFFIX,migc.g.mi.com
@@ -2094,6 +2127,7 @@ DOMAIN-SUFFIX,mk-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ml-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,mlog.search.xiaomi.net
 DOMAIN-SUFFIX,mm-ad-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,mm.tv.global.mi.com
 DOMAIN-SUFFIX,mn-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,mo-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,moa-upload-in.allawnos.com
@@ -2200,6 +2234,7 @@ DOMAIN-SUFFIX,mon32-normal.capcutapi.com
 DOMAIN-SUFFIX,mon32-normal.tiktokv.com
 DOMAIN-SUFFIX,monbk.tiktokv.com
 DOMAIN-SUFFIX,monitor-stsdk.vivoglobal.com
+DOMAIN-SUFFIX,monitor.pt.ai.xiaomi.com
 DOMAIN-SUFFIX,monitor.scf.pt.xiaomi.com
 DOMAIN-SUFFIX,mqs-log.miui.com
 DOMAIN-SUFFIX,mr-ad-lgsmartad-com.aws-prd.net
@@ -2292,8 +2327,10 @@ DOMAIN-SUFFIX,mx-timesync.vivoglobal.com
 DOMAIN-SUFFIX,mx-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,mx-vcode-od.vivoglobal.com
 DOMAIN-SUFFIX,mx-vcode-or.vivoglobal.com
+DOMAIN-SUFFIX,mx.tv.global.mi.com
 DOMAIN-SUFFIX,my-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,my-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,my.tv.global.mi.com
 DOMAIN-SUFFIX,mz-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,na-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,nav.sec.miui.com
@@ -2316,6 +2353,7 @@ DOMAIN-SUFFIX,nl-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,nl-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,nl-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,nl.rcd.ptqy.gitv.tv
+DOMAIN-SUFFIX,nl.tv.global.mi.com
 DOMAIN-SUFFIX,nmetrics.samsung.com
 DOMAIN-SUFFIX,nmetrics.samsungmobile.com
 DOMAIN-SUFFIX,no-ad-lgsmartad-com.aws-prd.net
@@ -2429,6 +2467,7 @@ DOMAIN-SUFFIX,osb.samsungqbe.com
 DOMAIN-SUFFIX,ostorage-ocloud-in.allawnos.com
 DOMAIN-SUFFIX,ostorage-ocloud-sg.allawnos.com
 DOMAIN-SUFFIX,ota.cdn.pandora.xiaomi.com
+DOMAIN-SUFFIX,ota.foreign.coloros.com
 DOMAIN-SUFFIX,ota.ptqy.gitv.tv
 DOMAIN-SUFFIX,ottl7-l2.pandora.xiaomi.com
 DOMAIN-SUFFIX,outlookads.live.com
@@ -2520,9 +2559,11 @@ DOMAIN-SUFFIX,pixel-sync.trafficmanager.net
 DOMAIN-SUFFIX,pixel.staging.web.roku.com
 DOMAIN-SUFFIX,pixel.web.roku.com
 DOMAIN-SUFFIX,pk-ad-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,pk.tv.global.mi.com
 DOMAIN-SUFFIX,pl-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,pl-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,pl-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,pl.tv.global.mi.com
 DOMAIN-SUFFIX,plbusiness.samsung.com
 DOMAIN-SUFFIX,pmir.sec.miui.com
 DOMAIN-SUFFIX,pnrt-stsdk.vivoglobal.com
@@ -2582,6 +2623,7 @@ DOMAIN-SUFFIX,ps-us.amazon-adsystem.com
 DOMAIN-SUFFIX,pt-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,pt-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,pt-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,pt.tv.global.mi.com
 DOMAIN-SUFFIX,ptmi.gitv.pandora.xiaomi.com
 DOMAIN-SUFFIX,pull.mitv.pandora.xiaomi.com
 DOMAIN-SUFFIX,puma-api.ptqy.gitv.tv
@@ -2771,7 +2813,7 @@ DOMAIN-SUFFIX,ru-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,ru-vcode-od.vivoglobal.com
 DOMAIN-SUFFIX,ru-vcode-or.vivoglobal.com
 DOMAIN-SUFFIX,ru.feedback.xmpush.global.xiaomi.com
-DOMAIN-SUFFIX,ru.video.intl.xiaomi.com
+DOMAIN-SUFFIX,ru.tv.global.mi.com
 DOMAIN-SUFFIX,rum.ap-northeast-1.amazonaws.com
 DOMAIN-SUFFIX,rum.ap-southeast-1.amazonaws.com
 DOMAIN-SUFFIX,rum.ca-central-1.amazonaws.com
@@ -2786,6 +2828,7 @@ DOMAIN-SUFFIX,rus-service-eu.allawnos.com
 DOMAIN-SUFFIX,rus-service-in.allawnos.com
 DOMAIN-SUFFIX,rus-service-sg.allawnos.com
 DOMAIN-SUFFIX,rus-service-us.allawnos.com
+DOMAIN-SUFFIX,rus.foreign.coloros.com
 DOMAIN-SUFFIX,rus.miui.com
 DOMAIN-SUFFIX,ruvideo.cdn.pandora.intl.xiaomi.com
 DOMAIN-SUFFIX,rw-ad-lgsmartad-com.aws-prd.net
@@ -2798,6 +2841,7 @@ DOMAIN-SUFFIX,s3-iad-ww.cf.videorolls.row.aiv-cdn.net
 DOMAIN-SUFFIX,sa-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,sa-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,sa-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,sa.tv.global.mi.com
 DOMAIN-SUFFIX,sa.windows.com
 DOMAIN-SUFFIX,sam.msn.com
 DOMAIN-SUFFIX,samples.voice.cti.roku.com
@@ -2915,6 +2959,7 @@ DOMAIN-SUFFIX,sdkconfig.xiaomi.com
 DOMAIN-SUFFIX,se-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,se-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,se-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,se.tv.global.mi.com
 DOMAIN-SUFFIX,sea-log-rcv.vansound.com
 DOMAIN-SUFFIX,seao.business.samsung.com
 DOMAIN-SUFFIX,search.miui.com
@@ -2934,6 +2979,7 @@ DOMAIN-SUFFIX,securemvt.v.aaplimg.com
 DOMAIN-SUFFIX,self-events-data.trafficmanager.net
 DOMAIN-SUFFIX,sentry.be.xiaomi.com
 DOMAIN-SUFFIX,sentry.pay.xiaomi.com
+DOMAIN-SUFFIX,sentry.pt.xiaomi.com
 DOMAIN-SUFFIX,sentry.sec.miui.com
 DOMAIN-SUFFIX,sf-ssp.tiktokcdn-eu.com
 DOMAIN-SUFFIX,sf-ssp.tiktokcdn-eu.com.edgesuite.net
@@ -2978,6 +3024,7 @@ DOMAIN-SUFFIX,sidebar-apps-in.allawnos.com
 DOMAIN-SUFFIX,sidebar-apps-sg.allawnos.com
 DOMAIN-SUFFIX,sk-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,sk-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,sk.tv.global.mi.com
 DOMAIN-SUFFIX,sl-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,slb-apisnd-in.heytapmobile.com
 DOMAIN-SUFFIX,smartcard-apps-in.allawnos.com
@@ -3042,6 +3089,7 @@ DOMAIN-SUFFIX,st.amazon-adsystem.com
 DOMAIN-SUFFIX,staging-analyze.pt.xiaomi.com
 DOMAIN-SUFFIX,staging.api.zhuti.n.xiaomi.com
 DOMAIN-SUFFIX,staging.appapi.n.xiaomi.com
+DOMAIN-SUFFIX,staging.market.n.xiaomi.com
 DOMAIN-SUFFIX,staging.stat.pt.xiaomi.com
 DOMAIN-SUFFIX,stat.browser.heytapmobi.com
 DOMAIN-SUFFIX,stat.miui.com
@@ -3116,6 +3164,7 @@ DOMAIN-SUFFIX,tgtus1-word-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,th-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,th-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,th-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,th.tv.global.mi.com
 DOMAIN-SUFFIX,thinqrecommend.lgtvcommon.com
 DOMAIN-SUFFIX,thm.market.xiaomi.com
 DOMAIN-SUFFIX,time.video.ptqy.gitv.tv
@@ -3208,6 +3257,7 @@ DOMAIN-SUFFIX,tr-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,tr-vcode-od.vivoglobal.com
 DOMAIN-SUFFIX,tr-vcode-or.vivoglobal.com
 DOMAIN-SUFFIX,tr-weather.vivoglobal.com
+DOMAIN-SUFFIX,tr.tv.global.mi.com
 DOMAIN-SUFFIX,trace-h5sdk.vivo.com.cn
 DOMAIN-SUFFIX,trace.app-performance.music.amazon.dev
 DOMAIN-SUFFIX,traces-us-east-1.dev.sr.roku.com
@@ -3247,6 +3297,7 @@ DOMAIN-SUFFIX,u-id.cpc.heytapmobile.com
 DOMAIN-SUFFIX,ua-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ua-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ua-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,ua.tv.global.mi.com
 DOMAIN-SUFFIX,uba.huaweicloud.com
 DOMAIN-SUFFIX,ubacollect-drcn.cloud.dbankcloud.cn
 DOMAIN-SUFFIX,uc.heytapmobile.com
@@ -3302,6 +3353,7 @@ DOMAIN-SUFFIX,us-east.ono.axp.amazon-adsystem.com
 DOMAIN-SUFFIX,us-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,us-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,us-report.gras.samsungdm.com
+DOMAIN-SUFFIX,us.tv.global.mi.com
 DOMAIN-SUFFIX,us7-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,usc-onenote-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,usc-visio-telemetry.officeapps.live.com
@@ -3353,6 +3405,7 @@ DOMAIN-SUFFIX,video-api-fr.heytapmobile.com
 DOMAIN-SUFFIX,video-api-gl.heytapmobile.com
 DOMAIN-SUFFIX,video-api-in.heytapmobile.com
 DOMAIN-SUFFIX,video-api-ru.heytapmobile.com
+DOMAIN-SUFFIX,video.intl.xiaomi.com
 DOMAIN-SUFFIX,video.kts.g.mi.com
 DOMAIN-SUFFIX,video.market.xiaomi.com
 DOMAIN-SUFFIX,videoads.lgtvcommon.com
@@ -3362,6 +3415,8 @@ DOMAIN-SUFFIX,visio-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,vn-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,vn-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,vn-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,vn.tv.global.mi.com
+DOMAIN-SUFFIX,voip.game.xiaomi.com
 DOMAIN-SUFFIX,vortex-sandbox.data.microsoft.com
 DOMAIN-SUFFIX,vortex-win-sandbox.data.microsoft.com
 DOMAIN-SUFFIX,vortex-win.data.microsoft.com
@@ -3389,7 +3444,6 @@ DOMAIN-SUFFIX,weus2watcab02.blob.core.windows.net
 DOMAIN-SUFFIX,win-global-asimov-leafs-events-data.trafficmanager.net
 DOMAIN-SUFFIX,win10-trt.msedge.net
 DOMAIN-SUFFIX,wiseconfig.lgtvcommon.com
-DOMAIN-SUFFIX,wl.voip.game.xiaomi.com
 DOMAIN-SUFFIX,wms-eu.amazon-adsystem.com
 DOMAIN-SUFFIX,wms-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,wms-in.amazon-adsystem.com
@@ -3445,6 +3499,7 @@ DOMAIN-SUFFIX,za-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,za-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,za-p.vivoglobal.com
 DOMAIN-SUFFIX,za-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,za.tv.global.mi.com
 DOMAIN-SUFFIX,zasc-cota.vivoglobal.com
 DOMAIN-SUFFIX,zasc-domaincfg.vivoglobal.com
 DOMAIN-SUFFIX,zasc-err-up.vivoglobal.com

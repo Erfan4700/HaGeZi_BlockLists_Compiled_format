@@ -87,12 +87,13 @@ DOMAIN-SUFFIX,conn-service-gl-01.allawntech.com
 DOMAIN-SUFFIX,smartcard.apps.coloros.com
 DOMAIN-SUFFIX,smartcardf.apps.coloros.com
 DOMAIN-SUFFIX,smartcardf-eu.apps.coloros.com
+DOMAIN-SUFFIX,ota.foreign.coloros.com
+DOMAIN-SUFFIX,rus.foreign.coloros.com
 DOMAIN-SUFFIX,conn1.coloros.com
 DOMAIN-SUFFIX,conn2.coloros.com
 DOMAIN-SUFFIX,conn3.coloros.com
 DOMAIN-SUFFIX,conn4.coloros.com
 DOMAIN-SUFFIX,conn5.coloros.com
-DOMAIN-SUFFIX,foreign.coloros.com
 DOMAIN-SUFFIX,guif.coloros.com
 DOMAIN-SUFFIX,guif-eu.coloros.com
 DOMAIN-SUFFIX,icota-eu.coloros.com
@@ -313,6 +314,7 @@ DOMAIN-SUFFIX,bdapi-ads-sg.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-br.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-fr.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-gl.heytapmobile.com
+DOMAIN-SUFFIX,browser-api-gl-01.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-id.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-in.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-my.heytapmobile.com

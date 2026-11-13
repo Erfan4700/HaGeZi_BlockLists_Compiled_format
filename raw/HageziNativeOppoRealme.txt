@@ -87,12 +87,13 @@ conn-service-gl-01.allawntech.com
 smartcard.apps.coloros.com
 smartcardf.apps.coloros.com
 smartcardf-eu.apps.coloros.com
+ota.foreign.coloros.com
+rus.foreign.coloros.com
 conn1.coloros.com
 conn2.coloros.com
 conn3.coloros.com
 conn4.coloros.com
 conn5.coloros.com
-foreign.coloros.com
 guif.coloros.com
 guif-eu.coloros.com
 icota-eu.coloros.com
@@ -313,6 +314,7 @@ bdapi-ads-sg.heytapmobile.com
 browser-api-br.heytapmobile.com
 browser-api-fr.heytapmobile.com
 browser-api-gl.heytapmobile.com
+browser-api-gl-01.heytapmobile.com
 browser-api-id.heytapmobile.com
 browser-api-in.heytapmobile.com
 browser-api-my.heytapmobile.com

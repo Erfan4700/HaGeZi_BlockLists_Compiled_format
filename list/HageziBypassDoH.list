@@ -756,6 +756,9 @@ DOMAIN-SUFFIX,dns.dgea.fr
 DOMAIN-SUFFIX,dns.dhemant.observer
 DOMAIN-SUFFIX,dns.isp.dhoho.net
 DOMAIN-SUFFIX,dns.diarbagus.id
+DOMAIN-SUFFIX,dns.digitale-gesellschaft.ch
+DOMAIN-SUFFIX,dns1.digitale-gesellschaft.ch
+DOMAIN-SUFFIX,dns2.digitale-gesellschaft.ch
 DOMAIN-SUFFIX,dns.digitalsize.net
 DOMAIN-SUFFIX,eka.dilli.dev
 DOMAIN-SUFFIX,dns.dimantus.com
@@ -1240,7 +1243,6 @@ DOMAIN-SUFFIX,beacon.fengli.love
 DOMAIN-SUFFIX,ag.ff0x.ca
 DOMAIN-SUFFIX,2.dnscrypt-cert.ffmuc.net
 DOMAIN-SUFFIX,doh.ffmuc.net
-DOMAIN-SUFFIX,dot.ffmuc.net
 DOMAIN-SUFFIX,dns.ffnw.de
 DOMAIN-SUFFIX,dns.fidbonteam.ru
 DOMAIN-SUFFIX,dns.filipccz.eu
@@ -3189,7 +3191,6 @@ DOMAIN-SUFFIX,deep-henchman-excuse.cfd
 DOMAIN-SUFFIX,deflectordns.com
 DOMAIN-SUFFIX,dehb.ru
 DOMAIN-SUFFIX,delgombe.be
-DOMAIN-SUFFIX,digitale-gesellschaft.ch
 DOMAIN-SUFFIX,digitallink.be
 DOMAIN-SUFFIX,dingdangnao.com
 DOMAIN-SUFFIX,disbish.com
