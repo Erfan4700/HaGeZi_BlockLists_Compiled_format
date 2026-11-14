@@ -172,8 +172,6 @@ DOMAIN-SUFFIX,ug.snssdk.com
 DOMAIN-SUFFIX,vas-hl-x.snssdk.com
 DOMAIN-SUFFIX,vcl-brain.snssdk.com
 DOMAIN-SUFFIX,xlog.snssdk.com
-DOMAIN-SUFFIX,url4077.ads-service.tiktok.com
-DOMAIN-SUFFIX,url7108.ads-service.tiktok.com
 DOMAIN-SUFFIX,ads.in.tiktok.com
 DOMAIN-SUFFIX,ads.us.tiktok.com
 DOMAIN-SUFFIX,ads-ttp2.us.tiktok.com
@@ -189,6 +187,7 @@ DOMAIN-SUFFIX,ads.tiktok.tv
 DOMAIN-SUFFIX,ads-api.tiktok.com
 DOMAIN-SUFFIX,ads-frontier.tiktok.com
 DOMAIN-SUFFIX,ads-ru.tiktok.com
+DOMAIN-SUFFIX,ads-service.tiktok.com
 DOMAIN-SUFFIX,ads-sg.tiktok.com
 DOMAIN-SUFFIX,ads-useast2a.tiktok.com
 DOMAIN-SUFFIX,ads-va.tiktok.com
@@ -349,6 +348,7 @@ DOMAIN-SUFFIX,log32-normal-useastred.tiktokv.eu
 DOMAIN-SUFFIX,log32-normal-zr.tiktokv.com
 DOMAIN-SUFFIX,log32-normal-zr-alisg.tiktokv.com
 DOMAIN-SUFFIX,log32-normal-zr-useast1a.tiktokv.com
+DOMAIN-SUFFIX,log53-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log58-normal.tiktokv.com
 DOMAIN-SUFFIX,log58-normal-alisg.tiktokv.com
 DOMAIN-SUFFIX,log58-normal-c-alisg.tiktokv.com
@@ -356,6 +356,8 @@ DOMAIN-SUFFIX,log58-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log58-normal-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log58-normal-useast2a.tiktokv.com
 DOMAIN-SUFFIX,log58-normal-ycru.tiktokv.com
+DOMAIN-SUFFIX,log61-normal-c-alisg.tiktokv.com
+DOMAIN-SUFFIX,log61-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log77-normal-c-alisg.tiktokv.com
 DOMAIN-SUFFIX,log77-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log9-normal-c-useast1a.tiktokv.com

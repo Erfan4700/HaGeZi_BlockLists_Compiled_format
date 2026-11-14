@@ -90,6 +90,8 @@ DOMAIN-SUFFIX,ads-setu-proxy-fe.amazon.com
 DOMAIN-SUFFIX,ads-setu-proxy.amazon.com
 DOMAIN-SUFFIX,ads.amazon.com
 DOMAIN-SUFFIX,adserver.pubtech.amazon.dev
+DOMAIN-SUFFIX,adskit.juno.alexa.amazon.dev
+DOMAIN-SUFFIX,advertising-api-cn.amazon.com
 DOMAIN-SUFFIX,advertising-api-eu.amazon.com
 DOMAIN-SUFFIX,advertising.a2z.com
 DOMAIN-SUFFIX,advertising.amazon.ae
@@ -134,19 +136,20 @@ DOMAIN-SUFFIX,assoc-amazon.jp
 DOMAIN-SUFFIX,assoc-msdk-cn.amazon-adsystem.com
 DOMAIN-SUFFIX,assoc-msdk-eu.amazon-adsystem.com
 DOMAIN-SUFFIX,assoc-msdk-us.amazon-adsystem.com
+DOMAIN-SUFFIX,at-beta.amazon-adsystem.com
+DOMAIN-SUFFIX,at-gamma-us-east.amazon-adsystem.com
+DOMAIN-SUFFIX,at-us-east.amazon-adsystem.com
 DOMAIN-SUFFIX,atfe.amazon-adsystem.com
 DOMAIN-SUFFIX,atue.amazon-adsystem.com
 DOMAIN-SUFFIX,aviary.amazon.co.jp
 DOMAIN-SUFFIX,aviary.amazon.com
 DOMAIN-SUFFIX,aviary.amazon.de
 DOMAIN-SUFFIX,bugs.firebat.prime-video.amazon.dev
-DOMAIN-SUFFIX,bugsnag-event.monitor.core.app.alexa.a2z.com
-DOMAIN-SUFFIX,bugsnag.appstore.a2z.com
-DOMAIN-SUFFIX,bugsnag.shopbop.amazon.dev
 DOMAIN-SUFFIX,c.amazon-adsystem.com
 DOMAIN-SUFFIX,cdn-a.amazon-adsystem.com
 DOMAIN-SUFFIX,cdn-d.amazon-adsystem.com
 DOMAIN-SUFFIX,cdn-t.amazon-adsystem.com
+DOMAIN-SUFFIX,cdn-vfw-us-test.amazon-adsystem.com
 DOMAIN-SUFFIX,d3p8zr0ffa9t17.cloudfront.net
 DOMAIN-SUFFIX,da-cdn.amazon-adsystem.com
 DOMAIN-SUFFIX,device-metrics-us-2.amazon.com
@@ -159,6 +162,7 @@ DOMAIN-SUFFIX,fe.us-west.ono.axp.amazon-adsystem.com
 DOMAIN-SUFFIX,federatedanalytics.amazon.com
 DOMAIN-SUFFIX,fls-cn.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-cn.amazon.cn
+DOMAIN-SUFFIX,fls-cn.amazon.com
 DOMAIN-SUFFIX,fls-eu.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-eu.amazon.ae
 DOMAIN-SUFFIX,fls-eu.amazon.co.uk
@@ -187,6 +191,7 @@ DOMAIN-SUFFIX,fls-na.amazon.com.br
 DOMAIN-SUFFIX,fls-na.amazon.com.mx
 DOMAIN-SUFFIX,fls-na.amazon.com
 DOMAIN-SUFFIX,forester.a2z.com
+DOMAIN-SUFFIX,global.prod.telemetry.taskei.amazon.dev
 DOMAIN-SUFFIX,h4g3z1-native-amazon.web.app
 DOMAIN-SUFFIX,identity.browserapps.amazon.de
 DOMAIN-SUFFIX,imdb.amazon-adsystem.com
@@ -286,6 +291,7 @@ DOMAIN-SUFFIX,sponsored-ads.amazon.com.br
 DOMAIN-SUFFIX,sponsored-ads.amazon.com.mx
 DOMAIN-SUFFIX,sponsored-ads.amazon.com.tr
 DOMAIN-SUFFIX,sponsored-ads.amazon.com
+DOMAIN-SUFFIX,sponsored-ads.amazon.de
 DOMAIN-SUFFIX,sponsored-ads.amazon.eg
 DOMAIN-SUFFIX,sponsored-ads.amazon.es
 DOMAIN-SUFFIX,sponsored-ads.amazon.fr
@@ -304,6 +310,8 @@ DOMAIN-SUFFIX,tk.amazon-adsystem.com
 DOMAIN-SUFFIX,trace.app-performance.music.amazon.dev
 DOMAIN-SUFFIX,ts-gamma.amazon-adsystem.com
 DOMAIN-SUFFIX,ts.amazon-adsystem.com
+DOMAIN-SUFFIX,unagi-cn.amazon.com
+DOMAIN-SUFFIX,unagi-eu-central-1.amazon.com
 DOMAIN-SUFFIX,unagi-eu.amazon.com
 DOMAIN-SUFFIX,unagi-fe.amazon.com
 DOMAIN-SUFFIX,unagi-na.amazon.com
@@ -354,6 +362,7 @@ DOMAIN-SUFFIX,vfwm-us.amazon-adsystem.com
 DOMAIN-SUFFIX,vfwm.amazon-adsystem.com
 DOMAIN-SUFFIX,vfws.amazon-adsystem.com
 DOMAIN-SUFFIX,video-ads.a2z.com
+DOMAIN-SUFFIX,vq-ap-southeast-1.amazon-adsystem.com
 DOMAIN-SUFFIX,vq-eu-west-1.amazon-adsystem.com
 DOMAIN-SUFFIX,vq-fe-us-west-2.amazon-adsystem.com
 DOMAIN-SUFFIX,vq-test-us-east-1.amazon-adsystem.com

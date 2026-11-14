@@ -2,6 +2,7 @@ DOMAIN-SUFFIX,browsercfg-drcn.cloud.dbankcloud.cn
 DOMAIN-SUFFIX,ubacollect-drcn.cloud.dbankcloud.cn
 DOMAIN-SUFFIX,metrics-dre.data.dbankcloud.cn
 DOMAIN-SUFFIX,metrics1.data.dbankcloud.cn
+DOMAIN-SUFFIX,metrics6.data.dbankcloud.cn
 DOMAIN-SUFFIX,datacollector-dra.dt.dbankcloud.cn
 DOMAIN-SUFFIX,datacollector-dre.dt.dbankcloud.cn
 DOMAIN-SUFFIX,hisearch-dra.dt.dbankcloud.com
@@ -19,6 +20,7 @@ DOMAIN-SUFFIX,connect-drru.hispace.dbankcloud.ru
 DOMAIN-SUFFIX,connect-dra.map.dbankcloud.com
 DOMAIN-SUFFIX,connect-dre.map.dbankcloud.com
 DOMAIN-SUFFIX,ad-drcn.media.dbankcloud.cn
+DOMAIN-SUFFIX,ug-drcn.media.dbankcloud.cn
 DOMAIN-SUFFIX,adx-dra.op.dbankcloud.com
 DOMAIN-SUFFIX,adx-drcn.op.dbankcloud.cn
 DOMAIN-SUFFIX,adx-dre.op.dbankcloud.com
