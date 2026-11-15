@@ -253,10 +253,12 @@ DOMAIN-SUFFIX,obus-cn.dc.heytapmobi.com
 DOMAIN-SUFFIX,api-id.game.heytapmobi.com
 DOMAIN-SUFFIX,album-cn01a.ocloud.heytapmobi.com
 DOMAIN-SUFFIX,album-sg01a.ocloud.heytapmobi.com
+DOMAIN-SUFFIX,httpdns.ocloud.heytapmobi.com
 DOMAIN-SUFFIX,i-cn01a.ocloud.heytapmobi.com
 DOMAIN-SUFFIX,i-sg01a.ocloud.heytapmobi.com
 DOMAIN-SUFFIX,dcintl.push.heytapmobi.com
 DOMAIN-SUFFIX,device-ups.push.heytapmobi.com
+DOMAIN-SUFFIX,httpdns.push.heytapmobi.com
 DOMAIN-SUFFIX,id.push.heytapmobi.com
 DOMAIN-SUFFIX,userprofile.push.heytapmobi.com
 DOMAIN-SUFFIX,api-id.theme.heytapmobi.com
@@ -451,6 +453,10 @@ DOMAIN-SUFFIX,dc-dragate-sg.heytapmobile.com
 DOMAIN-SUFFIX,dc-stat-eu.heytapmobile.com
 DOMAIN-SUFFIX,dc-stat-in.heytapmobile.com
 DOMAIN-SUFFIX,dragate-in-dc.heytapmobile.com
+DOMAIN-SUFFIX,htms.heytapmobile.com
+DOMAIN-SUFFIX,httpdns-euex-push.heytapmobile.com
+DOMAIN-SUFFIX,httpdns-ocloud.heytapmobile.com
+DOMAIN-SUFFIX,httpdns-push.heytapmobile.com
 DOMAIN-SUFFIX,jscatch-in-frontend.heytapmobile.com
 DOMAIN-SUFFIX,jscatch-sg-frontend.heytapmobile.com
 DOMAIN-SUFFIX,mdp-usertrace-in.heytapmobile.com
@@ -487,6 +493,7 @@ DOMAIN-SUFFIX,obus-jssdk-ru.heytapmobile.com
 DOMAIN-SUFFIX,obus-jssdk-sg.heytapmobile.com
 DOMAIN-SUFFIX,obus-jssdk-us.heytapmobile.com
 DOMAIN-SUFFIX,omes-sec.heytapmobile.com
+DOMAIN-SUFFIX,oop-installer-gl.heytapmobile.com
 DOMAIN-SUFFIX,opay.heytapmobile.com
 DOMAIN-SUFFIX,push.heytapmobile.com
 DOMAIN-SUFFIX,push-dc-us.heytapmobile.com
@@ -500,6 +507,7 @@ DOMAIN-SUFFIX,video-api-fr.heytapmobile.com
 DOMAIN-SUFFIX,video-api-gl.heytapmobile.com
 DOMAIN-SUFFIX,video-api-in.heytapmobile.com
 DOMAIN-SUFFIX,video-api-ru.heytapmobile.com
+DOMAIN-SUFFIX,virusinfo-cloudscan-in.heytapmobile.com
 DOMAIN-SUFFIX,uc-track-ru.oneplus.com
 DOMAIN-SUFFIX,dragate.dc.oppomobile.com
 DOMAIN-SUFFIX,dragate-br.dc.oppomobile.com
