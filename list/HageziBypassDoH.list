@@ -159,6 +159,9 @@ DOMAIN-SUFFIX,dns.adfreedns.org
 DOMAIN-SUFFIX,dns.adguard.com
 DOMAIN-SUFFIX,dns-family.adguard.com
 DOMAIN-SUFFIX,dns-unfiltered.adguard.com
+DOMAIN-SUFFIX,dns.adguarddns.com
+DOMAIN-SUFFIX,family.adguarddns.com
+DOMAIN-SUFFIX,unfiltered.adguarddns.com
 DOMAIN-SUFFIX,dns.adnull.com
 DOMAIN-SUFFIX,dns.adrianlam.com
 DOMAIN-SUFFIX,adguard.adrianofrongillo.ovh
@@ -2896,7 +2899,6 @@ DOMAIN-SUFFIX,solution.w10.life
 DOMAIN-SUFFIX,dns.w3ctag.org
 DOMAIN-SUFFIX,bh.wael.name
 DOMAIN-SUFFIX,dns.wael.name
-DOMAIN-SUFFIX,dns.wahr.top
 DOMAIN-SUFFIX,aqua.is.my.waifu.cz
 DOMAIN-SUFFIX,darkness.is.my.waifu.cz
 DOMAIN-SUFFIX,megumin.is.my.waifu.cz
@@ -3196,6 +3198,7 @@ DOMAIN-SUFFIX,dns.pub
 DOMAIN-SUFFIX,dns.sb
 DOMAIN-SUFFIX,dns.watch
 DOMAIN-SUFFIX,dns-free.link
+DOMAIN-SUFFIX,dns0.eu
 DOMAIN-SUFFIX,dns4me.net
 DOMAIN-SUFFIX,dns8.org
 DOMAIN-SUFFIX,dnsdoh.art
