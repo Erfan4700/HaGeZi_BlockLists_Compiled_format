@@ -265,7 +265,6 @@ DOMAIN-SUFFIX,adsfs.oppomobile.com
 DOMAIN-SUFFIX,adskit.juno.alexa.amazon.dev
 DOMAIN-SUFFIX,adstore.response.gcp.eastus.trafficmanager.net
 DOMAIN-SUFFIX,adsyndication.msn.com
-DOMAIN-SUFFIX,adsyndication.msn.com.nsatc.net
 DOMAIN-SUFFIX,adts.lgtvcommon.com
 DOMAIN-SUFFIX,adv.l7.34.sec.miui.com
 DOMAIN-SUFFIX,adv.sec.intl.miui.com
@@ -445,7 +444,6 @@ DOMAIN-SUFFIX,analytics16-normal-useastred.tiktokw.eu.edgesuite.net
 DOMAIN-SUFFIX,analytics16-normal.tiktok.com
 DOMAIN-SUFFIX,analytics16-normal.tiktok.com.edgesuite.net
 DOMAIN-SUFFIX,analyticsehnwe.servicebus.windows.net
-DOMAIN-SUFFIX,analyticsiot-prod-mobileapps-ehn.servicebus.windows.net
 DOMAIN-SUFFIX,analyticspixel.microsoft.com
 DOMAIN-SUFFIX,ao-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,ao-info-lgsmartad-com.aws-prd.net
@@ -686,6 +684,7 @@ DOMAIN-SUFFIX,br-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,br.ekatox.com
 DOMAIN-SUFFIX,br.tv.global.mi.com
 DOMAIN-SUFFIX,brc-visio-telemetry.officeapps.live.com
+DOMAIN-SUFFIX,browser-api-au.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-br.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-fr.heytapmobile.com
 DOMAIN-SUFFIX,browser-api-gl-01.heytapmobile.com
@@ -1105,7 +1104,6 @@ DOMAIN-SUFFIX,dcintl.push.heytapmobi.com
 DOMAIN-SUFFIX,ddf.di.atlas.samsung.com
 DOMAIN-SUFFIX,de-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,de-gdpr-err-up.vivoglobal.com
-DOMAIN-SUFFIX,de-gdpr-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,de-info-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,de-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,de.pandora.xiaomi.com
@@ -1215,7 +1213,6 @@ DOMAIN-SUFFIX,eu-cota.vivoglobal.com
 DOMAIN-SUFFIX,eu-domaincfg.vivoglobal.com
 DOMAIN-SUFFIX,eu-errup.vivoglobal.com
 DOMAIN-SUFFIX,eu-monitor-stsdk.vivoglobal.com
-DOMAIN-SUFFIX,eu-nrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-onrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-ort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-p.vivoglobal.com
@@ -1229,6 +1226,7 @@ DOMAIN-SUFFIX,eu-vcode-api.vivoglobal.com
 DOMAIN-SUFFIX,eu-vcode-od.vivoglobal.com
 DOMAIN-SUFFIX,eu-vcode-or.vivoglobal.com
 DOMAIN-SUFFIX,eu7-info-lgsmartad-com.aws-prd.net
+DOMAIN-SUFFIX,eu7-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,euc-excel-telemetry.officeapps.live.com
 DOMAIN-SUFFIX,euc-excel-telemetry.wac.trafficmanager.net
 DOMAIN-SUFFIX,euc-onenote-telemetry.officeapps.live.com
@@ -1261,6 +1259,7 @@ DOMAIN-SUFFIX,events-dre-op-hicloud-com-dre.appacc.dbankedge.cn
 DOMAIN-SUFFIX,events-dre.op.dbankcloud.com
 DOMAIN-SUFFIX,events-dre.op.hicloud.com
 DOMAIN-SUFFIX,events-sandbox.data.microsoft.com
+DOMAIN-SUFFIX,events-sandbox.data.msn.cn
 DOMAIN-SUFFIX,events-sandbox.data.msn.com
 DOMAIN-SUFFIX,events.app-performance.music.amazon.dev
 DOMAIN-SUFFIX,events.data.microsoft.com
@@ -1321,7 +1320,6 @@ DOMAIN-SUFFIX,flow.sec.miui.com
 DOMAIN-SUFFIX,fls-cn.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-cn.amazon.cn
 DOMAIN-SUFFIX,fls-cn.amazon.com
-DOMAIN-SUFFIX,fls-eu.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-eu.amazon.ae
 DOMAIN-SUFFIX,fls-eu.amazon.co.uk
 DOMAIN-SUFFIX,fls-eu.amazon.com
@@ -1338,12 +1336,10 @@ DOMAIN-SUFFIX,fls-eu.amazon.pl
 DOMAIN-SUFFIX,fls-eu.amazon.sa
 DOMAIN-SUFFIX,fls-eu.amazon.se
 DOMAIN-SUFFIX,fls-fe-opf.amazon.com
-DOMAIN-SUFFIX,fls-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-fe.amazon.co.jp
 DOMAIN-SUFFIX,fls-fe.amazon.com
 DOMAIN-SUFFIX,fls-fe.amazon.com.au
 DOMAIN-SUFFIX,fls-fe.amazon.sg
-DOMAIN-SUFFIX,fls-na.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-na.amazon.ca
 DOMAIN-SUFFIX,fls-na.amazon.com
 DOMAIN-SUFFIX,fls-na.amazon.com.br
@@ -1604,7 +1600,6 @@ DOMAIN-SUFFIX,iadsdk.apple.com
 DOMAIN-SUFFIX,iadsdk.apple.com.akadns.net
 DOMAIN-SUFFIX,iadsdk.apple.com.edgekey.net
 DOMAIN-SUFFIX,iadworkbench.apple.com
-DOMAIN-SUFFIX,icmskillevents.trafficmanager.net
 DOMAIN-SUFFIX,icosa-service-eu.allawnos.com
 DOMAIN-SUFFIX,icosa-service-fr-01.allawnos.com
 DOMAIN-SUFFIX,icosa-service-fr-02.allawnos.com
@@ -1631,6 +1626,7 @@ DOMAIN-SUFFIX,id.ekatox.com
 DOMAIN-SUFFIX,id.push.heytapmobi.com
 DOMAIN-SUFFIX,id.tv.global.mi.com
 DOMAIN-SUFFIX,identity.browserapps.amazon.de
+DOMAIN-SUFFIX,identity.nel.measure.office.net.intern.schreinereistumpf.de
 DOMAIN-SUFFIX,idiagnostics-mdn1.apple.com
 DOMAIN-SUFFIX,idiagnostics.apple.com
 DOMAIN-SUFFIX,idiagnostics.apple.com.akadns.net
@@ -1701,6 +1697,7 @@ DOMAIN-SUFFIX,in-pnrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-protect-dev.sec.intl.miui.com
 DOMAIN-SUFFIX,in-prt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-rdx2-lgtvsdp-com.aws-prd.net
+DOMAIN-SUFFIX,in-rt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,in-third-appstore.vivoglobal.com
 DOMAIN-SUFFIX,in-timesync.vivoglobal.com
 DOMAIN-SUFFIX,in-vcode-api.vivoglobal.com
@@ -2004,7 +2001,6 @@ DOMAIN-SUFFIX,log15-normal.tiktokv.com
 DOMAIN-SUFFIX,log15.byteoversea.com
 DOMAIN-SUFFIX,log16-applog-useast5.us.tiktokv.com
 DOMAIN-SUFFIX,log16-normal-alisg.tiktokv.com
-DOMAIN-SUFFIX,log16-normal-alisg.tiktokv.com.kp45.ru
 DOMAIN-SUFFIX,log16-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log16-normal-c-useast2a.tiktokv.com
 DOMAIN-SUFFIX,log16-normal-delay-alisg.tiktokv.com
@@ -2049,7 +2045,6 @@ DOMAIN-SUFFIX,log19-normal.tiktokv.com
 DOMAIN-SUFFIX,log22-applog-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log22-applog-useast2a.tiktokv.com
 DOMAIN-SUFFIX,log22-normal-alisg.tiktokv.com
-DOMAIN-SUFFIX,log22-normal-alisg.tiktokv.com.kp45.ru
 DOMAIN-SUFFIX,log22-normal-sg.capcutapi.com
 DOMAIN-SUFFIX,log22-normal-useast1a.tiktokv.com
 DOMAIN-SUFFIX,log22-normal-useast2a.tiktokv.com
@@ -2373,6 +2368,7 @@ DOMAIN-SUFFIX,mistat.rus.xiaomi.com.edgesuite.net
 DOMAIN-SUFFIX,mistat.rus.xiaomi.com.ksyna.net
 DOMAIN-SUFFIX,mistat.xiaomi.com
 DOMAIN-SUFFIX,mistat.xiaomi.com.download.ks-cdn.com
+DOMAIN-SUFFIX,mistat.xiaomi.com.mgslb.com
 DOMAIN-SUFFIX,miui-l7-data-other-c3.pt.miui.com
 DOMAIN-SUFFIX,miui-l7-data-other.pt.miui.com
 DOMAIN-SUFFIX,miui.net
@@ -2444,7 +2440,6 @@ DOMAIN-SUFFIX,mon15-normal-useast1a-checkout.tiktokv.com
 DOMAIN-SUFFIX,mon15-normal-useast1a.tiktokv.com
 DOMAIN-SUFFIX,mon15-normal.tiktokv.com
 DOMAIN-SUFFIX,mon16-normal-alisg.tiktokv.com
-DOMAIN-SUFFIX,mon16-normal-alisg.tiktokv.com.kp45.ru
 DOMAIN-SUFFIX,mon16-normal-c-useast1a.tiktokv.com
 DOMAIN-SUFFIX,mon16-normal-c-useast2a.tiktokv.com
 DOMAIN-SUFFIX,mon16-normal-ie.tiktokv.eu
@@ -2777,6 +2772,7 @@ DOMAIN-SUFFIX,open.snssdk.com
 DOMAIN-SUFFIX,openapi.vip.ptqy.gitv.tv
 DOMAIN-SUFFIX,openlocation-drcn-platform-dbankcloud-com-drcn.appacc.dbankedge.cn
 DOMAIN-SUFFIX,openlocation-drcn.platform.dbankcloud.com
+DOMAIN-SUFFIX,opex-service-eu-allawna-e3dde.fr-w01.cngw.allawnos.com
 DOMAIN-SUFFIX,opex-service-eu.allawnos.com
 DOMAIN-SUFFIX,opex-service-in.allawnos.com
 DOMAIN-SUFFIX,opex-service-sg.allawnos.com
@@ -2864,6 +2860,7 @@ DOMAIN-SUFFIX,performance-partners.apple.com
 DOMAIN-SUFFIX,pg-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,pgtbr1-excel-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgtbr2-excel-telemetry-vip.officeapps.live.com
+DOMAIN-SUFFIX,pgtca1-powerpoint-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu1-excel-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu1-powerpoint-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu1-word-telemetry-vip.officeapps.live.com
@@ -2877,8 +2874,8 @@ DOMAIN-SUFFIX,pgteu4-excel-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu4-powerpoint-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu4-word-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu5-excel-telemetry-vip.officeapps.live.com
-DOMAIN-SUFFIX,pgteu5-powerpoint-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgteu5-word-telemetry-vip.officeapps.live.com
+DOMAIN-SUFFIX,pgtmx1-excel-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgtus1-excel-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgtus1-powerpoint-telemetry-vip.officeapps.live.com
 DOMAIN-SUFFIX,pgtus1-word-telemetry-vip.officeapps.live.com
@@ -2954,6 +2951,7 @@ DOMAIN-SUFFIX,prod-event-relay-notes-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-sports-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-stocks-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-weather-api.v.aaplimg.com
+DOMAIN-SUFFIX,prod-event-relay-web-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-eventhub-analytics.servicebus.windows.net
 DOMAIN-SUFFIX,prod-iwork-events.v.aaplimg.com
 DOMAIN-SUFFIX,prod-news-notification-events.v.aaplimg.com
@@ -3086,7 +3084,6 @@ DOMAIN-SUFFIX,rtlog16-applog-useast1a.tiktokv.com
 DOMAIN-SUFFIX,rtlog16-applog-useast2a.tiktokv.com
 DOMAIN-SUFFIX,rtlog16-applog-useast5.us.tiktokv.com
 DOMAIN-SUFFIX,rtlog16-normal-alisg.tiktokv.com
-DOMAIN-SUFFIX,rtlog16-normal-alisg.tiktokv.com.kp45.ru
 DOMAIN-SUFFIX,rtlog16-normal-ie.tiktokv.eu
 DOMAIN-SUFFIX,rtlog16-normal-ind.tiktokv.com
 DOMAIN-SUFFIX,rtlog16-normal-no1a.tiktokv.eu
@@ -3123,7 +3120,6 @@ DOMAIN-SUFFIX,rtlog19-platform-useast5.us.tiktokv.com
 DOMAIN-SUFFIX,rtlog22-applog-useast1a.tiktokv.com
 DOMAIN-SUFFIX,rtlog22-applog-useast2a.tiktokv.com
 DOMAIN-SUFFIX,rtlog22-normal-alisg.tiktokv.com
-DOMAIN-SUFFIX,rtlog22-normal-alisg.tiktokv.com.kp45.ru
 DOMAIN-SUFFIX,rtlog22-normal-useast1a.tiktokv.com
 DOMAIN-SUFFIX,rtlog22-normal-useast2a.tiktokv.com
 DOMAIN-SUFFIX,rtlog22-normal-zr-alisg.tiktokv.com
@@ -3446,6 +3442,7 @@ DOMAIN-SUFFIX,sponsored-ads-eu.amazon.nl
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.pl
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.sa
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.se
+DOMAIN-SUFFIX,sponsored-ads-euc-1.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads-na.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads.amazon.ae
@@ -3527,13 +3524,11 @@ DOMAIN-SUFFIX,sys.intl.xiaomi.com
 DOMAIN-SUFFIX,sys.tv.india.xiaomi.com
 DOMAIN-SUFFIX,sz-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,sz-info-lgsmartad-com.aws-prd.net
-DOMAIN-SUFFIX,t-ring-fallback-s2.msedge.net
 DOMAIN-SUFFIX,t-ring-fallback.msedge.net
 DOMAIN-SUFFIX,t-ring-fallbacks1.msedge.net
 DOMAIN-SUFFIX,t-ring-s2.msedge.net
 DOMAIN-SUFFIX,t-ring-trafficshield.msedge.net
 DOMAIN-SUFFIX,t-ring.msedge.net
-DOMAIN-SUFFIX,t-s2-ring.msedge.net
 DOMAIN-SUFFIX,t1.market.xiaomi.com
 DOMAIN-SUFFIX,t15.market.xiaomi.com
 DOMAIN-SUFFIX,t17.market.xiaomi.com
@@ -3791,7 +3786,6 @@ DOMAIN-SUFFIX,ureca.samsungapps.com
 DOMAIN-SUFFIX,us-ad-lgsmartad-com.aws-prd.net
 DOMAIN-SUFFIX,us-east.ono.axp.amazon-adsystem.com
 DOMAIN-SUFFIX,us-info-lgsmartad-com.aws-prd.net
-DOMAIN-SUFFIX,us-mesh-events-data-leafs.trafficmanager.net
 DOMAIN-SUFFIX,us-rdx2-lgtvsdp-com.aws-prd.net
 DOMAIN-SUFFIX,us-report.gras.samsungdm.com
 DOMAIN-SUFFIX,us.ekatox.com

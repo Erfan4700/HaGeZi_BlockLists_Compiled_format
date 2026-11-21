@@ -163,7 +163,6 @@ DOMAIN-SUFFIX,federatedanalytics.amazon.com
 DOMAIN-SUFFIX,fls-cn.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-cn.amazon.cn
 DOMAIN-SUFFIX,fls-cn.amazon.com
-DOMAIN-SUFFIX,fls-eu.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-eu.amazon.ae
 DOMAIN-SUFFIX,fls-eu.amazon.co.uk
 DOMAIN-SUFFIX,fls-eu.amazon.com.be
@@ -180,12 +179,10 @@ DOMAIN-SUFFIX,fls-eu.amazon.pl
 DOMAIN-SUFFIX,fls-eu.amazon.sa
 DOMAIN-SUFFIX,fls-eu.amazon.se
 DOMAIN-SUFFIX,fls-fe-opf.amazon.com
-DOMAIN-SUFFIX,fls-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-fe.amazon.co.jp
 DOMAIN-SUFFIX,fls-fe.amazon.com.au
 DOMAIN-SUFFIX,fls-fe.amazon.com
 DOMAIN-SUFFIX,fls-fe.amazon.sg
-DOMAIN-SUFFIX,fls-na.amazon-adsystem.com
 DOMAIN-SUFFIX,fls-na.amazon.ca
 DOMAIN-SUFFIX,fls-na.amazon.com.br
 DOMAIN-SUFFIX,fls-na.amazon.com.mx
@@ -279,6 +276,7 @@ DOMAIN-SUFFIX,sponsored-ads-eu.amazon.nl
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.pl
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.sa
 DOMAIN-SUFFIX,sponsored-ads-eu.amazon.se
+DOMAIN-SUFFIX,sponsored-ads-euc-1.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads-na.amazon-adsystem.com
 DOMAIN-SUFFIX,sponsored-ads.amazon.ae

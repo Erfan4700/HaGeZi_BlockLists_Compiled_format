@@ -1,4 +1,5 @@
 payload:
+  - "+.opex-service-eu-allawna-e3dde.fr-w01.cngw.allawnos.com"
   - "+.classify-app-eu.allawnos.com"
   - "+.classify-app-in.allawnos.com"
   - "+.classify-app-sg.allawnos.com"
@@ -333,6 +334,7 @@ payload:
   - "+.adxu-bigo-sg.heytapmobile.com"
   - "+.bdapi-ads-in.heytapmobile.com"
   - "+.bdapi-ads-sg.heytapmobile.com"
+  - "+.browser-api-au.heytapmobile.com"
   - "+.browser-api-br.heytapmobile.com"
   - "+.browser-api-fr.heytapmobile.com"
   - "+.browser-api-gl.heytapmobile.com"
