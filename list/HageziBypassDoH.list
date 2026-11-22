@@ -240,7 +240,6 @@ DOMAIN-SUFFIX,dns-sehat.apigw.online
 DOMAIN-SUFFIX,ag.apollohct.com
 DOMAIN-SUFFIX,ds.appl.pk
 DOMAIN-SUFFIX,doh.dns.apple.com
-DOMAIN-SUFFIX,mask-api.fe.apple-dns.net
 DOMAIN-SUFFIX,dns.applewebkit.dev
 DOMAIN-SUFFIX,doh.appliedprivacy.net
 DOMAIN-SUFFIX,dot1.appliedprivacy.net
@@ -2304,6 +2303,7 @@ DOMAIN-SUFFIX,dns.petqa.ru
 DOMAIN-SUFFIX,adguard.pggns.de
 DOMAIN-SUFFIX,dns.pgnhatrang.com
 DOMAIN-SUFFIX,dns.phillipjberry.net
+DOMAIN-SUFFIX,doh.centraleu.pi-dns.com
 DOMAIN-SUFFIX,adguard.piekacz.pl
 DOMAIN-SUFFIX,dns.pierzchlewicz.pl
 DOMAIN-SUFFIX,dns.pieterdherde.com
@@ -3141,7 +3141,6 @@ DOMAIN-SUFFIX,bazooki-infra.dev
 DOMAIN-SUFFIX,beacon.dog
 DOMAIN-SUFFIX,beatquantum.com
 DOMAIN-SUFFIX,berd.moe
-DOMAIN-SUFFIX,bestwon203.com
 DOMAIN-SUFFIX,blockdns.com
 DOMAIN-SUFFIX,bluedns.xyz
 DOMAIN-SUFFIX,bluemood.me
@@ -3233,7 +3232,6 @@ DOMAIN-SUFFIX,duyyen.tk
 DOMAIN-SUFFIX,dvgarm.com
 DOMAIN-SUFFIX,easyhandshake.com
 DOMAIN-SUFFIX,echooff.xyz
-DOMAIN-SUFFIX,edgy-dns.com
 DOMAIN-SUFFIX,egorovna.su
 DOMAIN-SUFFIX,ejaysss.dev
 DOMAIN-SUFFIX,eliatofani.ovh
@@ -3351,6 +3349,8 @@ DOMAIN-SUFFIX,lukscasino-929-tr.xyz
 DOMAIN-SUFFIX,lunar-dns.de
 DOMAIN-SUFFIX,mabuktogel.business
 DOMAIN-SUFFIX,mabuktogel.cards
+DOMAIN-SUFFIX,mabuktogel.enterprises
+DOMAIN-SUFFIX,mabuktogel.ltd
 DOMAIN-SUFFIX,mabuktogel.marketing
 DOMAIN-SUFFIX,mabuktogel.properties
 DOMAIN-SUFFIX,mabuktogel.solutions
@@ -3490,7 +3490,6 @@ DOMAIN-SUFFIX,surfbelow.com
 DOMAIN-SUFFIX,surt.ovh
 DOMAIN-SUFFIX,svg33.eu
 DOMAIN-SUFFIX,szyrzyk.pl
-DOMAIN-SUFFIX,tecdrive.site
 DOMAIN-SUFFIX,tecworx.at
 DOMAIN-SUFFIX,teknorota.com
 DOMAIN-SUFFIX,telex.app
