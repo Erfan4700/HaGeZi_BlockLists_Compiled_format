@@ -3513,7 +3513,6 @@ DOMAIN-SUFFIX,adg.grinavto.ru
 DOMAIN-SUFFIX,dns.grinevich.eu
 DOMAIN-SUFFIX,dnsblock.grisumedia.de
 DOMAIN-SUFFIX,dns.groupesaintmichel.fr
-DOMAIN-SUFFIX,fivefootoneiscrazyngl.groups.id
 DOMAIN-SUFFIX,velocity.groups.id
 DOMAIN-SUFFIX,dns.grqu.de
 DOMAIN-SUFFIX,ir-ir.grumpyoldmen.info
@@ -4095,7 +4094,6 @@ DOMAIN-SUFFIX,recap.grade.kredytlinia.pl
 DOMAIN-SUFFIX,dns.kriswerry.nl
 DOMAIN-SUFFIX,xray.krnl.eu
 DOMAIN-SUFFIX,dns.krol.cloud
-DOMAIN-SUFFIX,kryptovpn.kryptotel.net
 DOMAIN-SUFFIX,hdns.ksyun.com
 DOMAIN-SUFFIX,ns.kubiskap.eu
 DOMAIN-SUFFIX,orbit.craft.kuede.info
@@ -4285,7 +4283,6 @@ DOMAIN-SUFFIX,dns.mateo.ovh
 DOMAIN-SUFFIX,dns.mathewakhil.online
 DOMAIN-SUFFIX,vm.mathfilm.dk
 DOMAIN-SUFFIX,rasp.matthias-iwer.de
-DOMAIN-SUFFIX,dns.matthias-prost.com
 DOMAIN-SUFFIX,media.maxim-api.com
 DOMAIN-SUFFIX,dns.maybe.icu
 DOMAIN-SUFFIX,dns.mayr.ws
@@ -4361,7 +4358,6 @@ DOMAIN-SUFFIX,mio.miosen.cyou
 DOMAIN-SUFFIX,guard.miracloud.fr
 DOMAIN-SUFFIX,netcup.mismat.ch
 DOMAIN-SUFFIX,httpdns.browser.miui.com
-DOMAIN-SUFFIX,dns.miyun1.com
 DOMAIN-SUFFIX,doh.mmmalia.com
 DOMAIN-SUFFIX,afrcloud22.mmv.kr
 DOMAIN-SUFFIX,dns.mnet-online.de
@@ -4387,7 +4383,6 @@ DOMAIN-SUFFIX,dns.moondip.net
 DOMAIN-SUFFIX,dns.moonssif.com
 DOMAIN-SUFFIX,dns.moonwx.net
 DOMAIN-SUFFIX,8o00imq7asda.mooo.com
-DOMAIN-SUFFIX,disinformer.mooo.com
 DOMAIN-SUFFIX,e23a.mooo.com
 DOMAIN-SUFFIX,feellike.mooo.com
 DOMAIN-SUFFIX,helsh0ru5.mooo.com
@@ -4632,7 +4627,6 @@ DOMAIN-SUFFIX,dns.netvpn.net
 DOMAIN-SUFFIX,dontblock.networkoutpost.com
 DOMAIN-SUFFIX,cube.neubsi.at
 DOMAIN-SUFFIX,dns.neubsi.at
-DOMAIN-SUFFIX,dns.neutopia.org
 DOMAIN-SUFFIX,doh.nexen.cloud
 DOMAIN-SUFFIX,doh.luigi.nexific.it
 DOMAIN-SUFFIX,anycast.nextdns.io
@@ -4938,7 +4932,6 @@ DOMAIN-SUFFIX,truffled.pages.dev
 DOMAIN-SUFFIX,ultraviolet-static-dhd.pages.dev
 DOMAIN-SUFFIX,unblockit.pages.dev
 DOMAIN-SUFFIX,uv-staticf.pages.dev
-DOMAIN-SUFFIX,vaporgithub.pages.dev
 DOMAIN-SUFFIX,vaporsite.pages.dev
 DOMAIN-SUFFIX,wowinterstellar.pages.dev
 DOMAIN-SUFFIX,zatoga.pages.dev
@@ -4986,6 +4979,7 @@ DOMAIN-SUFFIX,gojoiscoolbutweird.photo-frame.com
 DOMAIN-SUFFIX,fern.ub.phuri.cc
 DOMAIN-SUFFIX,quasar.ub.phuri.cc
 DOMAIN-SUFFIX,doh.centraleu.pi-dns.com
+DOMAIN-SUFFIX,dot.centraleu.pi-dns.com
 DOMAIN-SUFFIX,adguard.piekacz.pl
 DOMAIN-SUFFIX,dns.pierzchlewicz.pl
 DOMAIN-SUFFIX,dns.pieterdherde.com
@@ -6889,7 +6883,6 @@ DOMAIN-SUFFIX,acsnet.co
 DOMAIN-SUFFIX,actfordeal.com
 DOMAIN-SUFFIX,actipw3.online
 DOMAIN-SUFFIX,activefkey.store
-DOMAIN-SUFFIX,activpn.com
 DOMAIN-SUFFIX,actmobile.com
 DOMAIN-SUFFIX,adampowell.pro
 DOMAIN-SUFFIX,adblockersite.com
@@ -7250,7 +7243,6 @@ DOMAIN-SUFFIX,aurevia.ru
 DOMAIN-SUFFIX,auronsvr.site
 DOMAIN-SUFFIX,auronvpn.com
 DOMAIN-SUFFIX,auronvpn.site
-DOMAIN-SUFFIX,auroraest.com
 DOMAIN-SUFFIX,aurorajiasu.com
 DOMAIN-SUFFIX,aurorastork.com
 DOMAIN-SUFFIX,austim.cloud
@@ -7335,7 +7327,6 @@ DOMAIN-SUFFIX,bajie.la
 DOMAIN-SUFFIX,bajiess.com
 DOMAIN-SUFFIX,ballbang.com
 DOMAIN-SUFFIX,banana-vpn.com
-DOMAIN-SUFFIX,bananaspeed.site
 DOMAIN-SUFFIX,bananavpn.com
 DOMAIN-SUFFIX,bancuh.com
 DOMAIN-SUFFIX,band-lessons.com
@@ -7358,7 +7349,6 @@ DOMAIN-SUFFIX,barksymmetry.com
 DOMAIN-SUFFIX,barktether.com
 DOMAIN-SUFFIX,barnabech.fr
 DOMAIN-SUFFIX,bartproxies.com
-DOMAIN-SUFFIX,bartvpn.com
 DOMAIN-SUFFIX,base99.com
 DOMAIN-SUFFIX,basildo.beer
 DOMAIN-SUFFIX,basketbalo.ir
@@ -7861,7 +7851,6 @@ DOMAIN-SUFFIX,botclassic.com
 DOMAIN-SUFFIX,botvpn.help
 DOMAIN-SUFFIX,botvpntype.com
 DOMAIN-SUFFIX,bouquetberlin.org
-DOMAIN-SUFFIX,bpn.wtf
 DOMAIN-SUFFIX,bqinoiq.com
 DOMAIN-SUFFIX,bqkqixr.com
 DOMAIN-SUFFIX,brafnex.ru
@@ -8035,12 +8024,10 @@ DOMAIN-SUFFIX,candytally09.vip
 DOMAIN-SUFFIX,canlite.org
 DOMAIN-SUFFIX,canopypebble.com
 DOMAIN-SUFFIX,cantfindme.org
-DOMAIN-SUFFIX,canvas.mom
 DOMAIN-SUFFIX,canvasarts.org
 DOMAIN-SUFFIX,canyongravity.com
 DOMAIN-SUFFIX,canyonshore.com
 DOMAIN-SUFFIX,capybaravpn.app
-DOMAIN-SUFFIX,carebuzz.com
 DOMAIN-SUFFIX,carebuzz.io
 DOMAIN-SUFFIX,careersandjobs.org
 DOMAIN-SUFFIX,careproxy.com
@@ -8070,7 +8057,6 @@ DOMAIN-SUFFIX,cavecn.com
 DOMAIN-SUFFIX,caveofmythicalseals.life
 DOMAIN-SUFFIX,caytitf.com
 DOMAIN-SUFFIX,cb.gripe
-DOMAIN-SUFFIX,cbr2ozbx.online
 DOMAIN-SUFFIX,ccave.com
 DOMAIN-SUFFIX,ccavea.com
 DOMAIN-SUFFIX,ccdns.services
@@ -9764,7 +9750,6 @@ DOMAIN-SUFFIX,fraytether.com
 DOMAIN-SUFFIX,frealvpn.xyz
 DOMAIN-SUFFIX,fredic.us
 DOMAIN-SUFFIX,free-planet-vpn.com
-DOMAIN-SUFFIX,free-planet-vpn.net
 DOMAIN-SUFFIX,free-proxy.cz
 DOMAIN-SUFFIX,free-proxy.xyz
 DOMAIN-SUFFIX,free-proxyserver.com
@@ -9773,7 +9758,6 @@ DOMAIN-SUFFIX,free-signal.com
 DOMAIN-SUFFIX,free-vpn.club
 DOMAIN-SUFFIX,free-vpn.pro
 DOMAIN-SUFFIX,free-vpn.xyz
-DOMAIN-SUFFIX,free-vpnplanet-ru.net
 DOMAIN-SUFFIX,free-webproxy.com
 DOMAIN-SUFFIX,free2surfvpn.com
 DOMAIN-SUFFIX,freeanimesonline.com
@@ -10846,7 +10830,6 @@ DOMAIN-SUFFIX,ilovecheapestvpn.com
 DOMAIN-SUFFIX,ilovechinadlvpn.com
 DOMAIN-SUFFIX,ilovecnforeverfreevpn.com
 DOMAIN-SUFFIX,ilovecnvpn.com
-DOMAIN-SUFFIX,ilovecrocs.space
 DOMAIN-SUFFIX,iloveforeverfreevpn.com
 DOMAIN-SUFFIX,ilovefreefqvpn.com
 DOMAIN-SUFFIX,ilovefreevpn.com
@@ -11167,7 +11150,6 @@ DOMAIN-SUFFIX,jumpthewall.net
 DOMAIN-SUFFIX,jumpvpn.homes
 DOMAIN-SUFFIX,jumpvpn.mom
 DOMAIN-SUFFIX,juniorvpn.xyz
-DOMAIN-SUFFIX,jupitrdns.com
 DOMAIN-SUFFIX,juproxy.com
 DOMAIN-SUFFIX,just4test.xyz
 DOMAIN-SUFFIX,justahotm3ss.xyz
@@ -11510,7 +11492,6 @@ DOMAIN-SUFFIX,krym-toury.ru
 DOMAIN-SUFFIX,ks7aoe.site
 DOMAIN-SUFFIX,ksfodsgq.com
 DOMAIN-SUFFIX,ksho.uk
-DOMAIN-SUFFIX,kslsivnv.com
 DOMAIN-SUFFIX,kstdownload.com
 DOMAIN-SUFFIX,ksuu.loan
 DOMAIN-SUFFIX,kthksg.com
@@ -11558,7 +11539,6 @@ DOMAIN-SUFFIX,kuailian-ui.com
 DOMAIN-SUFFIX,kuailian-vip.com
 DOMAIN-SUFFIX,kuailian-vpn.com
 DOMAIN-SUFFIX,kuailian-we.com
-DOMAIN-SUFFIX,kuailian-win.com
 DOMAIN-SUFFIX,kuailian-wp.com
 DOMAIN-SUFFIX,kuailian-zo.com
 DOMAIN-SUFFIX,kuailian003.com
@@ -12753,7 +12733,6 @@ DOMAIN-SUFFIX,okayvpn.com
 DOMAIN-SUFFIX,okedr.ru
 DOMAIN-SUFFIX,okgfw.top
 DOMAIN-SUFFIX,oklubnika.ru
-DOMAIN-SUFFIX,okproxy.com
 DOMAIN-SUFFIX,okryjovnik.ru
 DOMAIN-SUFFIX,okvpn.io
 DOMAIN-SUFFIX,okyuovkg.com
@@ -12780,7 +12759,6 @@ DOMAIN-SUFFIX,onelight.cc
 DOMAIN-SUFFIX,oneproxy.xyz
 DOMAIN-SUFFIX,onesy.top
 DOMAIN-SUFFIX,onevpn.com
-DOMAIN-SUFFIX,onion.ca
 DOMAIN-SUFFIX,onion.cab
 DOMAIN-SUFFIX,onion.casa
 DOMAIN-SUFFIX,onion.city
@@ -13001,7 +12979,6 @@ DOMAIN-SUFFIX,peremen.am
 DOMAIN-SUFFIX,peremen.app
 DOMAIN-SUFFIX,peremen.space
 DOMAIN-SUFFIX,peremen.website
-DOMAIN-SUFFIX,perfect-privacy.com
 DOMAIN-SUFFIX,perfectlying.com
 DOMAIN-SUFFIX,perlproxy.com
 DOMAIN-SUFFIX,pers-dns.com
@@ -13111,7 +13088,6 @@ DOMAIN-SUFFIX,platovpn.club
 DOMAIN-SUFFIX,platovpn.com
 DOMAIN-SUFFIX,platovpn.homes
 DOMAIN-SUFFIX,platovpn.net
-DOMAIN-SUFFIX,platovpn.org
 DOMAIN-SUFFIX,platovpn.ru
 DOMAIN-SUFFIX,platovpn.site
 DOMAIN-SUFFIX,platovpn.space
@@ -13681,7 +13657,6 @@ DOMAIN-SUFFIX,raresoot.com
 DOMAIN-SUFFIX,rateavon.je
 DOMAIN-SUFFIX,ratecuts.us
 DOMAIN-SUFFIX,ratmist.com
-DOMAIN-SUFFIX,ravoapp.com
 DOMAIN-SUFFIX,rayneau.fr
 DOMAIN-SUFFIX,rayobyte.com
 DOMAIN-SUFFIX,rayvpn.help
@@ -14387,7 +14362,6 @@ DOMAIN-SUFFIX,stealthsurf.app
 DOMAIN-SUFFIX,stealthtunnel.com
 DOMAIN-SUFFIX,stealthtunnel.net
 DOMAIN-SUFFIX,stealthvpn.com
-DOMAIN-SUFFIX,steamstatic.xyz
 DOMAIN-SUFFIX,steelwrites.com
 DOMAIN-SUFFIX,steganos.com
 DOMAIN-SUFFIX,stellarflint.com
@@ -14413,7 +14387,6 @@ DOMAIN-SUFFIX,streamvia.com
 DOMAIN-SUFFIX,streamvpn.com
 DOMAIN-SUFFIX,streisand.blog
 DOMAIN-SUFFIX,streisand.pics
-DOMAIN-SUFFIX,streisandvpn.biz
 DOMAIN-SUFFIX,strongvpn.com
 DOMAIN-SUFFIX,strongvpnapp.com
 DOMAIN-SUFFIX,sttlink.com
@@ -14903,7 +14876,6 @@ DOMAIN-SUFFIX,turbovpn.mom
 DOMAIN-SUFFIX,turbovpnapp.net
 DOMAIN-SUFFIX,turkmenvibe.ru
 DOMAIN-SUFFIX,turmericrecipes.com
-DOMAIN-SUFFIX,tuskythehusky.tech
 DOMAIN-SUFFIX,tutoring4free.org
 DOMAIN-SUFFIX,tuvpn.com
 DOMAIN-SUFFIX,tuxler.com
@@ -14952,7 +14924,6 @@ DOMAIN-SUFFIX,ubst.space
 DOMAIN-SUFFIX,ubstv.click
 DOMAIN-SUFFIX,ubstvpn.click
 DOMAIN-SUFFIX,ubtv.space
-DOMAIN-SUFFIX,ubyis.top
 DOMAIN-SUFFIX,udetaca.tattoo
 DOMAIN-SUFFIX,udpcustom.online
 DOMAIN-SUFFIX,udpgw.com
@@ -15171,7 +15142,6 @@ DOMAIN-SUFFIX,v2ny.net
 DOMAIN-SUFFIX,v2ny.one
 DOMAIN-SUFFIX,v2ny.org
 DOMAIN-SUFFIX,v2ny.pro
-DOMAIN-SUFFIX,v2ny.top
 DOMAIN-SUFFIX,v2ny.vip
 DOMAIN-SUFFIX,v2ny.xyz
 DOMAIN-SUFFIX,v2plus.cc
@@ -15419,7 +15389,6 @@ DOMAIN-SUFFIX,vpn-planetvpn.net
 DOMAIN-SUFFIX,vpn-private.net
 DOMAIN-SUFFIX,vpn-russia.app
 DOMAIN-SUFFIX,vpn-server.xyz
-DOMAIN-SUFFIX,vpn-service.us
 DOMAIN-SUFFIX,vpn-simple.com
 DOMAIN-SUFFIX,vpn-th.net
 DOMAIN-SUFFIX,vpn-tn.com
@@ -15711,7 +15680,6 @@ DOMAIN-SUFFIX,vpr.lol
 DOMAIN-SUFFIX,vprskun.com
 DOMAIN-SUFFIX,vpstv.lol
 DOMAIN-SUFFIX,vptskmzra.com
-DOMAIN-SUFFIX,vpv-pay.ru
 DOMAIN-SUFFIX,vpvpay.ru
 DOMAIN-SUFFIX,vqols.cc
 DOMAIN-SUFFIX,vrbl.space
@@ -15724,7 +15692,6 @@ DOMAIN-SUFFIX,vstkp.click
 DOMAIN-SUFFIX,vtbimdkh.com
 DOMAIN-SUFFIX,vtcuong.site
 DOMAIN-SUFFIX,vthiawvu.com
-DOMAIN-SUFFIX,vthrnrwrbtq2n1xpjt5d.online
 DOMAIN-SUFFIX,vulturematrix.com
 DOMAIN-SUFFIX,vundekra.com
 DOMAIN-SUFFIX,vusetc.com
@@ -15909,7 +15876,6 @@ DOMAIN-SUFFIX,wjpiwixm.com
 DOMAIN-SUFFIX,wkor3yiac4.com
 DOMAIN-SUFFIX,wlvpn.com
 DOMAIN-SUFFIX,wmqbjq.cn
-DOMAIN-SUFFIX,wnuxuhdj.com
 DOMAIN-SUFFIX,wobti.com
 DOMAIN-SUFFIX,wokasn.com
 DOMAIN-SUFFIX,wolfpure.com
@@ -16419,13 +16385,10 @@ DOMAIN-SUFFIX,zgproxy.com
 DOMAIN-SUFFIX,zgproxy.org
 DOMAIN-SUFFIX,zgvnp.site
 DOMAIN-SUFFIX,zgvnpn.site
-DOMAIN-SUFFIX,zgvpn.fit
 DOMAIN-SUFFIX,zgvpn.net
 DOMAIN-SUFFIX,zgvpn.org
 DOMAIN-SUFFIX,zhangdong25.cn
 DOMAIN-SUFFIX,zhengkaiyun.top
-DOMAIN-SUFFIX,zhkflohs.com
-DOMAIN-SUFFIX,zhknia0azrek.online
 DOMAIN-SUFFIX,zhudedafeiji.com
 DOMAIN-SUFFIX,zhuifengdao.cloud
 DOMAIN-SUFFIX,zhuifengdao.com

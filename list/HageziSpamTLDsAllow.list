@@ -108,6 +108,7 @@ DOMAIN-SUFFIX,dhilosnetworks.cc
 DOMAIN-SUFFIX,dict.cc
 DOMAIN-SUFFIX,dns36.cc
 DOMAIN-SUFFIX,eay.cc
+DOMAIN-SUFFIX,ewelink.cc
 DOMAIN-SUFFIX,fanbox.cc
 DOMAIN-SUFFIX,fiedler.cc
 DOMAIN-SUFFIX,fito.cc
@@ -258,9 +259,11 @@ DOMAIN-SUFFIX,mer.eco
 DOMAIN-SUFFIX,nura.eco
 DOMAIN-SUFFIX,play.eco
 DOMAIN-SUFFIX,bigdig.energy
+DOMAIN-SUFFIX,bliq.energy
 DOMAIN-SUFFIX,chargee.energy
 DOMAIN-SUFFIX,eonnext-kraken.energy
 DOMAIN-SUFFIX,homewizard.energy
+DOMAIN-SUFFIX,mygrid.energy
 DOMAIN-SUFFIX,octopus.energy
 DOMAIN-SUFFIX,oegb-kraken.energy
 DOMAIN-SUFFIX,planetpod.energy
@@ -306,6 +309,7 @@ DOMAIN-SUFFIX,strem.fun
 DOMAIN-SUFFIX,apollo.fyi
 DOMAIN-SUFFIX,better.fyi
 DOMAIN-SUFFIX,crypt.fyi
+DOMAIN-SUFFIX,expo.fyi
 DOMAIN-SUFFIX,genderdysphoria.fyi
 DOMAIN-SUFFIX,iusearchlinux.fyi
 DOMAIN-SUFFIX,laelaps.fyi
@@ -386,6 +390,7 @@ DOMAIN-SUFFIX,intervals.icu
 DOMAIN-SUFFIX,lunar.icu
 DOMAIN-SUFFIX,mon.icu
 DOMAIN-SUFFIX,filepress.ink
+DOMAIN-SUFFIX,homey.ink
 DOMAIN-SUFFIX,ishortn.ink
 DOMAIN-SUFFIX,mez.ink
 DOMAIN-SUFFIX,next.ink
@@ -512,14 +517,21 @@ DOMAIN-SUFFIX,stefvanbuuren.name
 DOMAIN-SUFFIX,vlo.name
 DOMAIN-SUFFIX,bolt.new
 DOMAIN-SUFFIX,doc.new
+DOMAIN-SUFFIX,docs.new
 DOMAIN-SUFFIX,drawing.new
+DOMAIN-SUFFIX,drawings.new
 DOMAIN-SUFFIX,form.new
+DOMAIN-SUFFIX,forms.new
 DOMAIN-SUFFIX,git.new
 DOMAIN-SUFFIX,lecture.new
 DOMAIN-SUFFIX,postgres.new
 DOMAIN-SUFFIX,sheet.new
+DOMAIN-SUFFIX,sheets.new
 DOMAIN-SUFFIX,site.new
+DOMAIN-SUFFIX,sites.new
 DOMAIN-SUFFIX,slide.new
+DOMAIN-SUFFIX,slides.new
+DOMAIN-SUFFIX,vids.new
 DOMAIN-SUFFIX,coupa.ng
 DOMAIN-SUFFIX,google.com.ng
 DOMAIN-SUFFIX,origami.ng
@@ -607,6 +619,7 @@ DOMAIN-SUFFIX,pahe.plus
 DOMAIN-SUFFIX,petmed.plus
 DOMAIN-SUFFIX,rcti.plus
 DOMAIN-SUFFIX,saepay.plus
+DOMAIN-SUFFIX,vite.plus
 DOMAIN-SUFFIX,cypruspost.post
 DOMAIN-SUFFIX,postnl.post
 DOMAIN-SUFFIX,casey.prof
