@@ -1657,7 +1657,6 @@ DOMAIN-SUFFIX,home.jobytan.com
 DOMAIN-SUFFIX,adguard.jodatacenter.com
 DOMAIN-SUFFIX,dns.joey01245.nl
 DOMAIN-SUFFIX,dmjp.joeyl.de
-DOMAIN-SUFFIX,adguard.johanliebert.top
 DOMAIN-SUFFIX,dns.johndave.me
 DOMAIN-SUFFIX,child.joindns4.eu
 DOMAIN-SUFFIX,child-noads.joindns4.eu
@@ -2293,11 +2292,17 @@ DOMAIN-SUFFIX,dns.pgnhatrang.com
 DOMAIN-SUFFIX,dns.phillipjberry.net
 DOMAIN-SUFFIX,doh.centraleu.pi-dns.com
 DOMAIN-SUFFIX,dot.centraleu.pi-dns.com
+DOMAIN-SUFFIX,doh.eastas.pi-dns.com
 DOMAIN-SUFFIX,dot.eastas.pi-dns.com
 DOMAIN-SUFFIX,doh.eastau.pi-dns.com
 DOMAIN-SUFFIX,dot.eastau.pi-dns.com
+DOMAIN-SUFFIX,doh.eastus.pi-dns.com
 DOMAIN-SUFFIX,dot.eastus.pi-dns.com
+DOMAIN-SUFFIX,doh.northeu.pi-dns.com
+DOMAIN-SUFFIX,dot.northeu.pi-dns.com
+DOMAIN-SUFFIX,doh.westeu.pi-dns.com
 DOMAIN-SUFFIX,doh.westus.pi-dns.com
+DOMAIN-SUFFIX,dot.westus.pi-dns.com
 DOMAIN-SUFFIX,doh.pi-dns.com
 DOMAIN-SUFFIX,adguard.piekacz.pl
 DOMAIN-SUFFIX,dns.pierzchlewicz.pl
@@ -2681,6 +2686,7 @@ DOMAIN-SUFFIX,dns.surobe.com
 DOMAIN-SUFFIX,dns.sv-zauner.at
 DOMAIN-SUFFIX,dns.svoi.dev
 DOMAIN-SUFFIX,vps.swhome.by
+DOMAIN-SUFFIX,dns.swin.pro
 DOMAIN-SUFFIX,dns.switch.ch
 DOMAIN-SUFFIX,dns-cache.switch.ch
 DOMAIN-SUFFIX,dns-cache2.switch.ch
