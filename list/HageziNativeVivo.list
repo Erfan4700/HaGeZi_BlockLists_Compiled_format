@@ -110,6 +110,7 @@ DOMAIN-SUFFIX,eu-cota.vivoglobal.com
 DOMAIN-SUFFIX,eu-domaincfg.vivoglobal.com
 DOMAIN-SUFFIX,eu-errup.vivoglobal.com
 DOMAIN-SUFFIX,eu-monitor-stsdk.vivoglobal.com
+DOMAIN-SUFFIX,eu-nrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-onrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-ort-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,eu-p.vivoglobal.com
@@ -246,6 +247,7 @@ DOMAIN-SUFFIX,ru-p.vivoglobal.com
 DOMAIN-SUFFIX,ru-pnrt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,ru-prt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,ru-romsp-unifyconfig.vivoglobal.com
+DOMAIN-SUFFIX,ru-rt-stsdk.vivoglobal.com
 DOMAIN-SUFFIX,ru-st-exappupgrade.vivoglobal.com
 DOMAIN-SUFFIX,ru-st-sl.vivoglobal.com
 DOMAIN-SUFFIX,ru-stsdk.vivoglobal.com

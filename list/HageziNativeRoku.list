@@ -20,9 +20,6 @@ DOMAIN-SUFFIX,ads-us-east-2.delivery.roku.com
 DOMAIN-SUFFIX,ads-us-west-2.delivery.roku.com
 DOMAIN-SUFFIX,ads.gcp.roku.com
 DOMAIN-SUFFIX,logs.prod.ap.int.roku.com
-DOMAIN-SUFFIX,ad.usw2.qa.ap.int.roku.com
-DOMAIN-SUFFIX,ad.qa.ap.int.roku.com
-DOMAIN-SUFFIX,logs.qa.ap.int.roku.com
 DOMAIN-SUFFIX,ad-eng.prod.rpay.int.roku.com
 DOMAIN-SUFFIX,ad-eng.staging.rpay.int.roku.com
 DOMAIN-SUFFIX,advertising.qa.us-east-1.dev.msc.roku.com

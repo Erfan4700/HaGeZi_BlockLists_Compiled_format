@@ -9,7 +9,6 @@ DOMAIN-SUFFIX,prod-event-relay-notes-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-sports-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-stocks-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-event-relay-weather-api.v.aaplimg.com
-DOMAIN-SUFFIX,prod-event-relay-web-api.v.aaplimg.com
 DOMAIN-SUFFIX,prod-iwork-events.v.aaplimg.com
 DOMAIN-SUFFIX,prod-news-notification-events.v.aaplimg.com
 DOMAIN-SUFFIX,securemetrics.v.aaplimg.com
@@ -77,12 +76,7 @@ DOMAIN-SUFFIX,weather-analytics-events.apple.com
 DOMAIN-SUFFIX,xp.apple.com
 DOMAIN-SUFFIX,xp-cdn.apple.com
 DOMAIN-SUFFIX,feedbackws.fe.apple-dns.cn
-DOMAIN-SUFFIX,feedbackws.fe.apple-dns.net
 DOMAIN-SUFFIX,feedbackws.fe2.apple-dns.net
-DOMAIN-SUFFIX,books-analytics-events.news.apple-dns.net
-DOMAIN-SUFFIX,notes-analytics-events.news.apple-dns.net
-DOMAIN-SUFFIX,stocks-analytics-events.news.apple-dns.net
-DOMAIN-SUFFIX,weather-analytics-events.news.apple-dns.net
 DOMAIN-SUFFIX,me.apple-dns.net
 DOMAIN-SUFFIX,cstat.cdn-apple.com
 DOMAIN-SUFFIX,securemetrics.apple.com.cn
