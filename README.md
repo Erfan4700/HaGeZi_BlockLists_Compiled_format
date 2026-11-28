@@ -286,16 +286,6 @@ rules:
 
 ---
 
-### 3. Universal Clash Verge Merge Integration
-
-For users using **Clash Verge Rev**, **Mihomo Party**, or **FlClash**, the included `clash-verge-merge.js` script allows 1-click declarative integration:
-* **Dynamic Tier Selection:** Toggle between `light`, `normal`, `pro`, `proplus`, and `ultimate` using a single variable.
-* **Modular Add-ons:** Toggle TIF feeds, OEM device telemetry, NSFW, or gambling filters with zero manual YAML editing.
-
-👉 **[View Master Integration Script (clash-verge-merge.js)](./clash-verge-merge.js)**
-
----
-
 ## 📡 Telemetry Sources & Upstream Attribution
 
 * **DNS Blocklists & NRD Feeds:** Curated and maintained with excellence by [@hagezi](https://github.com/hagezi) at [hagezi/dns-blocklists](https://github.com/hagezi/dns-blocklists) and [hagezi/nrd](https://github.com/hagezi/nrd).
